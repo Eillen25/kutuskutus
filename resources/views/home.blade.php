@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    
+    <!-- DEN -->
     <!-- <div class="wrapper"> -->
                 <div class="side-left">
                 <div class="shortcut" onmouseover="showAdminProfile()">
