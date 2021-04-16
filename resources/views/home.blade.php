@@ -76,7 +76,7 @@
                 <img src="images/admin_picture.png" alt="">
             </div>
             <p class="admin-name">
-                <?php echo $nama_admin_f; ?> 
+              
             </p>
             <p class="admin-level">
                 Super Admin
@@ -141,7 +141,7 @@
                                 USERS LIFETIME
                             </p>
                             <p class="value-item">
-                                <?php echo count($checkdata_turis); ?>
+                           
                             </p>
                             <p class="desc-item">
                                 around the earth
@@ -163,7 +163,7 @@
                                 TICKET BEING SOLD
                             </p>
                             <p class="value-item">
-                            <?php echo count($checkdata_sales); ?>
+                           
                             </p>
                             <p class="desc-item">
                                 around the world
@@ -185,7 +185,7 @@
                                 PLACE THAT AVAILABLE
                             </p>
                             <p class="value-item">
-                            <?php echo count($checkdata_wisata); ?>
+                           
                             </p>
                             <p class="desc-item">
                                 around the Indonesia
@@ -210,31 +210,23 @@
 
                     <div class="divider-line"></div>
 
-                    <?php
-                        foreach($checkdata_turis as $checkdata_turis_value){
-                            
-                        
-                        
-                        
-                    ?>
-
                     <div class="user-item">
                         <div class="user-picture">
-                            <img src="<?php echo $checkdata_turis_value['url_photo_profile']; ?>" alt="">
+                            <img src="" alt="">
                         </div>
                         <div class="user-info">
                             <p class="title">
-                                <?php echo $checkdata_turis_value['nama_lengkap']; ?>
+                           
                             </p>
                             <br>
                             <p class="sub-title">
-                            <?php echo $checkdata_turis_value['bio']; ?>
+                      
                             </p>
                         </div>
                         <a href="#" class="btn btn-small-border btn-primary ">View Profile</a>
                     </div>
 
-                        <?php } ?>
+                 
                 
 
                 </div>
@@ -256,41 +248,24 @@
                     <div class="divider-line"></div>
 
 
-                    <?php
-
-                            // extract data
-                            foreach($checkdata_sales as $data_sales_final => $data_print_sales) {
-
-                                $path_data_based_on_username = 'Users/'.$data_print_sales['username'];
-                                $print_data_user_profile = $database->getReference($path_data_based_on_username)->getValue();
-
-                                foreach($print_data_user_profile as $print_data_user_profile_final => $value_data_user_profile)
-                                {}
-
-                                
-                            
-
-                    ?>
-
-
                     <div class="user-item">
                         <div class="user-picture">
-                            <img src="<?php echo $print_data_user_profile['url_photo_profile']; ?>" alt="">
+                            <img src="" alt="">
                         </div>
                         <div class="user-info">
                             <p class="title">
-                                <?php echo $print_data_user_profile['nama_lengkap']; ?>
+                          
                             </p>
                             <br>
                             <p class="sub-title">
-                            <?php echo $print_data_user_profile['bio']; ?>
+                          
                             </p>
                         </div>
                         <a href="#" class="btn btn-small-border btn-primary ">View Profile</a>
                     </div>
 
 
-                            <?php } ?>
+                   
 
 
                 </div>
