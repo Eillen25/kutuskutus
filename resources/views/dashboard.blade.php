@@ -2,16 +2,6 @@
 
 @section('isi_konten')
 <div class="main-content">
-        <div class="header row">
-            <div class="col-md-12">
-                <p class="header-title">
-                    Manage Wisata
-                </p>
-                <p class="sub-header-title">
-                    The place where the products were born
-                </p>
-            </div>
-        </div>
 
         <div class="row report-group">
 
@@ -21,7 +11,7 @@
 
                     <table class="table-wisata table-tiketsaya table table-borderless">
                         <thead>
-                            <tr>
+                            <tr class="1">
                                 <th scope="col">Nama Wisata</th>
                                 <th scope="col">Lokasi</th>
                                 <th scope="col">Tanggal</th>
@@ -31,7 +21,7 @@
                         </thead>
                         <tbody>
 
-                            <tr>
+                            <tr class="2" style="background-color: #DAC1AE;">
                                 <td>Monas</td>
                                 <td>Jakarta, Indonesia</td>
                                 <td>January 22, 2019</td>
@@ -41,7 +31,7 @@
                                 </td>
                             </tr>
 
-                            <tr>
+                            <tr class="3" style="background-color: #DAC1AE">
                                 <td>Candi</td>
                                 <td>Magelang, Indonesia</td>
                                 <td>March 1, 2019</td>
@@ -51,7 +41,7 @@
                                 </td>
                             </tr>
 
-                            <tr>
+                            <tr class="4" style="background-color: #DAC1AE">
                                 <td>Pisa</td>
                                 <td>Plance, Italy</td>
                                 <td>August 16, 2019</td>
