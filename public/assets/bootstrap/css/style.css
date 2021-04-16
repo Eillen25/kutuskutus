@@ -4,8 +4,8 @@
 
 /* global style */
 body {
-    background: rgb(147,105,135);
-background: linear-gradient(180deg, rgba(147,105,135,1) 0%, rgba(228,201,220,1) 0%);
+    
+
     /*background: rgb(198,133,141);
 background: linear-gradient(180deg, rgba(198,133,141,1) 0%, rgba(190,202,218,1) 69%, rgba(183,200,216,1) 100%);*/
     /*background: rgb(26,139,207);
@@ -264,9 +264,6 @@ background: linear-gradient(90deg, rgba(26,139,207,1) 0%, rgba(59,143,200,1) 12%
     color: #203DD1;
 }
 
-.main-content-user-details {
-    
-}
 
 .item-danger-zone .title {
     color: #212121;
@@ -586,7 +583,7 @@ box-shadow: 0px 3px 9px 0px rgba(32,61,209,0.21);
 .side-left .admin-profile {
     width: 240px;
     height: 1100px;
-    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(246,247,251,1) 100%);
+    background-color: #D2B59A;
     float: left;
 }
 
@@ -661,11 +658,7 @@ box-shadow: 0px 3px 9px 0px rgba(32,61,209,0.21);
     color: #21272C;
 }
 
-.side-left .menus {
-    width: 70px;
-    overflow: hidden;
-    margin-top: 200px;
-}
+
 
 .side-left .menus .inactive {
     background: none !important;
@@ -721,16 +714,6 @@ box-shadow: 0px 3px 9px 0px rgba(32,61,209,0.21);
     display: block;
 }
 
-.side-left .shortcut {
-    width: 70px;
-    height: 1100px;
-    /*background: linear-gradient(0deg, rgba(37,149,245,1) 0%, rgba(32,61,209,1) 100%);*/
-    /*background: rgb(147,105,135);
-background: linear-gradient(180deg, rgba(147,105,135,1) 0%, rgba(228,201,220,1) 87%);*/
-background: rgb(147,105,135);
-background: linear-gradient(180deg, rgba(147,105,135,1) 53%, rgba(228,201,220,1) 100%);
-    float: left;
-}
 
 .title-input-type-primary-tiketsaya {
     font-family: 'Montserrat';

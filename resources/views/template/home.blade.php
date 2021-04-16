@@ -14,270 +14,78 @@
 
 <body>
     <!-- DEN -->
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg " style="position: fixed; overflow:hidden; width:100%; z-index:9999; background-color:#b28e6b
+    ">
+        <a class="navbar-brand" href=""><img src="img/logo.png" height="50" alt=""></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <a class="nav-link" href="#" style="color:black">Logout <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="#" style="color:black">Registrasi Admin <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="#" style="color:black">About <span class="sr-only">(current)</span></a>
+          </form>
+        </div>
+      </nav>
+    <!-- End Of Navbar -->
     <!-- <div class="wrapper"> -->
     <div class="side-left">
-        <div class="shortcut" onmouseover="showAdminProfile()">
-            <div class="emblemapp">
-                <img src="images/emblemapp.png" height="29" alt="">
-            </div>
-            <div class="menus">
-
-                <div class="item-menu">
-                    <a href="dashboard.php">
-                        <p class="icon-item-menu">
-                            <i class="fab fa-delicious"></i>
-                        </p>
-                    </a>
-                </div>
-
-                <div class="item-menu inactive">
-                    <a href="sales.php">
-                        <p class="icon-item-menu">
-                            <i class="fas fa-ticket-alt"></i>
-                        </p>
-                    </a>
-                </div>
-
-                <div class="item-menu inactive">
-                    <a href="wisata.php">
-                        <p class="icon-item-menu">
-                            <i class="fas fa-globe"></i>
-                        </p>
-                    </a>
-                </div>
-
-                <div class="item-menu inactive">
-                    <a href="customer.php">
-                        <p class="icon-item-menu">
-                            <i class="fas fa-users"></i>
-                        </p>
-                    </a>
-                </div>
-
-                <div class="item-menu inactive">
-                    <a href="setting.php">
-                        <p class="icon-item-menu">
-                            <i class="fas fa-cog"></i>
-                        </p>
-                    </a>
-                </div>
-
-                <div class="item-menu inactive">
-                    <a href="#">
-                        <p class="icon-item-menu">
-                            <i class="fas fa-power-off"></i>
-                        </p>
-                    </a>
-                </div>
-            </div>
+        <div class="shortcut" onmouseover="showAdminProfile()">    
         </div>
-        <div class="admin-profile" id="sl_ap" onmouseover="showAdminProfile()" onmouseout="hideAdminProfile()">
-            <div class="admin-picture">
-                <img src="images/admin_picture.png" alt="">
-            </div>
-            <p class="admin-name">
-              
-            </p>
-            <p class="admin-level">
-                Super Admin
-            </p>
+        <div class="admin-profile" id="sl_ap" onmouseover="showAdminProfile()" onmouseout="hideAdminProfile()" style="padding-top: 50px">
             <ul class="admin-menus">
                 <a href="dashboard.php">
-                    <li class="active-link">
-                        My Dashboard
+                    <li class="active-link" style="color: black">
+                        Manage
                     </li>
-                </a>
+                </a>   
                 <a href="sales.php">
-                    <li>
-                        Ticket Sales
+                    <li style="color: black">
+                        <i class="fas fa-home"></i>
+                        Home
                     </li>
                 </a>
                 <a href="wisata.php">
-                    <li>
-                        Manage Wisata
+                    <li style="color: black">
+                        <i class="fas fa-sign-in-alt"></i>
+                        Barang Masuk
                     </li>
                 </a>
                 <a href="customer.php">
-                    <li>
-                        Customers <span class="badge-tiketsaya badge badge-pill badge-primary">96</span>
+                    <li style="color: black">
+                        <i class="fas fa-sign-out-alt"></i>
+                        Barang Keluar
                     </li>
                 </a>
                 <a href="setting.php">
-                    <li>
-                        Account Settings
+                    <li style="color: black">
+                        <i class="fas fa-box"></i>
+                        Produk
                     </li>
                 </a>
                 <a href="includes/user_destroy.php">
-                    <li style="padding-top: 120px;">
-                        Log Out
+                    <li style="color: black" >
+                        <i class="fas fa-2x fa-male" ></i>
+                        Reseller
+                    </li>
+                </a>
+                <a href="includes/user_destroy.php">
+                    <li style="color: black">
+                        <i class="fas fa-warehouse"></i>
+                        Stok Opname
                     </li>
                 </a>
             </ul>
         </div>
     </div>
 
-    <div class="main-content">
-        <div class="header row">
-            <div class="col-md-12">
-                <p class="header-title">
-                    My Dashboard
-                </p>
-                <p class="sub-header-title">
-                    Latest report updated this week and on
-                </p>
-            </div>
-        </div>
-        <div class="row report-group">
-
-            <div class="col-md-4">
-                <div class="item-report col-md-12">
-                    <div class="row">
-                        <div class="content col-md-12">
-                            <img src="images/icon_total_pengguna.png" alt="">
-                            <p class="title-item">
-                                TOURIST
-                            </p>
-                            <p class="subtitle-item">
-                                USERS LIFETIME
-                            </p>
-                            <p class="value-item">
-                           
-                            </p>
-                            <p class="desc-item">
-                                around the earth
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="item-report col-md-12">
-                    <div class="row">
-                        <div class="content col-md-12">
-                            <img src="images/icon_total_sales.png" alt="">
-                            <p class="title-item">
-                                SALES
-                            </p>
-                            <p class="subtitle-item">
-                                TICKET BEING SOLD
-                            </p>
-                            <p class="value-item">
-                           
-                            </p>
-                            <p class="desc-item">
-                                around the world
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="item-report col-md-12">
-                    <div class="row">
-                        <div class="content col-md-12">
-                            <img src="images/icon_total_wisata.png" alt="">
-                            <p class="title-item">
-                                WISATA
-                            </p>
-                            <p class="subtitle-item">
-                                PLACE THAT AVAILABLE
-                            </p>
-                            <p class="value-item">
-                           
-                            </p>
-                            <p class="desc-item">
-                                around the Indonesia
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <div class="row report-group">
-
-            <div class="col-md-6">
-                <div class="item-big-report col-md-12">
-                    <p class="title">
-                        <span class="title-blue">NEWEST</span> USERS
-                    </p>
-                    <p class="sub-title">
-                        USER THAT SIGN UP NOWADAYS
-                    </p>
-                    <a href="#" class="btn btn-small btn-primary btn-primary-tiketsaya">See More</a>
-
-                    <div class="divider-line"></div>
-
-                    <div class="user-item">
-                        <div class="user-picture">
-                            <img src="" alt="">
-                        </div>
-                        <div class="user-info">
-                            <p class="title">
-                           
-                            </p>
-                            <br>
-                            <p class="sub-title">
-                      
-                            </p>
-                        </div>
-                        <a href="#" class="btn btn-small-border btn-primary ">View Profile</a>
-                    </div>
-
-                 
-                
-
-                </div>
-
-
-
-            </div>
-
-            <div class="col-md-6">
-                <div class="item-big-report col-md-12">
-                    <p class="title">
-                        <span class="title-blue">TICKETS</span> SOLD
-                    </p>
-                    <p class="sub-title">
-                        USERS JUST BOUGHT TICKET
-                    </p>
-                    <a href="#" class="btn btn-small btn-primary btn-primary-tiketsaya">See More</a>
-
-                    <div class="divider-line"></div>
-
-
-                    <div class="user-item">
-                        <div class="user-picture">
-                            <img src="" alt="">
-                        </div>
-                        <div class="user-info">
-                            <p class="title">
-                          
-                            </p>
-                            <br>
-                            <p class="sub-title">
-                          
-                            </p>
-                        </div>
-                        <a href="#" class="btn btn-small-border btn-primary ">View Profile</a>
-                    </div>
-
-
-                   
-
-
-                </div>
-
-
-
-            </div>
-
-
-
-        </div>
-    </div>
+    <div class="main-content" style="padding-top: 50px;">
+    
     </div>
 
 
