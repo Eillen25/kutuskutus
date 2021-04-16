@@ -258,7 +258,7 @@
 
                     <?php
 
-                            // extrac data
+                            // extract data
                             foreach($checkdata_sales as $data_sales_final => $data_print_sales) {
 
                                 $path_data_based_on_username = 'Users/'.$data_print_sales['username'];
