@@ -16,4 +16,4 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-Route::get('/home', 'App\Http\Controllers\AwalController@home');
+Route::get('/', 'App\Http\Controllers\AwalController@home');

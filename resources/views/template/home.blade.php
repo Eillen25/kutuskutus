@@ -85,7 +85,8 @@
     </div>
 
     <div class="main-content" style="padding-top: 50px;">
-    
+    @yield('isi_konten')
+        
     </div>
 
 
