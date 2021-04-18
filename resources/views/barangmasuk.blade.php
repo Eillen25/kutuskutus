@@ -12,21 +12,21 @@
                 <div class="item-big-report col-md-12">
 
 
-                    <table class="table-wisata table-tiketsaya table table-borderless" id ="produk-table">
+                    <table class="table-wisata table-tiketsaya table table-borderless" id ="incoming-table">
                         <thead>
                             <tr class="1">
-                                <th scope="col">Nama Produk</th>
-                                <th scope="col">Status</th>
-                                <th scope="col">Jumlah Stok</th>
-                                <!-- <th scope="col">Harga Tiket</th>
-                                <th scope="col">Menu</th> -->
+                                <th scope="col">Nomor Invoice</th>
+                                <th scope="col">Total Harga</th>
+                                <th scope="col">Tanggal</th>
+                                <th scope="col">Aksi</th>
+                                <!-- <th scope="col">Menu</th> -->
                             </tr>
                         </thead>
                         <tbody>
 
                         <!-- BENTAR YA GENGS TA REMARK SEK -->
 
-                            <tr class="2" style="background-color: #DAC1AE;">
+                            <!-- <tr class="2" style="background-color: #DAC1AE;">
                                 <td>Monas</td>
                                 <td>Jakarta, Indonesia</td>
                                 <td>January 22, 2019</td>
@@ -54,7 +54,7 @@
                                 <td>
                                     <a href="manage_wisata.html" class="btn btn-small-table btn-primary ">Details</a>
                                 </td>
-                            </tr>
+                            </tr> -->
 
 
                         </tbody>
@@ -71,35 +71,35 @@
 
         </div>
 </div>
-<!-- <script>
+<script>
   $(document).ready(function() {
-    $('#produk-table').DataTable({
+    $('#incoming-table').DataTable({
       processing: true,
       serverside: true,
-      ajax: 'home/json',
+      ajax: 'barangmasuk/json',
       columns: [{
-          data: 'nama_produk',
-          name: 'nama_produk'
+          data: 'invoice_id',
+          name: 'invoice_id'
         },
         {
-          data: 'status',
-          name: 'status'
+          data: 'total_harga',
+          name: 'total_harga'
         },
         {
-          data: 'jumlah_stok',
-          name: 'jumlah_stok'
+          data: 'tanggal',
+          name: 'tanggal'
         },
         // {
         //   data: 'satuan_id',
         //   name: 'satuan_id'
         // },
-        // {
-        //   data: 'action',
-        //   name: 'action',
-        // }
+        {
+          data: 'action',
+          name: 'action'
+        }
       ]
     });
   });
-</script> -->
+</script>
   
 @endsection

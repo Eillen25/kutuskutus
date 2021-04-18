@@ -49,7 +49,7 @@
                         Home
                     </li>
                 </a>
-                <a href="wisata.php">
+                <a href="/barangmasuk">
                     <li style="color: black">
                         <i class="fas fa-sign-in-alt"></i>
                         Barang Masuk
