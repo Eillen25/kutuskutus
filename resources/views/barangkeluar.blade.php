@@ -10,6 +10,7 @@
 
             <div class="col-md-12">
                 <div class="item-big-report col-md-12">
+                  <a class="btn btn-primary float-right" style="background-color:#C2A890" href="#" role="button">+ Buat Nota</a>
 
 
                     <table class="table-wisata table-tiketsaya table table-borderless" id ="exit-table">
