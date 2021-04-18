@@ -6,18 +6,16 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use DB;
 
-class Produk extends Model
+class Grade extends Model
 {
     use HasFactory;
-    protected $primaryKey = 'produk_id';
-    protected $table = "produk";
+    protected $primaryKey = 'grade_id';
+    protected $table = "grade";
     protected $fillable = [
+        "grade_id",
+        "jenis_grade",
         "produk_id",
-        "nama_produk",
-        "jumlah_stok",
-        "satuan_id",
-        "harga_modal",
-        "harga_jual",
+        "potongan",
         "status_del"
     ];
 }

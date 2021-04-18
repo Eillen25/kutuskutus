@@ -10,6 +10,8 @@ use App\Models\Produk;
 use App\Models\BarangMasuk;
 use App\Models\BarangKeluar;
 use App\Models\Reseller;
+use App\Models\StockOpname;
+use App\Models\Admin;
 use Illuminate\Http\Request;
 
 class AwalController extends Controller
@@ -50,7 +52,6 @@ class AwalController extends Controller
         return DataTables::eloquent($incoming)
         ->addColumn('action', function ($incoming) {
             $button ='<div style="display: flex;  ">';
-            // <a class="btn btn-warning btn-sm btn-group" href="/admin/beasiswa/edit" )">Detail</a>
             $button .= '<a class="btn btn-success btn-sm"  href="/barangmasuk/detail/{id}' . $incoming->invoice_id. '")">Detail</a>';
             $button .= '<a class="btn btn-warning btn-sm" style="margin: 0 10px" "href="/barangmasuk/edit/{id}' . $incoming->invoice_id . '")">Edit</a>';
             $button .= '<a class="btn btn-danger btn-sm" href="/barangmasuk/destroy/{id}' . $incoming->invoice_id . '")">Hapus</a>';
@@ -61,7 +62,7 @@ class AwalController extends Controller
     }
 
     public function exit(){
-        // echo "Halo Kamu ngakses Controller Awal pada function index";
+
 
         return view('barangkeluar');
         
@@ -74,7 +75,6 @@ class AwalController extends Controller
         return DataTables::eloquent($exit)
         ->addColumn('action', function ($exit) {
             $button ='<div style="display: flex;  ">';
-            // <a class="btn btn-warning btn-sm btn-group" href="/admin/beasiswa/edit" )">Detail</a>
             $button .= '<a class="btn btn-success btn-sm"  href="/barangkeluar/detail/{id}' . $exit->nota_id. '")">Detail</a>';
             $button .= '<a class="btn btn-warning btn-sm" style="margin: 0 10px" "href="/barangkeluar/edit/{id}' . $exit->nota_id . '")">Edit</a>';
             $button .= '<a class="btn btn-danger btn-sm" href="/barangmasuk/keluar/{id}' . $exit->nota_id . '")">Hapus</a>';
@@ -85,6 +85,87 @@ class AwalController extends Controller
             return $exit->reseller->nama_reseller;
         })
         ->make(true);
+    }
+
+    public function produk(){
+
+
+        return view('produk');
+        // $incoming = BarangMasuk::all('invoice_id', 'total_harga', 'tanggal');
+        // dd($incoming);
+    }
+    // DATATABLE
+    public function produk_json(){
+        $produk = Produk::query();
+        // dd($results);
+        
+        return DataTables::eloquent($produk)
+        ->addColumn('action', function ($produk) {
+            $button ='<div style="display: flex;  ">';
+            // $button .= '<a class="btn btn-success btn-sm"  href="/produk/detail/{id}' . $produk->produk_id. '")">Detail</a>';
+            $button .= '<a class="btn btn-warning btn-sm" style="margin: 0 10px" "href="/produk/edit/{id}' .  $produk->produk_id . '")">Edit</a>';
+            $button .= '<a class="btn btn-danger btn-sm" href="/produk/destroy/{id}' . $produk->produk_id . '")">Hapus</a>';
+            $button .= '</div>';
+            return $button;
+        })
+        ->make(true);
+    }
+
+    public function reseller(){
+
+
+        return view('reseller');
+        
+    }
+
+    public function reseller_json(){
+        $res = Reseller::query();
+        // dd($results);
+        
+        return DataTables::eloquent($res)
+        ->addColumn('action', function ($res) {
+            $button ='<div style="display: flex;  ">';
+            // $button .= '<a class="btn btn-success btn-sm"  href="/reseller/detail/{id}' . $res->reseller_id. '")">Detail</a>';
+            $button .= '<a class="btn btn-warning btn-sm" style="margin: 0 10px" "href="/reseller/edit/{id}' . $res->reseller_id . '")">Edit</a>';
+            $button .= '<a class="btn btn-danger btn-sm" href="/reseller/destroy/{id}' . $res->reseller_id . '")">Hapus</a>';
+            $button .= '</div>';
+            return $button;
+        })
+        ->addColumn('jenis_grade',function($res){
+            return $res->grade->jenis_grade;
+        })
+        ->make(true);
+    }
+
+    public function sopname(){
+
+
+        return view('stockopname');
+        // $incoming = BarangMasuk::all('invoice_id', 'total_harga', 'tanggal');
+        // dd($incoming);
+    }
+    // DATATABLE
+    public function sopname_json(){
+        $sopname = StockOpname::query();
+        // dd($results);
+        
+        return DataTables::eloquent($sopname)
+        ->addColumn('action', function ($sopname) {
+            $button ='<div style="display: flex;  ">';
+            // $button .= '<a class="btn btn-success btn-sm"  href="/produk/detail/{id}' . $produk->produk_id. '")">Detail</a>';
+            $button .= '<a class="btn btn-warning btn-sm" style="margin: 0 10px" "href="/stockopname/edit/{id}' .  $sopname->opname_id . '")">Edit</a>';
+            $button .= '<a class="btn btn-danger btn-sm" href="/stockopname/destroy/{id}' . $sopname->opname_id . '")">Hapus</a>';
+            $button .= '</div>';
+            return $button;
+        })
+        ->addColumn('nama_admin',function($sopname){
+            return $sopname->admin->nama_admin;
+        })
+        ->addColumn('nama_produk',function($sopname){
+            return $sopname->produk->nama_produk;
+        })
+        ->make(true);
+        // dd($results);
     }
 
 }

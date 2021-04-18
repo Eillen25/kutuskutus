@@ -20,4 +20,10 @@ class Reseller extends Model
         "grade_id",
         "status_del"
     ];
+
+    public function  grade()
+    {
+    	return $this->belongsTo('App\Models\Grade', 'grade_id');
+   
+    }
 }

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-    <title>Customers — TiketSaya</title>
+    <title>Kutus-Kutus: Joss</title>
     <meta charset="UTF-8">
     <meta name="description" content="Login TiketSaya Admin">
     <meta name="keywords" content="TiketSaya, Web Dashboard TiketSaya, Login TiketSaya">
@@ -43,7 +43,7 @@
                         Manage
                     </li>
                 </a>   
-                <a href="sales.php">
+                <a href="/">
                     <li style="color: black">
                         <i class="fas fa-home"></i>
                         Home
@@ -61,19 +61,19 @@
                         Barang Keluar
                     </li>
                 </a>
-                <a href="setting.php">
+                <a href="/produk">
                     <li style="color: black">
                         <i class="fas fa-box"></i>
                         Produk
                     </li>
                 </a>
-                <a href="includes/user_destroy.php">
+                <a href="/reseller">
                     <li style="color: black" >
                         <i class="fas fa-2x fa-male" ></i>
                         Reseller
                     </li>
                 </a>
-                <a href="includes/user_destroy.php">
+                <a href="/stockopname">
                     <li style="color: black">
                         <i class="fas fa-warehouse"></i>
                         Stok Opname
