@@ -8,6 +8,8 @@ use DB;
 use DataTables;
 use App\Models\Produk;
 use App\Models\BarangMasuk;
+use App\Models\BarangKeluar;
+use App\Models\Reseller;
 use Illuminate\Http\Request;
 
 class AwalController extends Controller
@@ -57,4 +59,32 @@ class AwalController extends Controller
         })
         ->make(true);
     }
+
+    public function exit(){
+        // echo "Halo Kamu ngakses Controller Awal pada function index";
+
+        return view('barangkeluar');
+        
+    }
+
+    public function exit_json(){
+        $exit = BarangKeluar::query();
+        // dd($results);
+        
+        return DataTables::eloquent($exit)
+        ->addColumn('action', function ($exit) {
+            $button ='<div style="display: flex;  ">';
+            // <a class="btn btn-warning btn-sm btn-group" href="/admin/beasiswa/edit" )">Detail</a>
+            $button .= '<a class="btn btn-success btn-sm"  href="/barangkeluar/detail/{id}' . $exit->nota_id. '")">Detail</a>';
+            $button .= '<a class="btn btn-warning btn-sm" style="margin: 0 10px" "href="/barangkeluar/edit/{id}' . $exit->nota_id . '")">Edit</a>';
+            $button .= '<a class="btn btn-danger btn-sm" href="/barangmasuk/keluar/{id}' . $exit->nota_id . '")">Hapus</a>';
+            $button .= '</div>';
+            return $button;
+        })
+        ->addColumn('nama_reseller',function($exit){
+            return $exit->reseller->nama_reseller;
+        })
+        ->make(true);
+    }
+
 }

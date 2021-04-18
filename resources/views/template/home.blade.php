@@ -55,7 +55,7 @@
                         Barang Masuk
                     </li>
                 </a>
-                <a href="customer.php">
+                <a href="/barangkeluar">
                     <li style="color: black">
                         <i class="fas fa-sign-out-alt"></i>
                         Barang Keluar
