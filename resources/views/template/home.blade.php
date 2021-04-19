@@ -38,11 +38,11 @@
         </div>
         <div class="admin-profile" id="sl_ap" onmouseover="showAdminProfile()" onmouseout="hideAdminProfile()" style="padding-top: 50px">
             <ul class="admin-menus">
-                <a href="dashboard.php">
+              
                     <li class="active-link" style="color: black">
-                        Manage
+                        Fitur
                     </li>
-                </a>   
+                
                 <a href="/">
                     <li style="color: black">
                         <i class="fas fa-home"></i>
@@ -67,12 +67,19 @@
                         Produk
                     </li>
                 </a>
+                <a href="/admin">
+                    <li style="color: black">
+                        <i class="fas  fa-people-carry"></i>
+                        Admin
+                    </li>
+                </a>
                 <a href="/reseller">
                     <li style="color: black" >
                         <i class="fas fa-2x fa-male" ></i>
                         Reseller
                     </li>
                 </a>
+               
                 <a href="/stockopname">
                     <li style="color: black">
                         <i class="fas fa-warehouse"></i>
