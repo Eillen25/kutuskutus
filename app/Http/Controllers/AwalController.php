@@ -59,9 +59,9 @@ class AwalController extends Controller
         return DataTables::eloquent($incoming)
         ->addColumn('action', function ($incoming) {
             $button ='<div style="display: flex;  ">';
-            $button .= '<a class="btn btn-success btn-sm"  href="/barangmasuk/detail/{id}' . $incoming->invoice_id. '")">Detail</a>';
-            $button .= '<a class="btn btn-warning btn-sm" style="margin: 0 10px" "href="/barangmasuk/edit/{id}' . $incoming->invoice_id . '")">Edit</a>';
-            $button .= '<a class="btn btn-danger btn-sm" href="/barangmasuk/destroy/{id}' . $incoming->invoice_id . '")">Hapus</a>';
+            $button .= '<a class="btn btn-success btn-sm"  href="/barangmasuk/detail/' . $incoming->invoice_id. '")">Detail</a>';
+            $button .= '<a class="btn btn-warning btn-sm" style="margin: 0 10px" href="/barangmasuk/edit/' . $incoming->invoice_id . '")">Edit</a>';
+            $button .= '<a class="btn btn-danger btn-sm" href="/barangmasuk/destroy/' . $incoming->invoice_id . '")">Hapus</a>';
             $button .= '</div>';
             return $button;
         })
@@ -200,4 +200,6 @@ class AwalController extends Controller
         // dd($results);
     }
 
+
+ 
 }

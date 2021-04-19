@@ -18,8 +18,14 @@ use Illuminate\Support\Facades\Route;
 // });
 Route::get('/', 'App\Http\Controllers\AwalController@home');
 // Route::get('/home/json', 'App\Http\Controllers\AwalController@json');
+
+// BARANG MASUK
 Route::get('/barangmasuk', 'App\Http\Controllers\AwalController@incoming');
 Route::get('/barangmasuk/json', 'App\Http\Controllers\AwalController@json');
+
+Route::get('/barangmasuk/edit/{id}', 'App\Http\Controllers\BarangMasukController@edit');
+
+
 
 Route::get('/barangkeluar', 'App\Http\Controllers\AwalController@exit');
 Route::get('/barangkeluar/exit_json', 'App\Http\Controllers\AwalController@exit_json');

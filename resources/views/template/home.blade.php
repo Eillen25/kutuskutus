@@ -6,8 +6,8 @@
     <meta name="keywords" content="TiketSaya, Web Dashboard TiketSaya, Login TiketSaya">
     <meta name="author" content="BWA Team">
     
-    <link rel="stylesheet" type="text/css" href="assets/bootstrap/css/bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="assets/bootstrap/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../assets/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../../assets/bootstrap/css/style.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 </head>
@@ -16,7 +16,7 @@
     <!-- DEN -->
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg " style="position: fixed; overflow:hidden; width:100%; z-index:9999; background-color:#b28e6b">
-        <a class="navbar-brand" href=""><img src="img/logo.png" height="50" alt=""></a>
+        <a class="navbar-brand" href=""><img src="../../img/logo.png" height="50" alt=""></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -96,8 +96,8 @@
     </div>
 
 
-    <script type="text/javascript" src="assets/bootstrap/js/bootstrap.js"></script>
-    <script type="text/javascript" src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../assets/bootstrap/js/bootstrap.js"></script>
+    <script type="text/javascript" src="../../assets/bootstrap/js/bootstrap.min.js"></script>
 
 </body>
 </html>
