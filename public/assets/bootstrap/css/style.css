@@ -46,6 +46,15 @@ background: linear-gradient(90deg, rgba(26,139,207,1) 0%, rgba(59,143,200,1) 12%
     margin-top: 30px;
 }
 
+.borderr {
+    border-top-width: 4px;
+    border-right-width: 8px;
+    border-bottom-width: 10px;
+    border-left-width: 14px;
+    border-style: solid;
+    border-color:#D2B59A;
+ }
+
 .btn-cancel-secondary:hover {
     /*color:#203DD1;*/
     color:#6b4f63;

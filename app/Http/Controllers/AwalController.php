@@ -60,7 +60,7 @@ class AwalController extends Controller
         ->addColumn('action', function ($incoming) {
             $button ='<div style="display: flex;  ">';
             $button .= '<a class="btn btn-success btn-sm"  href="/barangmasuk/detail/' . $incoming->invoice_id. '")"><i class="far fa-eye"></i></a>';
-            $button .= '<a class="btn btn-warning btn-sm"  style="margin: 0 10px" href="/barangmasuk/edit/' . $incoming->invoice_id . '")"><i class="fas fa-edit"></i></a>';
+            $button .= '<a class="btn btn-warning btn-sm"   style="margin: 0 10px" href="/barangmasuk/edit/' . $incoming->invoice_id . '")"><i class="fas fa-edit"></i></a>';
             $button .= '<a class="btn btn-danger btn-sm" href="/barangmasuk/destroy/' . $incoming->invoice_id . '")"><i class="far fa-trash-alt"></i></a>';
             $button .= '</div>';
             return $button;
