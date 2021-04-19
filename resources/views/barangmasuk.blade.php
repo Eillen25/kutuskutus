@@ -13,7 +13,7 @@
                   <a class="btn btn-primary float-right" style="background-color:#C2A890" href="#" role="button">+ Tambah Invoice</a>
 
 
-                    <table class="table-wisata table-tiketsaya table table-borderless" id ="incoming-table">
+                    <table class="table-wisata table-tiketsaya table " id ="incoming-table">
                         <thead>
                             <tr class="1">
                                 <th scope="col">Nomor Invoice</th>

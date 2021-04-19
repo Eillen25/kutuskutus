@@ -12,7 +12,7 @@
                 <div class="item-big-report col-md-12">
 
 
-                    <table class="table-wisata table-tiketsaya table table-borderless" id ="produk-table">
+                    <table class="table-wisata table-tiketsaya table " id ="produk-table">
                         <thead>
                             <tr class="1">
                                 <th scope="col">Nama Produk</th>

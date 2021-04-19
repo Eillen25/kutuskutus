@@ -8,16 +8,15 @@
 
         <div class="row report-group">
 
-            <div class="col-md-12">
+            <div class="col-md-12" >
                 <div class="item-big-report col-md-12">
-                  <a class="btn btn-primary float-right" style="background-color:#C2A890" href="#" role="button">+ Tambah Reseller</a>
+                  <a class="btn btn-primary float-right" style="background-color:#C2A890" href="#" role="button">+ Tambah Admin</a>
 
 
                     <table class="table-wisata table-tiketsaya table table-borderless" id ="admin-table">
                         <thead>
-                            <tr class="1">
-                                <th scope="col">Nama Admin</th>
-                                <th scope="col">Password</th>
+                            <tr class="1" style="background-color: white">
+                                <th scope="col" >Nama Admin</th>
                                 <th scope="col">Gaji</th>
                                 <th scope="col">Alamat</th>
                                 <th scope="col">Nomor Telepon</th>
@@ -82,10 +81,6 @@
       columns: [{
           data: 'nama_admin',
           name: 'nama_admin'
-        },
-        {
-          data: 'password',
-          name: 'password'
         },
         {
           data: 'gaji',

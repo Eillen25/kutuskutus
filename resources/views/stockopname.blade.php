@@ -13,7 +13,7 @@
                   <a class="btn btn-primary float-right" style="background-color:#C2A890" href="#" role="button">+ Catat Stock Opname</a>
 
 
-                    <table class="table-wisata table-tiketsaya table table-borderless" id ="sopname-table">
+                    <table class="table-wisata table-tiketsaya table " id ="sopname-table">
                         <thead>
                             <tr class="1">
                                 <th scope="col">ID Stock Opname </th>

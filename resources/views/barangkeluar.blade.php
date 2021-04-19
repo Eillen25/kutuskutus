@@ -13,7 +13,7 @@
                   <a class="btn btn-primary float-right" style="background-color:#C2A890" href="#" role="button">+ Buat Nota</a>
 
 
-                    <table class="table-wisata table-tiketsaya table table-borderless" id ="exit-table">
+                    <table class="table-wisata table-tiketsaya table " id ="exit-table">
                         <thead>
                             <tr class="1">
                                 <th scope="col">Nomor Nota</th>

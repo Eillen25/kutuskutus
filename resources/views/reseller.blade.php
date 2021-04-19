@@ -13,7 +13,7 @@
                   <a class="btn btn-primary float-right" style="background-color:#C2A890" href="#" role="button">+ Tambah Reseller</a>
 
 
-                    <table class="table-wisata table-tiketsaya table table-borderless" id ="reseller-table">
+                    <table class="table-wisata table-tiketsaya table " id ="reseller-table">
                         <thead>
                             <tr class="1">
                                 <th scope="col">Nama Reseller</th>

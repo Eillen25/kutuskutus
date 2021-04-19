@@ -25,9 +25,9 @@
           <ul class="navbar-nav mr-auto">
           </ul>
           <form class="form-inline my-2 my-lg-0">
-            <a class="nav-link" href="#" style="color:black">Logout <span class="sr-only">(current)</span></a>
-            <a class="nav-link" href="#" style="color:black">Registrasi Admin <span class="sr-only">(current)</span></a>
-            <a class="nav-link" href="#" style="color:black">About <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="#" style="color:black">Logout</a>
+            <a class="nav-link" href="#" style="color:black">About </a>
+            <a class="nav-link" href="#" ><i class="fas fa-2x fa-user" href=""></i></a>
           </form>
         </div>
       </nav>

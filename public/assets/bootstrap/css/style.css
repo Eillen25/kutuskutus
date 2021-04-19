@@ -5,7 +5,7 @@
 /* global style */
 body {
     
-
+font-family: 'Montserrat';
     /*background: rgb(198,133,141);
 background: linear-gradient(180deg, rgba(198,133,141,1) 0%, rgba(190,202,218,1) 69%, rgba(183,200,216,1) 100%);*/
     /*background: rgb(26,139,207);
@@ -142,13 +142,7 @@ background: linear-gradient(90deg, rgba(26,139,207,1) 0%, rgba(59,143,200,1) 12%
     object-fit: cover;
 }
 
-.sitemap-ts {
-    
-}
 
-.table-wisata {
-
-}
 
 .table-wisata thead tr th {
     text-align: left !important;
@@ -187,6 +181,7 @@ background: linear-gradient(90deg, rgba(26,139,207,1) 0%, rgba(59,143,200,1) 12%
     font-family: 'Montserrat';
     text-align: center;
     border-bottom: 5px solid white;
+    background-color: #DAC1AE;
 }
 
 
@@ -197,6 +192,9 @@ background: linear-gradient(90deg, rgba(26,139,207,1) 0%, rgba(59,143,200,1) 12%
     display: block;
     object-fit: cover;
     margin: auto;
+}
+.nav-link {
+    text-decoration: underline;
 }
 
 .divider-line {
@@ -300,8 +298,8 @@ background: linear-gradient(90deg, rgba(26,139,207,1) 0%, rgba(59,143,200,1) 12%
 }
 
 .main-content {
-    width: 1000px;
-    /* overflow: hidden; */
+    width: 1270px;
+     overflow: hidden;
     float: left;
 }
 
