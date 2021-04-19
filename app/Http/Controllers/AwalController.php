@@ -18,16 +18,23 @@ class AwalController extends Controller
 {
     public function home(){
         // echo "Halo Kamu ngakses Controller Awal pada function index";
-
-        return view('dashboard');
+        $results = Produk::select('*',
+        \DB::raw('(CASE 
+            WHEN jumlah_stok <= "200" THEN "Stok Menipis"
+            WHEN jumlah_stok = "0" THEN "Tidak Tersedia"
+            ELSE "Tersedia" 
+            END) AS status'))
+        ->get();
+        return view('dashboard', compact('results'));
      
     }
 
     // DATATABLE
-    // public function json(){
+    // public function dashboard(){
     //     $results = Produk::select('*',
     //     \DB::raw('(CASE 
-    //         WHEN jumlah_stok < "3" THEN "Tidak Tersedia"
+    //         WHEN jumlah_stok <= "200" THEN "Stok Menipis"
+    //         WHEN jumlah_stok = "0" THEN "Tidak Tersedia"
     //         ELSE "Tersedia" 
     //         END) AS status'))
     //     ->get();
