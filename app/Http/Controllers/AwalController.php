@@ -168,4 +168,29 @@ class AwalController extends Controller
         // dd($results);
     }
 
+    public function admin(){
+
+
+        return view('admin');
+        // $incoming = BarangMasuk::all('invoice_id', 'total_harga', 'tanggal');
+        // dd($incoming);
+    }
+
+    public function admin_json(){
+        $admin = Admin::query();
+        // dd($results);
+        
+        return DataTables::eloquent($admin)
+        ->addColumn('action', function ($admin) {
+            $button ='<div style="display: flex;  ">';
+            // $button .= '<a class="btn btn-success btn-sm"  href="/produk/detail/{id}' . $produk->produk_id. '")">Detail</a>';
+            $button .= '<a class="btn btn-warning btn-sm" style="margin: 0 10px" "href="/admin/edit/{id}' .  $admin->admin_id . '")">Edit</a>';
+            $button .= '<a class="btn btn-danger btn-sm" href="/admin/destroy/{id}' . $admin->admin_id . '")">Hapus</a>';
+            $button .= '</div>';
+            return $button;
+        })
+        ->make(true);
+        // dd($results);
+    }
+
 }

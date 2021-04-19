@@ -32,3 +32,6 @@ Route::get('/reseller/reseller_json', 'App\Http\Controllers\AwalController@resel
 
 Route::get('/stockopname', 'App\Http\Controllers\AwalController@sopname');
 Route::get('/stockopname/sopname_json', 'App\Http\Controllers\AwalController@sopname_json');
+
+Route::get('/admin', 'App\Http\Controllers\AwalController@admin');
+Route::get('/admin/admin_json', 'App\Http\Controllers\AwalController@admin_json');
