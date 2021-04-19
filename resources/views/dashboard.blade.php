@@ -24,7 +24,13 @@
                             @foreach($results as $item)
                             <tr class="4" style="background-color: #DAC1AE">
                                 <td>{{$item->nama_produk}}</td>
-                                <td>{{$item->status}}</td>
+                                @if($item->status == 'Tidak Tersedia')
+                                <td class="bg-danger">{{$item->status}}</td>
+                                @elseif($item->status == 'Stok Menipis')
+                                <td class="bg-warning">{{$item->status}}</td>
+                                @else
+                                <td class="bg-success">{{$item->status}}</td>
+                                @endif
                                 <td>{{$item->jumlah_stok}}</td>
                             </tr> 
                             @endforeach
