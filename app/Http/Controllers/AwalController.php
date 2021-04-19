@@ -59,9 +59,9 @@ class AwalController extends Controller
         return DataTables::eloquent($incoming)
         ->addColumn('action', function ($incoming) {
             $button ='<div style="display: flex;  ">';
-            $button .= '<a class="btn btn-success btn-sm"  href="/barangmasuk/detail/' . $incoming->invoice_id. '")">Detail</a>';
-            $button .= '<a class="btn btn-warning btn-sm" style="margin: 0 10px" href="/barangmasuk/edit/' . $incoming->invoice_id . '")">Edit</a>';
-            $button .= '<a class="btn btn-danger btn-sm" href="/barangmasuk/destroy/' . $incoming->invoice_id . '")">Hapus</a>';
+            $button .= '<a class="btn btn-success btn-sm"  href="/barangmasuk/detail/' . $incoming->invoice_id. '")"><i class="far fa-eye"></i></a>';
+            $button .= '<a class="btn btn-warning btn-sm"  style="margin: 0 10px" href="/barangmasuk/edit/' . $incoming->invoice_id . '")"><i class="fas fa-edit"></i></a>';
+            $button .= '<a class="btn btn-danger btn-sm" href="/barangmasuk/destroy/' . $incoming->invoice_id . '")"><i class="far fa-trash-alt"></i></a>';
             $button .= '</div>';
             return $button;
         })
@@ -82,9 +82,9 @@ class AwalController extends Controller
         return DataTables::eloquent($exit)
         ->addColumn('action', function ($exit) {
             $button ='<div style="display: flex;  ">';
-            $button .= '<a class="btn btn-success btn-sm"  href="/barangkeluar/detail/{id}' . $exit->nota_id. '")">Detail</a>';
-            $button .= '<a class="btn btn-warning btn-sm" style="margin: 0 10px" "href="/barangkeluar/edit/{id}' . $exit->nota_id . '")">Edit</a>';
-            $button .= '<a class="btn btn-danger btn-sm" href="/barangmasuk/keluar/{id}' . $exit->nota_id . '")">Hapus</a>';
+            $button .= '<a class="btn btn-success btn-sm"  href="/barangkeluar/detail/{id}' . $exit->nota_id. '")"><i class="far fa-eye"></i></a>';
+            $button .= '<a class="btn btn-warning btn-sm" style="margin: 0 10px" "href="/barangkeluar/edit/{id}' . $exit->nota_id . '")"><i class="fas fa-edit"></i></a>';
+            $button .= '<a class="btn btn-danger btn-sm" href="/barangmasuk/keluar/{id}' . $exit->nota_id . '")"><i class="far fa-trash-alt"></i></a>';
             $button .= '</div>';
             return $button;
         })
@@ -110,8 +110,8 @@ class AwalController extends Controller
         ->addColumn('action', function ($produk) {
             $button ='<div style="display: flex;  ">';
             // $button .= '<a class="btn btn-success btn-sm"  href="/produk/detail/{id}' . $produk->produk_id. '")">Detail</a>';
-            $button .= '<a class="btn btn-warning btn-sm" style="margin: 0 10px" "href="/produk/edit/{id}' .  $produk->produk_id . '")">Edit</a>';
-            $button .= '<a class="btn btn-danger btn-sm" href="/produk/destroy/{id}' . $produk->produk_id . '")">Hapus</a>';
+            $button .= '<a class="btn btn-warning btn-sm" style="margin: 0 10px" "href="/produk/edit/{id}' .  $produk->produk_id . '")"><i class="fas fa-edit"></i></a>';
+            $button .= '<a class="btn btn-danger btn-sm" href="/produk/destroy/{id}' . $produk->produk_id . '")"><i class="far fa-trash-alt"></i></a>';
             $button .= '</div>';
             return $button;
         })
@@ -133,8 +133,8 @@ class AwalController extends Controller
         ->addColumn('action', function ($res) {
             $button ='<div style="display: flex;  ">';
             // $button .= '<a class="btn btn-success btn-sm"  href="/reseller/detail/{id}' . $res->reseller_id. '")">Detail</a>';
-            $button .= '<a class="btn btn-warning btn-sm" style="margin: 0 10px" "href="/reseller/edit/{id}' . $res->reseller_id . '")">Edit</a>';
-            $button .= '<a class="btn btn-danger btn-sm" href="/reseller/destroy/{id}' . $res->reseller_id . '")">Hapus</a>';
+            $button .= '<a class="btn btn-warning btn-sm" style="margin: 0 10px" "href="/reseller/edit/{id}' . $res->reseller_id . '")"><i class="fas fa-edit"></i></a>';
+            $button .= '<a class="btn btn-danger btn-sm" href="/reseller/destroy/{id}' . $res->reseller_id . '")"><i class="far fa-trash-alt"></i></a>';
             $button .= '</div>';
             return $button;
         })
@@ -160,8 +160,7 @@ class AwalController extends Controller
         ->addColumn('action', function ($sopname) {
             $button ='<div style="display: flex;  ">';
             // $button .= '<a class="btn btn-success btn-sm"  href="/produk/detail/{id}' . $produk->produk_id. '")">Detail</a>';
-            $button .= '<a class="btn btn-warning btn-sm" style="margin: 0 10px" "href="/stockopname/edit/{id}' .  $sopname->opname_id . '")">Edit</a>';
-            $button .= '<a class="btn btn-danger btn-sm" href="/stockopname/destroy/{id}' . $sopname->opname_id . '")">Hapus</a>';
+            $button .= '<a class="btn btn-danger btn-sm" href="/stockopname/destroy/{id}' . $sopname->opname_id . '")"><i class="far fa-trash-alt"></i></a>';
             $button .= '</div>';
             return $button;
         })
@@ -191,8 +190,8 @@ class AwalController extends Controller
         ->addColumn('action', function ($admin) {
             $button ='<div style="display: flex;  ">';
             // $button .= '<a class="btn btn-success btn-sm"  href="/produk/detail/{id}' . $produk->produk_id. '")">Detail</a>';
-            $button .= '<a class="btn btn-warning btn-sm" style="margin: 0 10px" "href="/admin/edit/{id}' .  $admin->admin_id . '")">Edit</a>';
-            $button .= '<a class="btn btn-danger btn-sm" href="/admin/destroy/{id}' . $admin->admin_id . '")">Hapus</a>';
+            $button .= '<a class="btn btn-warning btn-sm" style="margin: 0 10px" "href="/admin/edit/{id}' .  $admin->admin_id . '")"><i class="fas fa-edit"></i></a>';
+            $button .= '<a class="btn btn-danger btn-sm" href="/admin/destroy/{id}' . $admin->admin_id . '")"><i class="far fa-trash-alt"></i></a>';
             $button .= '</div>';
             return $button;
         })

@@ -17,7 +17,25 @@ background: linear-gradient(90deg, rgba(26,139,207,1) 0%, rgba(59,143,200,1) 12%
     margin-left: 100px;
 }   
 
+.row-2 {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: 400px;
+    margin-left: 250px;
+    margin-top: 50px;
+}
 
+.row-1 {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: 400px;
+    margin-left: 250px;
+    margin-top: 80px;
+}
 .btn-cancel-secondary {
     width: 140px;
     border-radius: 4px !important;
