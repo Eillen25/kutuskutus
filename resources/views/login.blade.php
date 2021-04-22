@@ -224,18 +224,41 @@ input {
 <body>
 <div class="container-1" id="container">
     <div class="form-container sign-up-container">
-        <form action="#">
+        <form action="/forgotpass" method="POST">
+		@csrf
             <h1>Lupa Password</h1>
-            <input type="email" placeholder="Email" />
+            <input type="email" placeholder="Email" name="email"/>
             <button>Kirim Email</button>
         </form>
     </div>
     <div class="form-container sign-in-container">
-        <form action="#">
+	<!-- ALERT -->
+	@if (Session::has('success'))
+	<div class="alert alert-success alert-block">
+	    <button type="button" class="close" data-dismiss="alert">×</button>
+	    <strong>{{ Session::get('success') }}</strong>
+	</div>
+	@endif
+	@if (Session::has('error'))
+	<div class="alert alert-danger alert-block">
+	    <button type="button" class="close" data-dismiss="alert">×</button>
+	    <strong>{{ Session::get('error') }}</strong>
+	</div>
+	@endif
+	@if (Session::has('keluar'))
+	<div class="alert alert-warning alert-block">
+	    <button type="button" class="close" data-dismiss="alert">×</button>
+	    <strong>{{ Session::get('keluar') }}</strong>
+	</div>
+	@endif
+
+	<!-- FORM -->
+        <form action="/authenticate" method="POST">
+		@csrf
             <h1>MASUK</h1>
-            <input type="email" placeholder="Email" />
-            <input type="password" placeholder="Password" />
-            <button href="#">MASUK</button>
+            <input type="text" placeholder="ID Admin" name="username"required/>
+            <input type="password" placeholder="Password" name="password"required/>
+            <button type = "submit">MASUK</button>
         </form>
     </div>
     <div class="overlay-container">
@@ -255,7 +278,21 @@ input {
         </div>
     </div>
 </div>
-<script src="app.js"></script>
+<script>
+	const signUpButton = document.getElementById('signUp');
+	const signInButton = document.getElementById('signIn');
+	const container = document.getElementById('container');
+
+	signUpButton.addEventListener('click', () => {
+		container.classList.add("right-panel-active");
+	});
+
+	signInButton.addEventListener('click', () => {
+		container.classList.remove("right-panel-active");
+	});
+	
+
+</script>
 </body>
 
 </html>
