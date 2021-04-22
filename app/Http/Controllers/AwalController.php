@@ -228,4 +228,10 @@ class AwalController extends Controller
 
         return view('Reseller.edit');
     }
+    public function adminedit(){
+
+
+        return view('Admin.edit');
+    }
 }
+

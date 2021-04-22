@@ -51,3 +51,5 @@ Route::get('/login', 'App\Http\Controllers\AwalController@login');
 Route::get('/produkedit', 'App\Http\Controllers\AwalController@produkedit');
 
 Route::get('/reselleredit', 'App\Http\Controllers\AwalController@reselleredit');
+
+Route::get('/adminedit', 'App\Http\Controllers\AwalController@adminedit');
