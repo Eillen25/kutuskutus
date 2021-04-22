@@ -58,3 +58,4 @@ Route::get('/reselleredit', 'App\Http\Controllers\AwalController@reselleredit');
 
 Route::get('/adminedit', 'App\Http\Controllers\AwalController@adminedit');
 
+Route::get('/incoming2', 'App\Http\Controllers\AwalController@incoming2');

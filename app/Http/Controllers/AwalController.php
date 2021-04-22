@@ -309,5 +309,11 @@ class AwalController extends Controller
         return view('Admin.edit');
     }
 
+    public function incoming2(){
+
+
+        return view('Barang_Masuk.edit');
+    }
+
 }
 
