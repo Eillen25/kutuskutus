@@ -218,4 +218,9 @@ class AwalController extends Controller
         return view('login');
     }
     
+    public function produkedit(){
+
+
+        return view('Produk.edit');
+    }
 }

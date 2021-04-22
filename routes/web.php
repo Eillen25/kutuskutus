@@ -47,3 +47,5 @@ Route::get('/exit2', 'App\Http\Controllers\AwalController@exit2');
 Route::get('/profile', 'App\Http\Controllers\AwalController@profile');
 
 Route::get('/login', 'App\Http\Controllers\AwalController@login');
+
+Route::get('/produkedit', 'App\Http\Controllers\AwalController@produkedit');
