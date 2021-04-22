@@ -223,4 +223,9 @@ class AwalController extends Controller
 
         return view('Produk.edit');
     }
+    public function reselleredit(){
+
+
+        return view('Reseller.edit');
+    }
 }
