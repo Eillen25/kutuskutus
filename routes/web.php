@@ -14,11 +14,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Route::get('/', function () {
-//     return view('welcome');
-// });
-Route::get('/', 'App\Http\Controllers\AwalController@home');
-// Route::get('/home/json', 'App\Http\Controllers\AwalController@json');
-
+    //     return view('welcome');
+    // });
+    Route::get('/', 'App\Http\Controllers\AwalController@home');
+    // Route::get('/home/json', 'App\Http\Controllers\AwalController@json');
+// LOGIN
+Route::get('/login', 'App\Http\Controllers\AwalController@login');
+Route::post('/authenticate','App\Http\Controllers\AwalController@authentication');
+Route::post('/forgotpass','App\Http\Controllers\AwalController@forgot_pass');
 // BARANG MASUK
 Route::get('/barangmasuk', 'App\Http\Controllers\AwalController@incoming');
 Route::get('/barangmasuk/json', 'App\Http\Controllers\AwalController@json');
@@ -52,4 +55,6 @@ Route::get('/produkedit', 'App\Http\Controllers\AwalController@produkedit');
 
 Route::get('/reselleredit', 'App\Http\Controllers\AwalController@reselleredit');
 
+
 Route::get('/adminedit', 'App\Http\Controllers\AwalController@adminedit');
+

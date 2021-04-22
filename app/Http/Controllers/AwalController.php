@@ -218,6 +218,80 @@ class AwalController extends Controller
         return view('login');
     }
     
+
+    //authentication
+    public function authentication(Request $req){
+        //1. Get INPUT
+        $username = $req->input('username');
+        $pass    = $req->input('password');
+
+        $data = [
+            'username' => $username,
+            'password' => $pass
+        ];
+
+        //2. Check Username dan Password ke database
+        $usr = new Admin();
+
+        //ini coba"
+        // $data_kembalian =['daftar' => $usr->isExist($data)];
+        // return view('coba',$data_kembalian);
+
+        //beneran
+        $flag_exist = $usr->isExist($data);
+        
+        // die;
+        if ($flag_exist){
+            //2.a. Jika KETEMU, maka session LOGIN dibuat
+            Session::put('login', $username);
+            Session::put('pass', $pass);
+            
+            // $pass_lama = Session::get('pass');
+            // dd($pass_lama);
+            // die;
+            
+            // $username_login = $data['username'];
+            // $username_login->belongsToMany('App\Models\Pelanggan');
+
+           
+
+            Session::flash('success', 'Anda berhasil Login!');
+
+            return redirect('/');
+        } else {
+            //2.b. Jika TIDKA KETEMU, maka kembali ke LOGIN dan tampilkan PESAN
+            Session::flash('error', 'Username dan Password tidak sesuai!');
+            return redirect('/login');
+        }
+    }
+
+    // FORGOT PASSWORD BELUM ADA QUERY UNTUK CEK EMAIL
+    public function forgot_pass(Request $req){
+        $this->validate($request, [
+            'email'  =>  'required|email'
+           ]);
+        $berhasil= 0;
+        $data = array(
+                'email'  => $request->input('email')
+            );
+
+        try{
+                Mail::send('email_sandi',$data, function($data) use($request){
+                    $data->to($request->email,'Verifikasi')->subject('Verifikasi Sandi');
+                    $data->from(env('MAIL_USERNAME','masakyukgan@gmail.com'),'Verifikasi Sandi anda');
+                    
+                    // dd($data->to('masakyukgan@gmail.com','Verifikasi')->subject('Verifikasi Email'));
+                });
+        }catch (Exception $e){
+                return response (['status' => false,'errors' => $e->getMessage()]);
+        }
+
+
+        return redirect('/login');
+        
+    }
+
+
     public function produkedit(){
 
 
@@ -228,10 +302,12 @@ class AwalController extends Controller
 
         return view('Reseller.edit');
     }
+
     public function adminedit(){
 
 
         return view('Admin.edit');
     }
+
 }
 
