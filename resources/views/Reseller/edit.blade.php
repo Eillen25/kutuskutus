@@ -19,36 +19,27 @@
 <div class="card-body" style="margin-top: 40px">
     <div class="row gutters">
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-            <h5 class="mb-2 text-primary">Ubah Barang Keluar</h5>
+            <h5 class="mb-2 text-primary">Ubah Data Reseller</h5>
         </div>
         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-            <div class="form-group">
-                <label for="fullName">No. Nota</label>
+            <div class="form-group mt-4">
+                <label for="fullName">Reseller ID</label>
                 {{-- <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="Oh Sehun"> --}}
-                <input type="text" class="form-control" id="fullName" value="J01001" readonly>
+                <input type="text" class="form-control" id="fullName" value="RL001" readonly >
             </div>
             <div class="form-group">
-                <label for="fullName">Jumlah</label>
-                {{-- <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="Oh Sehun"> --}}
-                <input type="text" class="form-control" id="fullName" value="5">
-            </div>
-            <div class="form-group">
-                <label for="phone">Total Harga</label>
-                <input type="text" class="form-control" id="phone" value="1150000">
+                <label for="fullName">Nama Reseller</label>
+                <input type="text" class="form-control" id="fullName" value="Megmeg">
             </div>
         </div>
         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-            <div class="form-group">
-                <label for="eMail">Admin ID</label>
-                <input type="text" class="form-control" value="owner" readonly>
+            <div class="form-group mt-4">
+                <label for="eMail">Alamat</label>
+                <input type="text" class="form-control" value="Jl. Damai Sejahtera Tapi Boong" >
             </div>
             <div class="form-group">
-                <label for="eMail">Reseller ID</label>
-                <input type="text" class="form-control" value="RL001" readonly>
-            </div>
-            <div class="form-group">
-                <label for="eMail">Tanggal</label>
-                <input type="date" class="form-control" id="date" >
+                <label for="eMail">Jenis Grade</label>
+                <input type="text" class="form-control" value="Bronze" >
             </div>
         </div>
     </div>

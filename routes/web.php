@@ -48,3 +48,12 @@ Route::get('/admin/admin_json', 'App\Http\Controllers\AwalController@admin_json'
 Route::get('/exit2', 'App\Http\Controllers\AwalController@exit2');
 
 Route::get('/profile', 'App\Http\Controllers\AwalController@profile');
+<<<<<<< HEAD
+=======
+
+Route::get('/login', 'App\Http\Controllers\AwalController@login');
+
+Route::get('/produkedit', 'App\Http\Controllers\AwalController@produkedit');
+
+Route::get('/reselleredit', 'App\Http\Controllers\AwalController@reselleredit');
+>>>>>>> 443532d571e4c449e4e74ca0268ea95755deaf11

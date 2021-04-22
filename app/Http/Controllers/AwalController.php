@@ -218,6 +218,7 @@ class AwalController extends Controller
         return view('login');
     }
     
+<<<<<<< HEAD
     //authentication
     public function authentication(Request $req){
         //1. Get INPUT
@@ -290,4 +291,16 @@ class AwalController extends Controller
         
     }
 
+=======
+    public function produkedit(){
+
+
+        return view('Produk.edit');
+    }
+    public function reselleredit(){
+
+
+        return view('Reseller.edit');
+    }
+>>>>>>> 443532d571e4c449e4e74ca0268ea95755deaf11
 }
