@@ -41,3 +41,9 @@ Route::get('/stockopname/sopname_json', 'App\Http\Controllers\AwalController@sop
 
 Route::get('/admin', 'App\Http\Controllers\AwalController@admin');
 Route::get('/admin/admin_json', 'App\Http\Controllers\AwalController@admin_json');
+
+Route::get('/exit2', 'App\Http\Controllers\AwalController@exit2');
+
+Route::get('/profile', 'App\Http\Controllers\AwalController@profile');
+
+Route::get('/login', 'App\Http\Controllers\AwalController@login');

@@ -199,6 +199,23 @@ class AwalController extends Controller
         // dd($results);
     }
 
+    public function exit2(){
 
- 
+
+        return view('Barang_Keluar.edit');
+        // $incoming = BarangMasuk::all('invoice_id', 'total_harga', 'tanggal');
+        // dd($incoming);
+    }
+    
+    public function profile(){
+
+
+        return view('profile');
+    }
+    public function login(){
+
+
+        return view('login');
+    }
+    
 }
