@@ -65,3 +65,5 @@ Route::get('/detailbarangkeluar', 'App\Http\Controllers\AwalController@detailbar
 Route::get('/detailbarangmasuk', 'App\Http\Controllers\AwalController@detailbarangmasuk');
 
 Route::get('/about', 'App\Http\Controllers\AwalController@about');
+
+Route::get('/deleteincoming', 'App\Http\Controllers\AwalController@deleteincoming');

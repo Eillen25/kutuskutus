@@ -332,5 +332,11 @@ class AwalController extends Controller
 
         return view('about');
     }
+
+    public function deleteincoming(){
+
+
+        return view('Barang_Masuk.delete');
+    }
 }
 
