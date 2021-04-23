@@ -61,3 +61,5 @@ Route::get('/adminedit', 'App\Http\Controllers\AwalController@adminedit');
 Route::get('/incoming2', 'App\Http\Controllers\AwalController@incoming2');
 
 Route::get('/detailbarangkeluar', 'App\Http\Controllers\AwalController@detailbarangkeluar');
+
+Route::get('/detailbarangmasuk', 'App\Http\Controllers\AwalController@detailbarangmasuk');

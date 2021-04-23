@@ -320,5 +320,11 @@ class AwalController extends Controller
 
         return view('Barang_Keluar.detail');
     }
+
+    public function detailbarangmasuk(){
+
+
+        return view('Barang_Masuk.detail');
+    }
 }
 
