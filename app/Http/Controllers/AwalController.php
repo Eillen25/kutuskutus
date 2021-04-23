@@ -315,5 +315,10 @@ class AwalController extends Controller
         return view('Barang_Masuk.edit');
     }
 
+    public function detailbarangkeluar(){
+
+
+        return view('Barang_Keluar.detail');
+    }
 }
 
