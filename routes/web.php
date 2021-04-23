@@ -63,3 +63,5 @@ Route::get('/incoming2', 'App\Http\Controllers\AwalController@incoming2');
 Route::get('/detailbarangkeluar', 'App\Http\Controllers\AwalController@detailbarangkeluar');
 
 Route::get('/detailbarangmasuk', 'App\Http\Controllers\AwalController@detailbarangmasuk');
+
+Route::get('/about', 'App\Http\Controllers\AwalController@about');

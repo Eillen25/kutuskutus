@@ -326,5 +326,11 @@ class AwalController extends Controller
 
         return view('Barang_Masuk.detail');
     }
+
+    public function about(){
+
+
+        return view('about');
+    }
 }
 
