@@ -225,6 +225,7 @@ class AwalController extends Controller
         return view('login');
     }
     
+
     //authentication
     public function authentication(Request $req){
         //1. Get INPUT
@@ -287,6 +288,7 @@ class AwalController extends Controller
         
     }
 
+
     public function produkedit(){
 
 
@@ -297,4 +299,41 @@ class AwalController extends Controller
 
         return view('Reseller.edit');
     }
+
+    public function adminedit(){
+
+
+        return view('Admin.edit');
+    }
+
+    public function incoming2(){
+
+
+        return view('Barang_Masuk.edit');
+    }
+
+    public function detailbarangkeluar(){
+
+
+        return view('Barang_Keluar.detail');
+    }
+
+    public function detailbarangmasuk(){
+
+
+        return view('Barang_Masuk.detail');
+    }
+
+    public function about(){
+
+
+        return view('about');
+    }
+
+    public function deleteincoming(){
+
+
+        return view('Barang_Masuk.delete');
+    }
 }
+

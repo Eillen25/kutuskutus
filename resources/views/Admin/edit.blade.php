@@ -19,31 +19,35 @@
 <div class="card-body" style="margin-top: 40px">
     <div class="row gutters">
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-            <h5 class="mb-2 text-primary">Ubah Barang Masuk</h5>
+            <h5 class="mb-2 text-primary">Ubah Data Admin</h5>
         </div>
         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
             <div class="form-group mt-4">
-                <label for="fullName">Nama Produk</label>
+                <label for="fullName">Nama Admin</label>
                 {{-- <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="Oh Sehun"> --}}
-                <input type="text" class="form-control" id="fullName" value="Minyak Kutus - Kutus" >
+                <input type="text" class="form-control" id="fullName" value="Eillen Lie Pramono" >
             </div>
             <div class="form-group">
-                <label for="fullName">Jumlah </label>
-                <input type="text" class="form-control" id="fullName" value="1000">
+                <label for="fullName">Password</label>
+                <input type="text" class="form-control" id="fullName" value="*****">
             </div>
             <div class="form-group">
-                <label for="phone">Tanggal</label>
-                <input type="date" class="form-control" id="phone" >
+                <label for="phone">Gaji</label>
+                <input type="text" class="form-control" id="phone" value="5000000">
             </div>
         </div>
         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
             <div class="form-group mt-4">
-                <label for="eMail">Harga Satuan</label>
-                <input type="text" class="form-control" value="230000" >
+                <label for="eMail">E-mail</label>
+                <input type="text" class="form-control" value="eilen@gmail.com" >
+            </div>
+            <div class="form-group mt-4">
+                <label for="eMail">Alamat</label>
+                <input type="text" class="form-control" value="Jl. Kalau Bisa 2 Kenapa Harus 1" >
             </div>
             <div class="form-group">
-                <label for="eMail">Harga Harga Total</label>
-                <input type="text" class="form-control" value="230000000" >
+                <label for="eMail">Nomor Telpon</label>
+                <input type="text" class="form-control" value="087787635463" >
             </div>
         </div>
     </div>
