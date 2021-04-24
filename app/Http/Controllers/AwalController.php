@@ -1,25 +1,31 @@
 <?php
 
 namespace App\Http\Controllers;
-use Session;
 use Alert;
-use Mail;
-use DB;
-use DataTables;
+
+
 use App\Models\Produk;
 use App\Models\BarangMasuk;
 use App\Models\BarangKeluar;
 use App\Models\Reseller;
 use App\Models\StockOpname;
 use App\Models\Admin;
+use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB as DB;
+use Illuminate\Support\Facades\Mail as Mail;
+use Illuminate\Support\Facades\Session as Session;
+use Yajra\DataTables\Facades\DataTables as DataTables;
+
+//use Yajra\DataTables\DataTables;
+//use Yajra\DataTables\Facades\DataTables as DataTables;
 
 class AwalController extends Controller
 {
     public function home(){
         // echo "Halo Kamu ngakses Controller Awal pada function index";
         $results = Produk::select('*',
-        \DB::raw('(CASE 
+        DB::raw('(CASE 
             WHEN jumlah_stok <= "200" THEN "Stok Menipis"
             WHEN jumlah_stok = "0" THEN "Tidak Tersedia"
             ELSE "Tersedia" 
@@ -62,6 +68,7 @@ class AwalController extends Controller
             $button .= '<a class="btn btn-success btn-sm"  href="/barangmasuk/detail/' . $incoming->invoice_id. '")"><i class="far fa-eye"></i></a>';
             $button .= '<a class="btn btn-warning btn-sm"   style="margin: 0 10px" href="/barangmasuk/edit/' . $incoming->invoice_id . '")"><i class="fas fa-edit"></i></a>';
             $button .= '<a class="btn btn-danger btn-sm" href="/barangmasuk/destroy/' . $incoming->invoice_id . '")"><i class="far fa-trash-alt"></i></a>';
+            $button .= '<button type="submit"  class="donate_now btn btn-default-border-blk generalDonation" data-toggle="modal"  data-backdrop="static" data-keyboard="false" data-target="#myModalHorizontal">donate now</button>';
             $button .= '</div>';
             return $button;
         })
@@ -218,7 +225,6 @@ class AwalController extends Controller
         return view('login');
     }
     
-<<<<<<< HEAD
     //authentication
     public function authentication(Request $req){
         //1. Get INPUT
@@ -233,25 +239,13 @@ class AwalController extends Controller
         //2. Check Username dan Password ke database
         $usr = new Admin();
 
-        //ini coba"
-        // $data_kembalian =['daftar' => $usr->isExist($data)];
-        // return view('coba',$data_kembalian);
-
-        //beneran
         $flag_exist = $usr->isExist($data);
         
         // die;
         if ($flag_exist){
             //2.a. Jika KETEMU, maka session LOGIN dibuat
-            Session::put('login', $username);
+           Session::put('login', $username);
             Session::put('pass', $pass);
-            
-            // $pass_lama = Session::get('pass');
-            // dd($pass_lama);
-            // die;
-            
-            // $username_login = $data['username'];
-            // $username_login->belongsToMany('App\Models\Pelanggan');
 
            
 
@@ -265,8 +259,10 @@ class AwalController extends Controller
         }
     }
 
+
+
     // FORGOT PASSWORD BELUM ADA QUERY UNTUK CEK EMAIL
-    public function forgot_pass(Request $req){
+    public function forgot_pass(Request $request){
         $this->validate($request, [
             'email'  =>  'required|email'
            ]);
@@ -291,7 +287,6 @@ class AwalController extends Controller
         
     }
 
-=======
     public function produkedit(){
 
 
@@ -302,5 +297,4 @@ class AwalController extends Controller
 
         return view('Reseller.edit');
     }
->>>>>>> 443532d571e4c449e4e74ca0268ea95755deaf11
 }

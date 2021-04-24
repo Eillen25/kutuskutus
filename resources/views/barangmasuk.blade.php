@@ -56,8 +56,43 @@
                                     <a href="manage_wisata.html" class="btn btn-small-table btn-primary ">Details</a>
                                 </td>
                             </tr> -->
-
-
+                            <!-- NANTI DIHAPUS -->
+                            <!-- Modal -->
+                            <div class="modal fade" id="myModalHorizontal" tabindex="-1" role="dialog" aria-hidden="true">
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-content">
+                                        <!-- Modal Header -->
+                                        <div class="modal-header" style="background: orange">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"
+                                                    class="ion-android-close"></span></button>
+                                            <h4 class="modal-title" id="myModalLabel" style="color: whitesmoke;">Donation For Siddhyog Sadhan Mandal
+                                            </h4>
+                                        </div> <!-- Modal Body -->
+                                        <div class="modal-body">
+                                            <div>
+                                                Payment Option
+                                            </div>
+                                            <form id="frm-donation" name="frm-donation">
+                                                <div class="header-btn">
+                                                    <div id="div-physical">
+                                                        <label>
+                                                            <input id="rdb_physical" name="rdb_donation" value="0" type="radio" checked=""
+                                                                class="validate[required]"
+                                                                data-errormessage-value-missing="Donation Type is required!">
+                                                            Physical Entity Donation
+                                                        </label>
+                                                    </div>
+                                            </form>
+                                            <div class="modal-body">
+                                                <div class="modal-footer" id="modal_footer">
+                                                    <!--<input id="btnSubmit" name="btnSubmit" value="Donate" class="btn btn-default-border-blk" type="submit">-->
+                                                    <a id="btnDonate" class="btn btn-default-border-blk">Donate</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                          <!-- DIHAPUS -->
                         </tbody>
                     </table>
 
@@ -101,6 +136,65 @@
       ]
     });
   });
+
+
+
+  // When the user clicks on <div>, open the popup
+
 </script>
-  
+
+<style>
+/* Popup container */
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* The actual popup (appears on top) */
+.popup .popuptext {
+  visibility: hidden;
+  width: 160px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+</style>
 @endsection
