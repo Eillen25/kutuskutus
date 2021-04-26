@@ -33,6 +33,8 @@ Route::get('/barangmasuk/edit/{id}', 'App\Http\Controllers\BarangMasukController
 
 Route::get('/barangkeluar', 'App\Http\Controllers\AwalController@exit');
 Route::get('/barangkeluar/exit_json', 'App\Http\Controllers\AwalController@exit_json');
+Route::get('/barangkeluar/edit/{id}', 'App\Http\Controllers\BarangKeluarController@edit');
+
 
 Route::get('/produk', 'App\Http\Controllers\AwalController@produk');
 Route::get('/produk/produk_json', 'App\Http\Controllers\AwalController@produk_json');
@@ -46,7 +48,7 @@ Route::get('/stockopname/sopname_json', 'App\Http\Controllers\AwalController@sop
 Route::get('/admin', 'App\Http\Controllers\AwalController@admin');
 Route::get('/admin/admin_json', 'App\Http\Controllers\AwalController@admin_json');
 
-Route::get('/exit2', 'App\Http\Controllers\AwalController@exit2');
+// Route::get('/exit2', 'App\Http\Controllers\AwalController@exit2');
 
 Route::get('/profile', 'App\Http\Controllers\AwalController@profile');
 
