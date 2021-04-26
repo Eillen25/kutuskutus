@@ -48,11 +48,8 @@ Route::get('/stockopname/sopname_json', 'App\Http\Controllers\AwalController@sop
 Route::get('/admin', 'App\Http\Controllers\AwalController@admin');
 Route::get('/admin/admin_json', 'App\Http\Controllers\AwalController@admin_json');
 
-<<<<<<< Updated upstream
 // Route::get('/exit2', 'App\Http\Controllers\AwalController@exit2');
-=======
- Route::get('/exit2', 'App\Http\Controllers\AwalController@exit2');
->>>>>>> Stashed changes
+
 
 Route::get('/profile', 'App\Http\Controllers\AwalController@profile');
 
@@ -77,3 +74,5 @@ Route::get('/detailbarangmasuk', 'App\Http\Controllers\AwalController@detailbara
 Route::get('/about', 'App\Http\Controllers\AwalController@about');
 
 Route::get('/deleteincoming', 'App\Http\Controllers\AwalController@deleteincoming');
+
+Route::get('/addproduk', 'App\Http\Controllers\AwalController@addproduk');
