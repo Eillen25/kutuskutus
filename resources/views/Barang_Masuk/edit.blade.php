@@ -67,16 +67,4 @@
 		<script type="text/javascript" src="js/jquery-3.5.1.js"></script>
 		<script type="text/javascript" src="js/popper.min.js"></script>
 		<script type="text/javascript" src="./js/bootstrap.min.js"></script>
-
-        <script>
-            $(function(){
-        $("#to").datepicker({ dateFormat: 'yy-mm-dd' });
-        $("#from").datepicker({ dateFormat: 'yy-mm-dd' }).bind("change",function(){
-            var minValue = $(this).val();
-            minValue = $.datepicker.parseDate("yy-mm-dd", minValue);
-            minValue.setDate(minValue.getDate()+1);
-            $("#to").datepicker( "option", "minDate", minValue );
-        })
-    });
-            </script>
 @endsection
