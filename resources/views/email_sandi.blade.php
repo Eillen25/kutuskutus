@@ -9,7 +9,9 @@
 <body>
 <!-- <form action="/hubungikami"></form> -->
 
-    <h3>Password Anda telah diperbaharui. Password: 1234</h3>
+    <h3>Password Anda telah diperbaharui. Password Sementara Anda: 1234</h3>
+    <br>
+    <h4>Silakan segera mengubah password Anda setelah Login. Terima Kasih</h4>
     
 
 </body>

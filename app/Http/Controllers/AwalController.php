@@ -252,7 +252,7 @@ class AwalController extends Controller
 
             Session::flash('success', 'Anda berhasil Login!');
 
-            return redirect('/');
+            return redirect('/home');
         } else {
             //2.b. Jika TIDKA KETEMU, maka kembali ke LOGIN dan tampilkan PESAN
             Session::flash('error', 'Username dan Password tidak sesuai!');
@@ -267,20 +267,31 @@ class AwalController extends Controller
         $this->validate($request, [
             'email'  =>  'required|email'
            ]);
-        $berhasil= 0;
+        // $berhasil= 0;
         $data = array(
                 'email'  => $request->input('email')
             );
-
-        try{
-                Mail::send('email_sandi',$data, function($data) use($request){
-                    $data->to($request->email,'Verifikasi')->subject('Verifikasi Sandi');
-                    $data->from(env('MAIL_USERNAME','masakyukgan@gmail.com'),'Verifikasi Sandi anda');
-                    
-                    // dd($data->to('masakyukgan@gmail.com','Verifikasi')->subject('Verifikasi Email'));
-                });
-        }catch (Exception $e){
-                return response (['status' => false,'errors' => $e->getMessage()]);
+        $email = $_POST['email'];
+        $isExist = Admin::select("*")
+                        ->where("email", $email)
+                        ->exists();
+        // UPDATE PASSWORD JADI 123
+        Admin::where('email',$email)->update(['password'=>'1234']);
+        // BARU KIRIM KE EMAIL ADMIN
+        if ($isExist) {
+            // dd('Record is available.');
+            try{
+                    Mail::send('email_sandi',$data, function($data) use($request){
+                        $data->to($request->email,'Verifikasi')->subject('Verifikasi Sandi');
+                        $data->from(env('MAIL_USERNAME','masakyukgan@gmail.com'),'Verifikasi Sandi anda');
+                        
+                        // dd($data->to('masakyukgan@gmail.com','Verifikasi')->subject('Verifikasi Email'));
+                    });
+            }catch (Exception $e){
+                    return response (['status' => false,'errors' => $e->getMessage()]);
+            }
+        }else{
+            dd('Record is not available.');
         }
 
 
