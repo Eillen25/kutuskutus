@@ -358,5 +358,12 @@ class AwalController extends Controller
 
         return view('Barang_Masuk.delete');
     }
+
+    public function addproduk(){
+
+
+        return view('Barang_Masuk.tambah');
+    }
+    
 }
 

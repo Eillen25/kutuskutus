@@ -73,3 +73,5 @@ Route::get('/detailbarangmasuk', 'App\Http\Controllers\AwalController@detailbara
 Route::get('/about', 'App\Http\Controllers\AwalController@about');
 
 Route::get('/deleteincoming', 'App\Http\Controllers\AwalController@deleteincoming');
+
+Route::get('/addproduk', 'App\Http\Controllers\AwalController@addproduk');
