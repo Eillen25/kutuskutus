@@ -48,11 +48,7 @@ Route::get('/stockopname/sopname_json', 'App\Http\Controllers\AwalController@sop
 Route::get('/admin', 'App\Http\Controllers\AwalController@admin');
 Route::get('/admin/admin_json', 'App\Http\Controllers\AwalController@admin_json');
 
-<<<<<<< Updated upstream
 // Route::get('/exit2', 'App\Http\Controllers\AwalController@exit2');
-=======
- Route::get('/exit2', 'App\Http\Controllers\AwalController@exit2');
->>>>>>> Stashed changes
 
 Route::get('/profile', 'App\Http\Controllers\AwalController@profile');
 

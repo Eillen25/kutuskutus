@@ -20,8 +20,11 @@ class BarangKeluarController extends Controller
     //DEN TARUH BLADENYA DI SINI
     public function edit($id){
         // echo "Halo Kamu ngakses Controller Awal pada function index";
-
-        return view('Barang_Keluar.edit');
+        $exit = BarangKeluar::query()
+        ->where('nota_id', '=', $id)
+        ->get();
+        
+        return view('Barang_Keluar.edit', compact('exit'));
         // $incoming = BarangMasuk::all('invoice_id', 'total_harga', 'tanggal');
         // dd($incoming);
     }

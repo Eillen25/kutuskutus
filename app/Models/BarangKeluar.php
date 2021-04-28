@@ -27,4 +27,10 @@ class BarangKeluar extends Model
     	return $this->belongsTo('App\Models\Reseller', 'reseller_id');
    
     }
+
+    public function admin()
+    {
+    	return $this->belongsTo('App\Models\Admin', 'admin_id');
+   
+    }
 }

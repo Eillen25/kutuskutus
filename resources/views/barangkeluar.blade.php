@@ -19,9 +19,8 @@
                                 <th scope="col">Nomor Nota</th>
                                 <th scope="col">Tanggal</th>
                                 <th scope="col">Nama Reseller</th>
-                                <th scope="col">Total Harga</th>
-                                <th scope="col">Sudah Dibayar</th>
-                                <th scope="col">Belum Dibayar</th>
+                                <th scope="col">Status</th>
+                                
                                 <th scope="col">Aksi</th>
                             </tr>
                         </thead>
@@ -93,16 +92,8 @@
           name: 'nama_reseller'
         },
         {
-          data: 'total_harga_penjualan',
-          name: 'total_harga_penjualan'
-        },
-        {
-          data: 'sudah_dibayar',
-          name: 'sudah_dibayar'
-        },
-        {
-          data: 'belum_dibayar',
-          name: 'belum_dibayar'
+          data: 'status',
+          name: 'status'
         },
         {
           data: 'action',
