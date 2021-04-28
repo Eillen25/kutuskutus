@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 class DetailBarangKeluar extends Model
 {
     use HasFactory;
-    
+
     protected $table = "detail_barang_keluar";
     protected $fillable = [
         "nota_id",
@@ -19,4 +19,10 @@ class DetailBarangKeluar extends Model
         "harga_satuan"
         
     ];
+
+    public function produk()
+    {
+    	return $this->belongsTo('App\Models\Produk', 'produk_id');
+   
+    }
 }
