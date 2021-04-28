@@ -43,7 +43,7 @@
                         Fitur
                     </li>
                 
-                <a href="/">
+                <a href="/home">
                     <li style="color: black">
                         <i class="fas fa-home"></i>
                         Home

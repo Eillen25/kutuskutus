@@ -9,6 +9,7 @@ use DB;
 class BarangMasuk extends Model
 {
     use HasFactory;
+    // protected $primaryKey = "invoice_id";
     protected $table = "barang_masuk";
     protected $fillable = [
         "invoice_id",
