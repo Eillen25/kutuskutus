@@ -20,7 +20,7 @@
     <div class="card-body" style="margin-top: 40px">
         <div class="row gutters">
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                <h5 class="mb-2 text-primary">Ubah Barang Keluar</h5>
+                <h3 class="mb-2 text-primary" style="padding-bottom:20px;">Ubah Barang Keluar</h3>
             </div>
             <div class="ini">
                 <div class="col">
@@ -47,9 +47,7 @@
             <div class="row align-items-end">
                 <div class="col ml-3 mt-5">
                     <label for="fullName" class='font-weight-bold'>Harga Total Penjualan </label>
-                    <input type="text" class="form-control" id="fullName" value="{{$exit->total_harga_penjualan}}"
-                        readonly>
-
+                    <input type="text" class="form-control" id="fullName" value="{{$exit->total_harga_penjualan}}" readonly>
                 </div>
                 <div class="col">
                     <label for="eMail" class='font-weight-bold'>Sudah Dibayar</label>
@@ -60,31 +58,41 @@
                     <input type="text" class="form-control" value="{{$exit->belum_dibayar}}" readonly>
                 </div>
             </div>
-        @foreach($detail as $d)
-            <div class="row align-items-end">
-                <div class="col ml-3 mt-5">
-                    <label for="fullName" class='font-weight-bold'>Nama Produk </label>
-                    <input type="text" class="form-control" id="fullName" value="{{$d->produk->nama_produk}}" readonly>
-                    <!-- <input type="text" class="form-control" id="fullName" value="Minyak Tanamu Tanami" readonly> -->
-                </div>
-                <div class="col ml-3 mt-5">
-                    <label for="fullName" class='font-weight-bold'>Jumlah</label>
-                    <input type="text" class="form-control" id="fullName" value="{{$d->jumlah}}" readonly>
-                    <!-- <input type="text" class="form-control" id="fullName" value="10" readonly> -->
-                </div>
-                <div class="col">
-                    <label for="eMail" class='font-weight-bold'>Harga Satuan</label>
-                    <input type="text" class="form-control" value="{{$d->harga_satuan}}" readonly>
-                    <!-- <input type="text" class="form-control" value="325000" readonly> -->
-                </div>
-                <div class="col">
-                    <label for="eMail" class='font-weight-bold'>Harga Total</label>
-                    <input type="text" class="form-control" value="{{($d->jumlah)*($d->harga_satuan)}}" readonly>
-                    <!-- <input type="text" class="form-control" value="3250000" readonly> -->
+            <div class="row col" style="margin-top:30px;">
+                <div class="col-md-12 row">
+                    <div class="col-md-3"><label for="fullName" class='font-weight-bold'>Nama Produk </label></div>
+                    <div class="col-md-3"><label for="fullName" class='font-weight-bold'>Jumlah</label></div>
+                    <div class="col-md-3"><label for="eMail" class='font-weight-bold'>Harga Satuan</label></div>
+                    <div class="col-md-3"><label for="eMail" class='font-weight-bold'>Harga Total</label></div>
                 </div>
 
+                @foreach($detail as $d)
+                <div class="col-md-12 row" style="margin-top:10px;">
+                    <div class="col-md-3">
+                        <!-- <label for="fullName" class='font-weight-bold'>Nama Produk </label> -->
+                        <input type="text" class="form-control" id="fullName" value="{{$d->produk->nama_produk}}"
+                            readonly>
+                        <!-- <input type="text" class="form-control" id="fullName" value="Minyak Tanamu Tanami" readonly> -->
+                    </div>
+                    <div class="col-md-3">
+                        <!-- <label for="fullName" class='font-weight-bold'>Jumlah</label> -->
+                        <input type="text" class="form-control" id="fullName" value="{{$d->jumlah}}" readonly>
+                        <!-- <input type="text" class="form-control" id="fullName" value="10" readonly> -->
+                    </div>
+                    <div class="col-md-3">
+                        <!-- <label for="eMail" class='font-weight-bold'>Harga Satuan</label> -->
+                        <input type="text" class="form-control" value="{{$d->harga_satuan}}" readonly>
+                        <!-- <input type="text" class="form-control" value="325000" readonly> -->
+                    </div>
+                    <div class="col-md-3">
+                        <!-- <label for="eMail" class='font-weight-bold'>Harga Total</label> -->
+                        <input type="text" class="form-control" value="{{($d->jumlah)*($d->harga_satuan)}}" readonly>
+                        <!-- <input type="text" class="form-control" value="3250000" readonly> -->
+                    </div>
+
+                </div>
+                @endforeach
             </div>
-        @endforeach
         </div>
 
         <div class="row gutters">
