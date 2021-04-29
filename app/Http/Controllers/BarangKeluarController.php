@@ -25,7 +25,8 @@ class BarangKeluarController extends Controller
         ->where('nota_id', '=', $id)
         ->first();
         
-        $detail = DetailBarangKeluar::where('nota_id', $id)->first();
+        $detail = DetailBarangKeluar::where('nota_id', $id)->get();
+        // diganti get karena ambilnya banyak bukan 1
         // dd($detail);
         return view('Barang_Keluar.edit', compact('exit','detail'));
         // $incoming = BarangMasuk::all('invoice_id', 'total_harga', 'tanggal');

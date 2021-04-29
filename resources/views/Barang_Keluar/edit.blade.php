@@ -60,30 +60,31 @@
                     <input type="text" class="form-control" value="{{$exit->belum_dibayar}}" readonly>
                 </div>
             </div>
-
+        @foreach($detail as $d)
             <div class="row align-items-end">
                 <div class="col ml-3 mt-5">
                     <label for="fullName" class='font-weight-bold'>Nama Produk </label>
-                    <input type="text" class="form-control" id="fullName" value="{{$detail->produk->nama_produk}}" readonly>
+                    <input type="text" class="form-control" id="fullName" value="{{$d->produk->nama_produk}}" readonly>
                     <!-- <input type="text" class="form-control" id="fullName" value="Minyak Tanamu Tanami" readonly> -->
                 </div>
                 <div class="col ml-3 mt-5">
                     <label for="fullName" class='font-weight-bold'>Jumlah</label>
-                    <input type="text" class="form-control" id="fullName" value="{{$detail->jumlah}}" readonly>
+                    <input type="text" class="form-control" id="fullName" value="{{$d->jumlah}}" readonly>
                     <!-- <input type="text" class="form-control" id="fullName" value="10" readonly> -->
                 </div>
                 <div class="col">
                     <label for="eMail" class='font-weight-bold'>Harga Satuan</label>
-                    <input type="text" class="form-control" value="{{$detail->harga_satuan}}" readonly>
+                    <input type="text" class="form-control" value="{{$d->harga_satuan}}" readonly>
                     <!-- <input type="text" class="form-control" value="325000" readonly> -->
                 </div>
                 <div class="col">
                     <label for="eMail" class='font-weight-bold'>Harga Total</label>
-                    <input type="text" class="form-control" value="{{($detail->jumlah)*($detail->harga_satuan)}}" readonly>
+                    <input type="text" class="form-control" value="{{($d->jumlah)*($d->harga_satuan)}}" readonly>
                     <!-- <input type="text" class="form-control" value="3250000" readonly> -->
                 </div>
 
             </div>
+        @endforeach
         </div>
 
         <div class="row gutters">
