@@ -30,7 +30,10 @@
             <label for="phone"class='font-weight-bold'>Tanggal</label>
             <input type="date" class="form-control" id="from-datepicker" >
         </div>
-        <div class="col">
+       
+    </div>
+    <div class="row align-items-end">
+        <div class="col ml-3">
             <label for="fullName" class='font-weight-bold'>Nama Produk</label>
             <input type="text" class="form-control" id="fullName" value="" >
             <input type="text" class="form-control" id="fullName" value="" >
@@ -38,8 +41,6 @@
             <input type="text" class="form-control" id="fullName" value="" >
             <input type="text" class="form-control" id="fullName" value="" >
         </div>
-    </div>
-    <div class="row align-items-end">
         <div class="col">
                 <label for="fullName" class='font-weight-bold'>Jumlah Per Produk </label>
                 <input type="text" class="form-control" id="fullName" value="">

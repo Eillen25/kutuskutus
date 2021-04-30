@@ -17,9 +17,15 @@
 }
 </style>
 <div class="card-body" style="margin-top: 40px">
-    <div class="row gutters">
+    <div class="row ">
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
             <h5 class="mb-3 text-primary">Tambah Barang Keluar</h5>
+        </div>
+        <div class="row  ml-2">
+            <div class="col">
+                <label for="fullName"class='font-weight-bold'>Nama Reseller</label>
+                <input type="text" class="form-control" id="fullName" value="" >
+            </div>
         </div>
     <div class="row gutters ml-2">
         <div class="col">
@@ -34,8 +40,8 @@
             <label for="phone"class='font-weight-bold'>Tanggal</label>
             <input type="date" class="form-control" id="from-datepicker" >
         </div>
-       
     </div>
+    
     <div class="row align-items-end ml-2">
         <div class="col">
             <label for="fullName" class='font-weight-bold'>Nama Produk</label>
