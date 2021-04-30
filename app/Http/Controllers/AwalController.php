@@ -382,5 +382,11 @@ class AwalController extends Controller
 
         return view('Admin.tambah');
     }
+
+    public function addexit(){
+
+
+        return view('Barang_Keluar.tambah');
+    }
 }
 

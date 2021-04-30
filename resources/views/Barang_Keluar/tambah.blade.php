@@ -19,17 +19,24 @@
 <div class="card-body" style="margin-top: 40px">
     <div class="row gutters">
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-            <h5 class="mb-2 text-primary">Tambah Barang Masuk</h5>
+            <h5 class="mb-3 text-primary">Tambah Barang Keluar</h5>
         </div>
-    <div class="ini">
+    <div class="row gutters ml-2">
         <div class="col">
             <label for="fullName"class='font-weight-bold'>No. Nota</label>
+            <input type="text" class="form-control" id="fullName" value="" >
+        </div>
+        <div class="col">
+            <label for="fullName"class='font-weight-bold'>Admin ID</label>
             <input type="text" class="form-control" id="fullName" value="" >
         </div>
         <div class="col mb-4">  
             <label for="phone"class='font-weight-bold'>Tanggal</label>
             <input type="date" class="form-control" id="from-datepicker" >
         </div>
+       
+    </div>
+    <div class="row align-items-end ml-2">
         <div class="col">
             <label for="fullName" class='font-weight-bold'>Nama Produk</label>
             <input type="text" class="form-control" id="fullName" value="" >
@@ -38,8 +45,6 @@
             <input type="text" class="form-control" id="fullName" value="" >
             <input type="text" class="form-control" id="fullName" value="" >
         </div>
-    </div>
-    <div class="row align-items-end">
         <div class="col">
                 <label for="fullName" class='font-weight-bold'>Jumlah Per Produk </label>
                 <input type="text" class="form-control" id="fullName" value="">
@@ -57,7 +62,7 @@
                 <input type="text" class="form-control" value="" >
         </div>
         <div class="col">    
-                <label for="eMail"class='font-weight-bold'>Harga  Total</label>
+                <label for="eMail"class='font-weight-bold'>Harga Total</label>
                 <input type="text" class="form-control" value="" readonly>
                 <input type="text" class="form-control" value="" readonly>
                 <input type="text" class="form-control" value="" readonly>
@@ -68,7 +73,7 @@
 </div>    
     <div class="row gutters">
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-            <div class="text-center mt-4">
+            <div class="text-center"style="margin-top:80px;">
                 <button type="button" id="submit" name="submit" class="btn btn-secondary btn-lg">Batal</button>
                 <button type="button" id="submit" name="submit" class="btn btn-primary btn-lg">Tambah</button>
             </div>
