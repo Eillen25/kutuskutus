@@ -376,5 +376,11 @@ class AwalController extends Controller
 
         return view('Reseller.tambah');
     }
+
+    public function addadmin(){
+
+
+        return view('Admin.tambah');
+    }
 }
 
