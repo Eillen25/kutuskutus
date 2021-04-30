@@ -75,3 +75,7 @@ Route::get('/about', 'App\Http\Controllers\AwalController@about');
 Route::get('/deleteincoming', 'App\Http\Controllers\AwalController@deleteincoming');
 
 Route::get('/addproduk', 'App\Http\Controllers\AwalController@addproduk');
+
+Route::get('/addso', 'App\Http\Controllers\AwalController@addso');
+
+Route::get('/addreseller', 'App\Http\Controllers\AwalController@addreseller');

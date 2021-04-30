@@ -364,6 +364,17 @@ class AwalController extends Controller
 
         return view('Barang_Masuk.tambah');
     }
+
+    public function addso(){
+
+
+        return view('Stok_Opname.tambah');
+    }
     
+    public function addreseller(){
+
+
+        return view('Reseller.tambah');
+    }
 }
 
