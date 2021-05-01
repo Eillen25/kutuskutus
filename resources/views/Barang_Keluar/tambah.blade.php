@@ -43,7 +43,7 @@
     </div>
     
     <div class="row ml-2">
-        <div class="col-md-12 row ">
+        <div class="col-md-12 row">
             <div class="col-md-3">
                 <label for="fullName" class='font-weight-bold'>Nama Produk</label>
             </div>

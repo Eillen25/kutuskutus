@@ -17,43 +17,41 @@
 }
 </style>
 <div class="card-body" style="margin-top: 40px">
-    <div class="row gutters">
+    <div class="row ">
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-            <h5 class="mb-2 text-primary">Tambah Admin Baru</h5>
+            <h3 class="mb-4 text-primary">Tambah Admin Baru</h3>
         </div>
-    <div class="row gutters ml-5 mb-4">
-        <div class="col ">
-            <label for="fullName"class='font-weight-bold'>ID Admin</label>
-            <input type="text" class="form-control" id="fullName" value=""  >
+        <div class="col-md-12 row  ml-4">
+        <div class="col-md-2"><label for="fullName"class='font-weight-bold'>ID Admin</label></div>
+        <div class="col-md-4 "><label for="phone"class='font-weight-bold'>Nama Admin</label></div>
+        <div class="col-md-3"><label for="eMail"class='font-weight-bold'>Password</label></div>  
         </div>
-        <div class="col ">  
-            <label for="phone"class='font-weight-bold'>Nama Admin</label>
-            <input type="text" class="form-control" id="fullName" value=""  >
+        <div class="col-md-12 row ml-4 mb-3">
+        <div class="col-md-2"> <input type="text" class="form-control" id="fullName" value=""  ></div>
+        <div class="col-md-4"><input type="text" class="form-control" id="fullName" value=""  ></div>
+        <div class="col-md-3"><input type="text" class="form-control" value="" ></div>
         </div>
-        <div class="col">    
-            <label for="eMail"class='font-weight-bold'>Password</label>
-            <input type="text" class="form-control" value="" >
-         </div>
-        
-    </div>
-    <div class="row gutters ml-5 mb-6">
-        <div class="col">
-                <label for="fullName" class='font-weight-bold'>Gaji </label>
-                <input type="text" class="form-control" id="gaji" value="">
+    </div>    
+    <div class="row">
+        <div class="col-md-12 row  ml-4">
+            <div class="col-md-2" ><label for="fullName" class='font-weight-bold'>Gaji</label></div>
+            <div class="col-md-4 "><label for="phone"class='font-weight-bold'>Nomor Telpon</label></div>
+            <div class="col-md-3"><label for="eMail"class='font-weight-bold'>Email</label></div>  
         </div>
-        <div class="col">
-                <label for="eMail"class='font-weight-bold'>Nomor Telpon</label>
-                <input type="text" class="form-control" value="" >
-        </div>
-        <div class="col">    
-            <label for="eMail"class='font-weight-bold'>Email</label>
-            <input type="text" class="form-control" value="" >
+        <div class="col-md-12 row  ml-4">
+            <div class="col-md-2"> <input type="text" class="form-control" id="fullName" value=""></div>
+            <div class="col-md-4"><input type="text" class="form-control" id="fullName" value="" ></div>
+            <div class="col-md-3"><input type="text" class="form-control" value=""></div>
         </div>
     </div>
-</div>    
-<div class="form-group col-md-8 ml-5" style="text-align:left;padding-left:0px; margin-top:30px;">
-    <label for="inputalamat" class='font-weight-bold'>Alamat</label>
-    <textarea class="form-control" rows="3" id="inputalamat" name="alamat" placeholder="Alamat"></textarea>
+</div> 
+<div class="col-md-12 row  ml-4">   
+    <div class="col-md-8" style="margin-top:30px;">
+        <label for="inputalamat" class='font-weight-bold'>Alamat</label>
+    </div>
+    <div class="col-md-8">
+        <textarea class="form-control" rows="3" id="inputalamat" name="alamat" placeholder="Alamat"></textarea>
+    </div>
 </div>
     <div class="row gutters">
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">

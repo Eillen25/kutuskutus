@@ -19,37 +19,39 @@
 <div class="card-body" style="margin-top: 40px">
     <div class="row gutters">
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-            <h5 class="mb-2 text-primary">Tambah Reseller Baru</h5>
+            <h3 class="mb-2 text-primary">Tambah Reseller Baru</h3>
         </div>
-    <div class="ini">
-        <div class="col mb-2">
-            <label for="fullName"class='font-weight-bold'>ID Reseller</label>
-            <input type="text" class="form-control" id="fullName" value="RL006" readonly >
-        </div>
-        <div class="col mb-4">  
-            <label for="phone"class='font-weight-bold'>Nama Reseller</label>
-            <input type="text" class="form-control" id="fullName" value=""  >
-        </div>
-        <div class="col">    
-            <label for="eMail"class='font-weight-bold'>Grade ID</label>
-            <input type="text" class="form-control" value="" >
-         </div>
+<div class="roww ml-2 mt-4">
+    <div class="col-md-12 row">
+        <div class="col-md-3 "><label for="fullName"class='font-weight-bold'>ID Reseller</label></div>
+        <div class="col-md-3"><label for="fullName" class='font-weight-bold'>Total Kutus </label></div>
+        <div class="col-md-4"><label for="eMail"class='font-weight-bold'>Tanggal Kutus</label></div>
     </div>
-    <div class="row gutters">
-        <div class="col">
-                <label for="fullName" class='font-weight-bold'>Total Kutus </label>
-                <input type="text" class="form-control" id="fullName" value="">
+    <div class="col-md-12 row">
+        <div class="col-md-3 mb-2"><input type="text" class="form-control" id="fullName" value="RL006" readonly ></div>
+        <div class="col-md-3 mb-4"><input type="text" class="form-control" id="fullName" value="0"  ></div>
+        <div class="col-md-4"><input type="date" class="form-control" value="" ></div>
+    </div>
+</div>
+    <div class="row  ml-2">
+        <div class="col-md-12 row">
+            <div class="col-md-4"><label for="fullName"class='font-weight-bold'>Nama Reseller</label></div>
+            <div class="col-md-3"><label for="fullName" class='font-weight-bold'>Jenis Grade</label></div>
         </div>
-        <div class="col">
-                <label for="eMail"class='font-weight-bold'>Tanggal Kutus</label>
-                <input type="date" class="form-control" value="" >
+        <div class="col-md-12 row">
+            <div class="col-md-4 mb-2"><input type="text" class="form-control" id="fullName" value=""  ></div>
+            <div class="col-md-3 mb-4"><input type="text" class="form-control" id="fullName" value=""  ></div>
         </div>
-       
+    </div>  
     </div>
 </div>    
-<div class="form-group col-md-8" style="text-align:left;padding-left:0px; margin-top:30px;">
+<div class="col-md-12 ml-2">
+<div class="form-group col-md-8" style="text-align:left;padding-left:0px;">
     <label for="inputalamat" class='font-weight-bold'>Alamat</label>
+</div>
+<div class="form-group col-md-8" style="text-align:left;padding-left:0px;">
     <textarea class="form-control" rows="3" id="inputalamat" name="alamat" placeholder="Alamat"></textarea>
+</div>
 </div>
     <div class="row gutters">
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">

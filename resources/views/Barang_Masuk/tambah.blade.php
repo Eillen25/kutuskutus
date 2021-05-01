@@ -17,14 +17,14 @@
 }
 </style>
 <div class="card-body" style="margin-top: 40px">
-    <div class="row gutters">
+    <div class="row gutters ml-2">
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-            <h5 class="mb-2 text-primary">Tambah Barang Masuk</h5>
+            <h3 class="mb-3 text-primary">Tambah Barang Masuk</h3>
         </div>
-    <div class="ini">
-        <div class="col">
+    <div class="ini ml-2">
+        <div class="col mb-3">
             <label for="fullName"class='font-weight-bold'>No. Nota</label>
-            <input type="text" class="form-control" id="fullName" value="" >
+            <input type="text" class="form-control" id="fullName" value="" readonly >
         </div>
         <div class="col mb-4">  
             <label for="phone"class='font-weight-bold'>Tanggal</label>
@@ -32,44 +32,40 @@
         </div>
        
     </div>
-    <div class="row align-items-end">
-        <div class="col ml-3">
-            <label for="fullName" class='font-weight-bold'>Nama Produk</label>
-            <input type="text" class="form-control" id="fullName" value="" >
-            <input type="text" class="form-control" id="fullName" value="" >
-            <input type="text" class="form-control" id="fullName" value="" >
-            <input type="text" class="form-control" id="fullName" value="" >
-            <input type="text" class="form-control" id="fullName" value="" >
-        </div>
-        <div class="col">
+    <div class="row ml-2">
+        <div class="col-md-12 row">
+            <div class="col-md-3">
+                <label for="fullName" class='font-weight-bold'>Nama Produk</label>
+            </div>
+            <div class="col-md-2">
                 <label for="fullName" class='font-weight-bold'>Jumlah Per Produk </label>
-                <input type="text" class="form-control" id="fullName" value="">
-                <input type="text" class="form-control" id="fullName" value="">
-                <input type="text" class="form-control" id="fullName" value="">
-                <input type="text" class="form-control" id="fullName" value="">
-                <input type="text" class="form-control" id="fullName" value="">
-        </div>
-        <div class="col">
+            </div>
+            <div class="col-md-3">
                 <label for="eMail"class='font-weight-bold'>Harga Satuan</label>
-                <input type="text" class="form-control" value="" >
-                <input type="text" class="form-control" value="" >
-                <input type="text" class="form-control" value="" >
-                <input type="text" class="form-control" value="" >
-                <input type="text" class="form-control" value="" >
+            </div>
+            <div class="col-md-3 ">
+                <label for="eMail"class='font-weight-bold'>Subtotal</label>
+            </div>
         </div>
-        <div class="col">    
-                <label for="eMail"class='font-weight-bold'>Harga  Total</label>
-                <input type="text" class="form-control" value="" readonly>
-                <input type="text" class="form-control" value="" readonly>
-                <input type="text" class="form-control" value="" readonly>
-                <input type="text" class="form-control" value="" readonly>
-                <input type="text" class="form-control" value="" readonly>
+        <div class="col-md-12 row">
+            <div class="col-md-3"><input type="text" class="form-control" id="fullName" value="" ></div>
+            <div class="col-md-2"><input type="text" class="form-control" id="fullName" value=""></div>
+            <div class="col-md-3"> <input type="text" class="form-control" value="" readonly></div>
+            <div class="col-md-3  mb-3"> <input type="text" class="form-control" value="" readonly></div>
         </div>
+    </div>
+    <div class="col align-self-end">
+        <div class="col-md-3 offset-md-8 ">
+            <label for="eMail"class='font-weight-bold'>Total Harga</label>
+        </div>
+    <div class="col align-self-end  ">
+            <div class="col-md-3 offset-md-8"> <input type="text" class="form-control" value="" readonly></div>
+    </div>
     </div>
 </div>    
     <div class="row gutters">
-        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-            <div class="text-center mt-4">
+        <div class="col align-self-end">
+            <div class="col-md-3 offset-md-8  mt-5">
                 <button type="button" id="submit" name="submit" class="btn btn-secondary btn-lg">Batal</button>
                 <button type="button" id="submit" name="submit" class="btn btn-primary btn-lg">Tambah</button>
             </div>
