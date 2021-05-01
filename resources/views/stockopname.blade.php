@@ -25,7 +25,7 @@
                                 <th scope="col">Jumlah Hitung Manual</th>
                                 <th scope="col">Selisih</th>
                                 <th scope="col">Alasan</th>
-                                <th scope="col">Aksi</th>
+                                <!-- <th scope="col">Aksi</th> -->
                             </tr>
                         </thead>
                         <tbody>
@@ -119,10 +119,10 @@
           data: 'alasan',
           name: 'alasan'
         },
-        {
-          data: 'action',
-          name: 'action'
-        }
+        // {
+        //   data: 'action',
+        //   name: 'action'
+        // }
       ]
     });
   });

@@ -19,6 +19,14 @@ use Illuminate\Http\Request;
 class BarangKeluarController extends Controller
 {
     //DEN TARUH BLADENYA DI SINI
+    public function addexit(){
+
+
+        return view('Barang_Keluar.tambah');
+    }
+
+
+
     public function edit($id){
         // echo "Halo Kamu ngakses Controller Awal pada function index";
         $exit = BarangKeluar::query()
@@ -32,4 +40,17 @@ class BarangKeluarController extends Controller
         // $incoming = BarangMasuk::all('invoice_id', 'total_harga', 'tanggal');
         // dd($incoming);
     }
+
+    public function update_exit(Request $request){
+        $id = $_POST['nota_id'];
+        BarangKeluar::where('nota_id',$id)->update([
+            'total_harga_penjualan'=> $request->input('total_harga_penjualan'), 
+            'sudah_dibayar'=>$request->input('sudah_dibayar'), 
+            'belum_dibayar'=>$request->input('belum_dibayar')
+
+        ]);
+
+        return redirect('/barangkeluar');;
+    }
+
 }

@@ -69,7 +69,11 @@ class AwalController extends Controller
             $button .= '<a class="btn btn-success btn-sm"  href="/barangmasuk/detail/' . $incoming->invoice_id. '")"><i class="far fa-eye"></i></a>';
             // $button .= '<a class="btn btn-warning btn-sm"   style="margin: 0 10px" href="/barangmasuk/edit/' . $incoming->invoice_id . '")"><i class="fas fa-edit"></i></a>';
             // $button .= '<a class="btn btn-danger btn-sm" href="/barangmasuk/destroy/' . $incoming->invoice_id . '")"><i class="far fa-trash-alt"></i></a>';
+<<<<<<< Updated upstream
             // $button .= '<button type="submit"  class="donate_now btn btn-default-border-blk generalDonation" data-toggle="modal"  data-backdrop="static" data-keyboard="false" data-target="#myModalHorizontal">donate now</button>';
+=======
+            $button .= '<button type="submit"  class="donate_now btn btn-default-border-blk generalDonation" data-toggle="modal"  data-backdrop="static" data-keyboard="false" data-target="#myModalHorizontal">donate now</button>';
+>>>>>>> Stashed changes
             $button .= '</div>';
             return $button;
         })
@@ -88,7 +92,8 @@ class AwalController extends Controller
         DB::raw('*, (CASE 
             WHEN belum_dibayar = 0 THEN "Lunas"
             ELSE "Belum Lunas" 
-            END) AS status'));
+            END) AS status'))
+            ;
 
         //var_dump($exit->get()->toArray());die();
         
@@ -176,13 +181,13 @@ class AwalController extends Controller
         // dd($results);
         
         return DataTables::eloquent($sopname)
-        ->addColumn('action', function ($sopname) {
-            $button ='<div style="display: flex;  ">';
-            // $button .= '<a class="btn btn-success btn-sm"  href="/produk/detail/{id}' . $produk->produk_id. '")">Detail</a>';
-            $button .= '<a class="btn btn-danger btn-sm" href="/stockopname/destroy/{id}' . $sopname->opname_id . '")"><i class="far fa-trash-alt"></i></a>';
-            $button .= '</div>';
-            return $button;
-        })
+        // ->addColumn('action', function ($sopname) {
+        //     $button ='<div style="display: flex;  ">';
+        //     // $button .= '<a class="btn btn-success btn-sm"  href="/produk/detail/{id}' . $produk->produk_id. '")">Detail</a>';
+        //     // $button .= '<a class="btn btn-danger btn-sm" href="/stockopname/destroy/{id}' . $sopname->opname_id . '")"><i class="far fa-trash-alt"></i></a>';
+        //     $button .= '</div>';
+        //     return $button;
+        // })
         ->addColumn('nama_admin',function($sopname){
             return $sopname->admin->nama_admin;
         })
@@ -383,10 +388,6 @@ class AwalController extends Controller
         return view('Admin.tambah');
     }
 
-    public function addexit(){
-
-
-        return view('Barang_Keluar.tambah');
-    }
+    
 }
 

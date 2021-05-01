@@ -38,7 +38,7 @@
         </div>
         <div class="col mb-4">  
             <label for="phone"class='font-weight-bold'>Tanggal</label>
-            <input type="date" class="form-control" id="from-datepicker" >
+            <input type="text" class="form-control datepicker" id="from-datepicker" value="{{ now()->format('d/m/Y') }}">
         </div>
     </div>
     

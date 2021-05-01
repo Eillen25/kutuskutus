@@ -17,8 +17,8 @@
                         <thead>
                             <tr class="1">
                                 <th scope="col">Nomor Invoice</th>
-                                <th scope="col">Total Harga</th>
                                 <th scope="col">Tanggal</th>
+                                <th scope="col">Total Harga</th>
                                 <th scope="col">Aksi</th>
                                 <!-- <th scope="col">Menu</th> -->
                             </tr>
@@ -118,12 +118,12 @@
           name: 'invoice_id'
         },
         {
-          data: 'total_harga',
-          name: 'total_harga'
-        },
-        {
           data: 'tanggal',
           name: 'tanggal'
+        },
+        {
+          data: 'total_harga',
+          name: 'total_harga'
         },
         // {
         //   data: 'satuan_id',

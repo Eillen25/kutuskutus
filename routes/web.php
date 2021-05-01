@@ -30,11 +30,14 @@ Route::get('/barangmasuk/json', 'App\Http\Controllers\AwalController@json');
 Route::get('/barangmasuk/edit/{id}', 'App\Http\Controllers\BarangMasukController@edit');
 
 
-
+// READ BARANG KELUAR
 Route::get('/barangkeluar', 'App\Http\Controllers\AwalController@exit');
 Route::get('/barangkeluar/exit_json', 'App\Http\Controllers\AwalController@exit_json');
+// UPDATE BARANG KELUAR
 Route::get('/barangkeluar/edit/{id}', 'App\Http\Controllers\BarangKeluarController@edit');
-
+Route::post('/barangkeluar/edit/update', 'App\Http\Controllers\BarangKeluarController@update_exit');
+// CREATE BARANG KELUAR
+Route::get('/addexit', 'App\Http\Controllers\BarangKeluarController@addexit');
 
 Route::get('/produk', 'App\Http\Controllers\AwalController@produk');
 Route::get('/produk/produk_json', 'App\Http\Controllers\AwalController@produk_json');
@@ -81,5 +84,3 @@ Route::get('/addso', 'App\Http\Controllers\AwalController@addso');
 Route::get('/addreseller', 'App\Http\Controllers\AwalController@addreseller');
 
 Route::get('/addadmin', 'App\Http\Controllers\AwalController@addadmin');
-
-Route::get('/addexit', 'App\Http\Controllers\AwalController@addexit');

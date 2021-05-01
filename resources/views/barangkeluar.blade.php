@@ -10,7 +10,7 @@
 
             <div class="col-md-12">
                 <div class="item-big-report col-md-12">
-                  <a class="btn btn-primary float-right" style="background-color:#C2A890" href="#" role="button">+ Buat Nota</a>
+                  <a class="btn btn-primary float-right" style="background-color:#C2A890" href="/addexit" role="button">+ Buat Nota</a>
 
 
                     <table class="table-wisata table-tiketsaya table " id ="exit-table">
@@ -79,6 +79,7 @@
       processing: true,
       serverside: true,
       ajax: 'barangkeluar/exit_json',
+      order: [[3, 'asc']],
       columns: [{
           data: 'nota_id',
           name: 'nota_id'
