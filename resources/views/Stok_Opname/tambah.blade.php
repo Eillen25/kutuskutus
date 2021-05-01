@@ -16,57 +16,66 @@ body {
 
 </style>
 <body>
-    <H5 class="text-primary mt-5 ml-2"> Tambah stock opname</H5>
-    
-    <form class="ml-3 mr-3">
-        <div class="form-row">
-          <div class="form-group col-md-4">
-            <label for="inputID">ID opname</label>
-            <input type="text" class="form-control" id="inputID" placeholder="Opname ID" readonly>
+    <H3 class="text-primary mt-5 ml-2"> Tambah stock opname</H3>
+      <div class="col-md-12 row  ml-4">
+          <div class="col-md-3"><label for="inputID">ID opname</label></div>
+          <div class="col-md-3"><label for="inputID1">ID Admin</label></div>
+          <div class="col-md-3"><label for="inputtanggal">Tanggal</label></div>
+      <div class="col-md-12 row mb-3">
+            <div class="col-md-3"><input type="text" class="form-control" id="inputID" value="SO2101" readonly></div>
+            <div class="col-md-3"><select class="form-control" id="sel1">
+              <option>owner</option>
+              <option>sehun</option>
+              <option>iniaku</option>
+              <option>apaaja</option>
+            </select></div>
+            <div class="col-md-3"><input type="date" class="form-control" id="inputtanggal" ></div>
+      </div>
+      </div>
+      <div class="roww">
+        <div class="col-md-12 row  ml-4">
+          <div class="col-md-3"><label for="inputproduk">Nama produk</label></div>
+          <div class="col-md-3"><label for="inputAddress2">Satuan</label></div>
+        </div>
+        <div class="col-md-12 row  ml-4 mb-3">
+          <div class="col-md-3"><select class="form-control" id="sel1">
+            <option>Minyak Kutus - Kutus</option>
+            <option>Minyak Tanamu Tanami</option>
+            <option>Sabun Kalila Kalila</option>
+            <option>Sabun Tanamu Tanami</option>
+            <option>Bubuk Kutus - Kutus</option>
+          </select></div>
+          <div class="col-md-3"><input type="text" class="form-control" id="inputSatuan"></div>
+        </div>
+      </div>
+        <div class="roww">
+          <div class="col-md-12 row  ml-4">
+            <div class="col-md-3"><label for="inputID">Jumlah Sistem</label></div>
+            <div class="col-md-3"><label for="inputID1">Jumlah Hitung</label></div>
+            <div class="col-md-3"><label for="inputtanggal">Perbedaan</label></div>
+          <div class="col-md-12 row mb-3">
+              <div class="col-md-3"><input type="text" class="form-control" id="inputID" value="0"></div>
+              <div class="col-md-3"><input type="text" class="form-control" id="inputID1" value="0"></div>
+              <div class="col-md-3"><input type="text" class="form-control" id="inputtanggal" value="0"></div>
           </div>
-          <div class="form-group col-md-4">
-            <label for="inputID1">ID Admin</label>
-            <input type="text" class="form-control" id="inputID1" placeholder="Admin ID"readonly >
-          </div>
-          <div class="form-group col-md-4">
-            <label for="inputtanggal">Tanggal</label>
-            <input type="date" class="form-control" id="inputtanggal" placeholder="tanggal">
           </div>
         </div>
-        <div class="form-row">
-        <div class="form-group col-md-6">
-          <label for="inputproduk">ID produk</label>
-          <input type="text" class="form-control" id="inputproduk" placeholder="ID Produk">
-        </div>
-        <div class="form-group col-md-6">
-          <label for="inputAddress2">ID Satuan</label>
-          <input type="text" class="form-control" id="inputSatuan" placeholder="ID Satuan">
-        </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group col-md-4">
-            <label for="inputjumlahsistem">Jumlah Sistem</label>
-            <input type="text" class="form-control" id="inputjumlahsistem" placeholder="Jumlah Sistem">
+        <div class="roww">
+          <div class="col-md-12 row  ml-4">
+            <div class="col-md-3"><label for="inputalasan">Alasan</label></div>
           </div>
-          <div class="form-group col-md-4">
-            <label for="inputjumlahhitung">Jumlah Hitung</label>
-            <input type="text" class="form-control" id="inputjumlahhitung"placeholder = "Jumlah Hitung">
-          </div>
-          <div class="form-group col-md-4">
-            <label for="inputperbedaan">Perbedaan</label>
-            <input type="text" class="form-control" id="inputperbedaan" placeholder="perbedaan"readonly>
+          <div class="col-md-12 row  ml-4">
+            <div class="col-md-5"><input type="text" class="form-control" id="inputalasan"></div>
           </div>
         </div>
-        <div class="form-group">
-            <label for="inputalasan">Alasan</label>
-            <input type="text" class="form-control" id="inputalasan" placeholder="Alasan">
+        <div class="row gutters">
+          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+              <div class="text-center mt-5">
+                  <button type="button" id="submit" name="submit" class="btn btn-secondary btn-lg">Batal</button>
+                  <button type="button" id="submit" name="submit" class="btn btn-primary btn-lg">Tambah</button>
+              </div>
           </div>
-
-       
-        <button type="submit" class="btn btn-primary">Tambah</button>
-        <button type= "submit" class = "btn btn-secondary">Batal</button>
-      </form>
-
+      </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

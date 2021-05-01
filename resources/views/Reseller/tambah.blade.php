@@ -46,12 +46,12 @@
     </div>
 </div>    
 <div class="col-md-12 ml-2">
-<div class="form-group col-md-8" style="text-align:left;padding-left:0px;">
-    <label for="inputalamat" class='font-weight-bold'>Alamat</label>
-</div>
-<div class="form-group col-md-8" style="text-align:left;padding-left:0px;">
-    <textarea class="form-control" rows="3" id="inputalamat" name="alamat" placeholder="Alamat"></textarea>
-</div>
+    <div class="form-group col-md-8" style="text-align:left;padding-left:0px;">
+        <label for="inputalamat" class='font-weight-bold'>Alamat</label>
+    </div>
+    <div class="form-group col-md-8" style="text-align:left;padding-left:0px;">
+        <textarea class="form-control" rows="3" id="inputalamat" name="alamat" placeholder="Alamat"></textarea>
+    </div>
 </div>
     <div class="row gutters">
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
