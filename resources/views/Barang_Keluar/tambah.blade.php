@@ -30,11 +30,11 @@
     <div class="row gutters ml-2">
         <div class="col">
             <label for="fullName"class='font-weight-bold'>No. Nota</label>
-            <input type="text" class="form-control" id="fullName" value="" >
+            <input type="text" class="form-control" id="fullName" value="" readonly>
         </div>
         <div class="col">
             <label for="fullName"class='font-weight-bold'>Admin ID</label>
-            <input type="text" class="form-control" id="fullName" value="" >
+            <input type="text" class="form-control" id="fullName" value="" readonly>
         </div>
         <div class="col mb-4">  
             <label for="phone"class='font-weight-bold'>Tanggal</label>
@@ -42,38 +42,30 @@
         </div>
     </div>
     
-    <div class="row align-items-end ml-2">
-        <div class="col">
-            <label for="fullName" class='font-weight-bold'>Nama Produk</label>
-            <input type="text" class="form-control" id="fullName" value="" >
-            <input type="text" class="form-control" id="fullName" value="" >
-            <input type="text" class="form-control" id="fullName" value="" >
-            <input type="text" class="form-control" id="fullName" value="" >
-            <input type="text" class="form-control" id="fullName" value="" >
-        </div>
-        <div class="col">
+    <div class="row ml-2">
+        <div class="col-md-12 row ">
+            <div class="col-md-3">
+                <label for="fullName" class='font-weight-bold'>Nama Produk</label>
+            </div>
+            <div class="col-md-2">
                 <label for="fullName" class='font-weight-bold'>Jumlah Per Produk </label>
-                <input type="text" class="form-control" id="fullName" value="">
-                <input type="text" class="form-control" id="fullName" value="">
-                <input type="text" class="form-control" id="fullName" value="">
-                <input type="text" class="form-control" id="fullName" value="">
-                <input type="text" class="form-control" id="fullName" value="">
-        </div>
-        <div class="col">
+            </div>
+            <div class="col-md-2">
                 <label for="eMail"class='font-weight-bold'>Harga Satuan</label>
-                <input type="text" class="form-control" value="" >
-                <input type="text" class="form-control" value="" >
-                <input type="text" class="form-control" value="" >
-                <input type="text" class="form-control" value="" >
-                <input type="text" class="form-control" value="" >
+            </div>
+            <div class="col-md-2">
+                <label for="eMail"class='font-weight-bold'>Harga Setelah Diskon</label>
+            </div>
+            <div class="col-md-3">
+                <label for="eMail"class='font-weight-bold'>Subtotal</label>
+            </div>
         </div>
-        <div class="col">    
-                <label for="eMail"class='font-weight-bold'>Harga Total</label>
-                <input type="text" class="form-control" value="" readonly>
-                <input type="text" class="form-control" value="" readonly>
-                <input type="text" class="form-control" value="" readonly>
-                <input type="text" class="form-control" value="" readonly>
-                <input type="text" class="form-control" value="" readonly>
+        <div class="col-md-12 row">
+            <div class="col-md-3"><input type="text" class="form-control" id="fullName" value="" ></div>
+            <div class="col-md-2"><input type="text" class="form-control" id="fullName" value=""></div>
+            <div class="col-md-2"> <input type="text" class="form-control" value="" readonly></div>
+            <div class="col-md-2"> <input type="text" class="form-control" value="" readonly></div>
+            <div class="col-md-3"><input type="text" class="form-control" value="" readonly></div>
         </div>
     </div>
 </div>    
