@@ -40,7 +40,11 @@
         </div>
         <div class="col-md-12 row">
             <div class="col-md-4 mb-2"><input type="text" class="form-control" id="fullName" value=""  ></div>
-            <div class="col-md-3 mb-4"><input type="text" class="form-control" id="fullName" value=""  ></div>
+            <div class="col-md-3 mb-4"><select class="form-control" id="sel1">
+                <option>Bronze</option>
+                <option>Gold</option>
+                <option>Platinum</option>
+              </select></div>
         </div>
     </div>  
     </div>
