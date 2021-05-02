@@ -24,17 +24,23 @@
         <div class="row  ml-2">
             <div class="col">
                 <label for="fullName"class='font-weight-bold'>Nama Reseller</label>
-                <input type="text" class="form-control" id="fullName" value="" >
+                <select class="form-control mt-2 ab-t-rpt-2" name="reseller"
+                                    id="type_institution"  required>
+                                    <option value="">--Nama Reseller--</option>
+                                    @foreach($reseller as $items)
+                                    <option value="{{ $items->reseller_id }}">{{ $items->nama_reseller }}</option>
+                                    @endforeach
+                </select>
             </div>
         </div>
     <div class="row gutters ml-2">
         <div class="col">
             <label for="fullName"class='font-weight-bold'>No. Nota</label>
-            <input type="text" class="form-control" id="fullName" value="" readonly>
+            <input type="text" class="form-control" id="fullName" value="{{$nota[0]->ID}}" readonly>
         </div>
         <div class="col">
             <label for="fullName"class='font-weight-bold'>Admin ID</label>
-            <input type="text" class="form-control" id="fullName" value="" readonly>
+            <input type="text" class="form-control" id="fullName" value="{{$admin->nama_admin}}" readonly>
         </div>
         <div class="col mb-4">  
             <label for="phone"class='font-weight-bold'>Tanggal</label>
@@ -61,9 +67,17 @@
             </div>
         </div>
         <div class="col-md-12 row">
-            <div class="col-md-3"><input type="text" class="form-control" id="fullName" value="" ></div>
+            <div class="col-md-3">
+                <select class="form-control mt-2 ab-t-rpt-2" name="produk"
+                                        id="type_institution"  required>
+                                        <!-- <option value="">--Nama Produk--</option> -->
+                                        @foreach($produk as $items)
+                                        <option value="{{ $items->produk_id }}" id="id_produk" onchange="myFunction()">{{ $items->nama_produk }}</option>
+                                        @endforeach
+                </select>
+            </div>
             <div class="col-md-2"><input type="text" class="form-control" id="fullName" value=""></div>
-            <div class="col-md-2"> <input type="text" class="form-control" value="" readonly></div>
+            <div class="col-md-2"> <input type="text" class="form-control" value=""  id="harga_produk"  readonly></div>
             <div class="col-md-2"> <input type="text" class="form-control" value="" readonly></div>
             <div class="col-md-3"><input type="text" class="form-control" value="" readonly></div>
         </div>
@@ -82,4 +96,14 @@
 		<script type="text/javascript" src="js/jquery-3.5.1.js"></script>
 		<script type="text/javascript" src="js/popper.min.js"></script>
 		<script type="text/javascript" src="./js/bootstrap.min.js"></script>
+
+<script>
+    function myFunction() {
+        var id = document.getElementById("id_produk").value;
+        var harga = document.getElementById("harga_produk").value;
+        // isinya harga sesuai id produk
+        document.getElementById("harga_produk").value = total-sudah;
+    } 
+</script>
+
 @endsection

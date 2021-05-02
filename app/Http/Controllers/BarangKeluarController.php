@@ -16,13 +16,21 @@ use App\Models\Admin;
 use Illuminate\Http\Request;
 
 
+
 class BarangKeluarController extends Controller
 {
     //DEN TARUH BLADENYA DI SINI
     public function addexit(){
-
-
-        return view('Barang_Keluar.tambah');
+        $reseller = Reseller::all('reseller_id','nama_reseller');
+        $produk = Produk::all();
+        $id = Session::get('login');
+        $admin = Admin::where('admin_id',$id)->first();
+        $nota = DB::select('CALL ID_barangkeluar');
+        // $nota = BarangKeluar::hydrate($query);
+        // dd($nota);
+        // $nota = collect($query);
+        // dd($reseller,$produk,$admin);
+        return view('Barang_Keluar.tambah', compact('reseller','produk','admin','nota'));
     }
 
 
