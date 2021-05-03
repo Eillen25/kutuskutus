@@ -67,15 +67,15 @@ Route::get('/profile', 'App\Http\Controllers\AwalController@profile');
 
 Route::get('/login', 'App\Http\Controllers\AwalController@login');
 
-Route::get('/produk/edit/{id}', 'App\Http\Controllers\AwalController@produkedit');
+Route::get('/produk/edit/{id}', 'App\Http\Controllers\ProdukController@produkedit');
 
-Route::get('/reseller/edit{id}', 'App\Http\Controllers\AwalController@reselleredit');
+Route::get('/reseller/edit{id}', 'App\Http\Controllers\ResellerController@reselleredit');
 
 // Auth::routes();
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/admin/edit{id}', 'App\Http\Controllers\AwalController@adminedit');
+Route::get('/admin/edit{id}', 'App\Http\Controllers\AdminController@adminedit');
 
 
 
@@ -84,11 +84,11 @@ Route::get('/detailbarangmasuk', 'App\Http\Controllers\BarangMasukController@det
 
 Route::get('/about', 'App\Http\Controllers\AwalController@about');
 
-Route::get('/deleteincoming', 'App\Http\Controllers\AwalController@deleteincoming');
+// Route::get('/deleteincoming', 'App\Http\Controllers\AwalController@deleteincoming');
 
 
-Route::get('/addso', 'App\Http\Controllers\AwalController@addso');
+Route::get('/addso', 'App\Http\Controllers\StockOpnameController@addso');
 
-Route::get('/addreseller', 'App\Http\Controllers\AwalController@addreseller');
+Route::get('/addreseller', 'App\Http\Controllers\ResellerController@addreseller');
 
-Route::get('/addadmin', 'App\Http\Controllers\AwalController@addadmin');
+Route::get('/addadmin', 'App\Http\Controllers\AdminController@addadmin');

@@ -311,62 +311,19 @@ class AwalController extends Controller
         return redirect('/login');
         
     }
-
-
-    public function produkedit(){
-
-
-        return view('Produk.edit');
-    }
-    public function reselleredit(){
-
-
-        return view('Reseller.edit');
-    }
-
-    public function adminedit(){
-
-
-        return view('Admin.edit');
-    }
-
-    public function incoming2(){
-
-
-        return view('Barang_Masuk.edit');
-    }
-
-  
-
+    
     public function about(){
 
 
         return view('about');
     }
 
-    public function addproduk(){
 
-
-        return view('Barang_Masuk.tambah');
-    }
-
-    public function addso(){
-
-
-        return view('Stok_Opname.tambah');
-    }
+   
     
-    public function addreseller(){
+   
 
-
-        return view('Reseller.tambah');
-    }
-
-    public function addadmin(){
-
-
-        return view('Admin.tambah');
-    }
+  
 
     
 }
