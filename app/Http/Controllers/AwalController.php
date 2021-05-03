@@ -98,7 +98,7 @@ class AwalController extends Controller
             $button ='<div style="display: flex;  ">';
             $button .= '<a class="btn btn-success btn-sm"  href="/barangkeluar/detail/' . $exit->nota_id. '")"><i class="far fa-eye"></i></a>';
             $button .= '<a class="btn btn-warning btn-sm" style="margin: 0 10px" href="/barangkeluar/edit/' . $exit->nota_id . '")"><i class="fas fa-edit"></i></a>';
-            $button .= '<a class="btn btn-danger btn-sm" href="/barangkeluar/destroy/' . $exit->nota_id . '")"><i class="far fa-trash-alt"></i></a>';
+            $button .= '<a class="btn btn-danger btn-sm"  onclick="return confirm(`Are you sure?`)" href="/barangkeluar/destroy/' . $exit->nota_id . '")"><i class="far fa-trash-alt"></i></a>';
             $button .= '</div>';
             return $button;
         })
@@ -336,11 +336,7 @@ class AwalController extends Controller
         return view('Barang_Masuk.edit');
     }
 
-    public function detailbarangkeluar(){
-
-
-        return view('Barang_Keluar.detail');
-    }
+  
 
     public function detailbarangmasuk(){
 
@@ -360,11 +356,7 @@ class AwalController extends Controller
         return view('Barang_Masuk.delete');
     }
 
-    public function addproduk(){
-
-
-        return view('Barang_Masuk.tambah');
-    }
+    
 
     public function addso(){
 

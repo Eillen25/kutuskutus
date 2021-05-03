@@ -24,15 +24,16 @@
     <div class="ini ml-2">
         <div class="col mb-3">
             <label for="fullName"class='font-weight-bold'>No. Nota</label>
-            <input type="text" class="form-control" id="fullName" value="" readonly >
+            <input type="text" class="form-control" id="fullName" value="{{$nota[0]->ID}}" readonly >
         </div>
         <div class="col mb-4">  
             <label for="phone"class='font-weight-bold'>Tanggal</label>
-            <input type="date" class="form-control" id="from-datepicker" >
+            <input type="text" class="form-control datepicker" id="from-datepicker"  value="{{ now()->format('d/m/Y') }}" >
         </div>
        
     </div>
     <div class="row ml-2">
+    
         <div class="col-md-12 row">
             <div class="col-md-3">
                 <label for="fullName" class='font-weight-bold'>Nama Produk</label>
@@ -47,8 +48,17 @@
                 <label for="eMail"class='font-weight-bold'>Subtotal</label>
             </div>
         </div>
+    
         <div class="col-md-12 row">
-            <div class="col-md-3"><input type="text" class="form-control" id="fullName" value="" ></div>
+            <div class="col-md-3">
+                <select class="form-control mt-2 ab-t-rpt-2" name="produk"
+                                        id="type_institution"  required>
+                                        <!-- <option value="">--Nama Produk--</option> -->
+                                        @foreach($produk as $items)
+                                        <option value="{{ $items->produk_id }}" id="id_produk" onchange="myFunction()">{{ $items->nama_produk }}</option>
+                                        @endforeach
+                </select>
+            </div>
             <div class="col-md-2"><input type="text" class="form-control" id="fullName" value=""></div>
             <div class="col-md-3"> <input type="text" class="form-control" value="" readonly></div>
             <div class="col-md-3  mb-3"> <input type="text" class="form-control" value="" readonly></div>

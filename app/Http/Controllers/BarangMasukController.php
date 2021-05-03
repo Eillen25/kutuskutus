@@ -20,6 +20,15 @@ use Illuminate\Http\Request;
 
 class BarangMasukController extends Controller
 {
+
+    public function addproduk(){
+
+        $nota = DB::select('CALL ID_barangmasuk');
+        $produk = Produk::all();
+
+        return view('Barang_Masuk.tambah',compact('nota','produk'));
+    }
+
     public function edit($id){
         // echo "Halo Kamu ngakses Controller Awal pada function index";
         // dd($id);

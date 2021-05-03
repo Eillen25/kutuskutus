@@ -38,6 +38,16 @@ Route::get('/barangkeluar/edit/{id}', 'App\Http\Controllers\BarangKeluarControll
 Route::post('/barangkeluar/edit/update', 'App\Http\Controllers\BarangKeluarController@update_exit');
 // CREATE BARANG KELUAR
 Route::get('/addexit', 'App\Http\Controllers\BarangKeluarController@addexit');
+Route::get('/detailbarangkeluar', 'App\Http\Controllers\BarangKeluarController@detailbarangkeluar');
+// DELETE BARANG KELUAR
+Route::get('/barangkeluar/destroy/{id}', 'App\Http\Controllers\BarangKeluarController@destroy');
+
+
+
+// BARANG MASUK
+// CREATE BARANG MASUK
+Route::get('/addproduk', 'App\Http\Controllers\BarangMasukController@addproduk');
+
 
 Route::get('/produk', 'App\Http\Controllers\AwalController@produk');
 Route::get('/produk/produk_json', 'App\Http\Controllers\AwalController@produk_json');
@@ -69,7 +79,6 @@ Route::get('/adminedit', 'App\Http\Controllers\AwalController@adminedit');
 
 
 
-Route::get('/detailbarangkeluar', 'App\Http\Controllers\AwalController@detailbarangkeluar');
 
 Route::get('/detailbarangmasuk', 'App\Http\Controllers\AwalController@detailbarangmasuk');
 
@@ -77,7 +86,6 @@ Route::get('/about', 'App\Http\Controllers\AwalController@about');
 
 Route::get('/deleteincoming', 'App\Http\Controllers\AwalController@deleteincoming');
 
-Route::get('/addproduk', 'App\Http\Controllers\AwalController@addproduk');
 
 Route::get('/addso', 'App\Http\Controllers\AwalController@addso');
 

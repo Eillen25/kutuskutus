@@ -61,4 +61,18 @@ class BarangKeluarController extends Controller
         return redirect('/barangkeluar');;
     }
 
+    public function detailbarangkeluar(){
+
+
+        return view('Barang_Keluar.detail');
+    }
+
+    public function destroy($id)
+    {
+        BarangKeluar::where('nota_id',$id)->delete();
+        // kalau pakai restore dibalikin
+        return redirect('/barangkeluar');
+        
+    }
+
 }
