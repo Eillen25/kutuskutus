@@ -67,20 +67,20 @@ Route::get('/profile', 'App\Http\Controllers\AwalController@profile');
 
 Route::get('/login', 'App\Http\Controllers\AwalController@login');
 
-Route::get('/produkedit', 'App\Http\Controllers\AwalController@produkedit');
+Route::get('/produk/edit/{id}', 'App\Http\Controllers\AwalController@produkedit');
 
-Route::get('/reselleredit', 'App\Http\Controllers\AwalController@reselleredit');
+Route::get('/reseller/edit{id}', 'App\Http\Controllers\AwalController@reselleredit');
 
 // Auth::routes();
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/adminedit', 'App\Http\Controllers\AwalController@adminedit');
+Route::get('/admin/edit{id}', 'App\Http\Controllers\AwalController@adminedit');
 
 
 
 
-Route::get('/detailbarangmasuk', 'App\Http\Controllers\AwalController@detailbarangmasuk');
+Route::get('/detailbarangmasuk', 'App\Http\Controllers\BarangMasukController@detailbarangmasuk');
 
 Route::get('/about', 'App\Http\Controllers\AwalController@about');
 

@@ -338,25 +338,17 @@ class AwalController extends Controller
 
   
 
-    public function detailbarangmasuk(){
-
-
-        return view('Barang_Masuk.detail');
-    }
-
     public function about(){
 
 
         return view('about');
     }
 
-    public function deleteincoming(){
+    public function addproduk(){
 
 
-        return view('Barang_Masuk.delete');
+        return view('Barang_Masuk.tambah');
     }
-
-    
 
     public function addso(){
 

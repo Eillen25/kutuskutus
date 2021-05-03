@@ -40,6 +40,10 @@ class BarangMasukController extends Controller
         // dd($incoming);
     }
 
+    public function detailbarangmasuk(){
 
+
+        return view('Barang_Masuk.detail');
+    }
 
 }
