@@ -130,7 +130,7 @@ class AwalController extends Controller
         ->addColumn('action', function ($produk) {
             $button ='<div style="display: flex;  ">';
             // $button .= '<a class="btn btn-success btn-sm"  href="/produk/detail/{id}' . $produk->produk_id. '")">Detail</a>';
-            $button .= '<a class="btn btn-warning btn-sm" style="margin: 0 10px" href="/produk/edit/{id}' .  $produk->produk_id . '")"><i class="fas fa-edit"></i></a>';
+            $button .= '<a class="btn btn-warning btn-sm" style="margin: 0 10px" href="/produk/edit/' .  $produk->produk_id . '")"><i class="fas fa-edit"></i></a>';
             // $button .= '<a class="btn btn-danger btn-sm" href="/produk/destroy/{id}' . $produk->produk_id . '")"><i class="far fa-trash-alt"></i></a>';
             $button .= '</div>';
             return $button;

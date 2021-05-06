@@ -38,15 +38,25 @@ Route::get('/barangkeluar/edit/{id}', 'App\Http\Controllers\BarangKeluarControll
 Route::post('/barangkeluar/edit/update', 'App\Http\Controllers\BarangKeluarController@update_exit');
 // CREATE BARANG KELUAR
 Route::get('/addexit', 'App\Http\Controllers\BarangKeluarController@addexit');
+Route::post('/calexit', 'App\Http\Controllers\BarangKeluarController@calexit');
+Route::post('/insertexit', 'App\Http\Controllers\BarangKeluarController@insert_exit');
+
 Route::get('/detailbarangkeluar', 'App\Http\Controllers\BarangKeluarController@detailbarangkeluar');
 // DELETE BARANG KELUAR
 Route::get('/barangkeluar/destroy/{id}', 'App\Http\Controllers\BarangKeluarController@destroy');
 
 
-
 // BARANG MASUK
 // CREATE BARANG MASUK
 Route::get('/addproduk', 'App\Http\Controllers\BarangMasukController@addproduk');
+
+
+
+// PRODUK
+// EDIT PRODUK
+Route::get('/produk/edit/{id}', 'App\Http\Controllers\ProdukController@produkedit');
+
+
 
 
 Route::get('/produk', 'App\Http\Controllers\AwalController@produk');
@@ -67,7 +77,6 @@ Route::get('/profile', 'App\Http\Controllers\AwalController@profile');
 
 Route::get('/login', 'App\Http\Controllers\AwalController@login');
 
-Route::get('/produk/edit/{id}', 'App\Http\Controllers\ProdukController@produkedit');
 
 Route::get('/reseller/edit{id}', 'App\Http\Controllers\ResellerController@reselleredit');
 

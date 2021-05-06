@@ -13,25 +13,114 @@ use App\Models\DetailBarangKeluar;
 use App\Models\Reseller;
 use App\Models\StockOpname;
 use App\Models\Admin;
+use  App\Models\Grade;
 use Illuminate\Http\Request;
-
+use Carbon\Carbon;
 
 
 class BarangKeluarController extends Controller
 {
     //DEN TARUH BLADENYA DI SINI
     public function addexit(){
-        $reseller = Reseller::all('reseller_id','nama_reseller');
+        $reseller = Reseller::all();
         $produk = Produk::all();
+        // dd($produk);
+
         $id = Session::get('login');
         $admin = Admin::where('admin_id',$id)->first();
         $nota = DB::select('CALL ID_barangkeluar');
+        $grade = Grade::all();
         // $nota = BarangKeluar::hydrate($query);
         // dd($nota);
         // $nota = collect($query);
         // dd($reseller,$produk,$admin);
-        return view('Barang_Keluar.tambah', compact('reseller','produk','admin','nota'));
+        // dd($reseller->grade->jenis_grade);
+        return view('Barang_Keluar.tambah', compact('reseller','produk','admin','nota','grade'));
     }
+
+    public function calexit(Request $request){
+        // return $request->all();
+                $cal = Grade::where([
+                'grade_id' =>$request->grade_id,
+                'produk_id' =>$request->produk_id
+            ])
+            ->firstOrFail();
+        
+        return $cal;
+    }
+
+    public function insert_exit(Request $request){
+        $data = $request->all();
+        $data['produk_id'] = array_filter($data['produk_id']);
+        $data['jumlah'] = array_filter($data['jumlah']);
+        $data['harga_satuan'] = array_filter($data['harga_satuan']);
+        $data['total_harga_penjualan'] = array_filter($data['total_harga_penjualan']);
+
+        //  dd($data);
+        $nota_id = $_POST['nota_id'];
+        $admin_id = Session::get('login');
+        $tanggal = Carbon::parse($request->tanggal)->toDateString();
+        $res = $_POST['reseller_id'];
+        $reseller_id = substr($res,0, strpos($res, "|"));
+        $jumlah = $_POST['jumlah'];
+
+        $subtotal = $_POST['total_harga_penjualan'];
+        $total = 0;
+            foreach($subtotal as $s){
+                if(!is_null($s)){
+                    $total += (int)$s;
+                }
+            };
+        $produk_id = $_POST['produk_id'];
+        $harga_satuan = $_POST['harga_satuan'];
+        // dd($reseller_id);
+        // dd($total);
+        // dd($jumlah);
+        // BUAT IF UNTUK JUMLAH KUTUS
+        foreach($produk_id as $p){
+            if($p == 'MUS1'){
+                $jumlah_kutus = $jumlah;
+            }
+            else{
+                $jumlah_kutus = 0;
+            };
+        };  
+
+        // INSERT PERTAMA KE BARANG KELUAR
+         $insert = DB::select(DB::raw("CALL insert_barangkeluar(:id_nota, :id_admin, :tanggal, :id_res, :total,  :jum_kut)"),[
+            ':id_nota' => $nota_id,
+            ':id_admin' => $admin_id,
+            ':tanggal' => $tanggal,
+            ':id_res' => $reseller_id,
+            ':total' => $total,
+            ':jum_kut' => $jumlah_kutus
+            
+        ]);
+        foreach ($data['produk_id'] as $index => $produk_id) {
+            $insert_det = DB::select(DB::raw("CALL insert_detbarangkeluar(:id_nota, :id_prod, :jum, :harga)"),[
+                ':id_nota' => $nota_id,
+                ':id_prod' => $produk_id,
+                ':jum' => $data['jumlah'][$index],
+                ':harga' => $data['harga_satuan'][$index],
+            ]);
+        }
+        // INSERT KEDUA KE DETAIL BARANG KELUAR
+        // foreach(array($jumlah) as $j){
+        //     if(!is_null($j)){
+        //         $insert_det = DB::select(DB::raw("CALL insert_detbarangkeluar(:id_nota, :id_prod, :jum, :harga)"),[
+        //             ':id_nota' => $nota_id,
+        //             ':id_prod' =>$produk_id[$j],
+        //             ':jum' => $jumlah[$j],
+        //             ':harga' => $harga_satuan[$j],
+                    
+                    
+        //         ]);
+        //     }
+        // }
+        return redirect('/barangkeluar');
+    }
+    
+
 
 
 
@@ -58,7 +147,7 @@ class BarangKeluarController extends Controller
 
         ]);
 
-        return redirect('/barangkeluar');;
+        return redirect('/barangkeluar');
     }
 
     public function detailbarangkeluar(){
@@ -70,9 +159,12 @@ class BarangKeluarController extends Controller
     public function destroy($id)
     {
         BarangKeluar::where('nota_id',$id)->delete();
+        DetailBarangKeluar::where('nota_id',$id)->delete();
         // kalau pakai restore dibalikin
         return redirect('/barangkeluar');
         
     }
+
+
 
 }

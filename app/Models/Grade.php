@@ -9,7 +9,7 @@ use DB;
 class Grade extends Model
 {
     use HasFactory;
-    protected $primaryKey = 'grade_id';
+    // protected $primaryKey = 'grade_id';
     protected $table = "grade";
     protected $fillable = [
         "grade_id",
@@ -18,4 +18,6 @@ class Grade extends Model
         "potongan",
         "status_del"
     ];
+
+
 }

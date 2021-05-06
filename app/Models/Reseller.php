@@ -10,6 +10,10 @@ class Reseller extends Model
 {
     use HasFactory;
     protected $primaryKey = 'reseller_id';
+    public $incrementing = false;
+
+    // In Laravel 6.0+ make sure to also set $keyType
+    protected $keyType = 'string';
     protected $table = "reseller";
     protected $fillable = [
         "reseller_id",
@@ -21,7 +25,7 @@ class Reseller extends Model
         "status_del"
     ];
 
-    public function  grade()
+    public function grade()
     {
     	return $this->belongsTo('App\Models\Grade', 'grade_id');
    

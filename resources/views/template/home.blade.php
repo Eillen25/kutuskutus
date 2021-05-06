@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="/assets/bootstrap/css/style.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    @yield('css', '')
 </head>
 
 <body>
@@ -35,9 +36,9 @@
     <!-- End Of Navbar -->
     <!-- <div class="wrapper"> -->
     <div class="side-left">
-        <div class="shortcut" onmouseover="showAdminProfile()">    
+        <div class="shortcut">    
         </div>
-        <div class="admin-profile" id="sl_ap" onmouseover="showAdminProfile()" onmouseout="hideAdminProfile()" style="padding-top: 50px">
+        <div class="admin-profile" id="sl_ap"  style="padding-top: 50px">
             <ul class="admin-menus">
               
                     <li class="active-link" style="color: black">
@@ -96,14 +97,22 @@
         
     </div>
 
-
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script> 
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <!-- <script type="text/javascript" src="/assets/js/jquery-3.5.1.js"></script> -->
+    <script type="text/javascript" src="/assets/js/popper.min.js"></script>
+    <script type="text/javascript" src="/bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../../assets/bootstrap/js/bootstrap.js"></script>
     <script type="text/javascript" src="../../assets/bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../../assets/js/bootstrap-datepicker.min.js"></script>
     <script>
-        $(function() {
+        $(function () {
             $('.datepicker').datepicker();
+
         })
+       
     </script>
+    @yield('js', '')
 </body>
 </html>
