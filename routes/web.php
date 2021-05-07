@@ -28,6 +28,9 @@ Route::get('/barangmasuk', 'App\Http\Controllers\AwalController@incoming');
 Route::get('/barangmasuk/json', 'App\Http\Controllers\AwalController@json');
 
 Route::get('/barangmasuk/edit/{id}', 'App\Http\Controllers\BarangMasukController@edit');
+// CREATE BARANG MASUK
+Route::get('/addproduk', 'App\Http\Controllers\BarangMasukController@addproduk');
+Route::post('/insertincoming', 'App\Http\Controllers\BarangMasukController@insert_incoming');
 
 
 // READ BARANG KELUAR
@@ -46,10 +49,7 @@ Route::get('/detailbarangkeluar', 'App\Http\Controllers\BarangKeluarController@d
 Route::get('/barangkeluar/destroy/{id}', 'App\Http\Controllers\BarangKeluarController@destroy');
 
 
-// BARANG MASUK
-// CREATE BARANG MASUK
-Route::get('/addproduk', 'App\Http\Controllers\BarangMasukController@addproduk');
-// Route::post('/insertincoming', 'App\Http\Controllers\BarangKeluarController@insert_incoming');
+
 
 
 // PRODUK

@@ -13,6 +13,7 @@ use App\Models\BarangKeluar;
 use App\Models\Reseller;
 use App\Models\StockOpname;
 use App\Models\Admin;
+use Carbon\Carbon;
 
 use Illuminate\Http\Request;
 
@@ -27,6 +28,38 @@ class BarangMasukController extends Controller
         $produk = Produk::all();
         
         return view('Barang_Masuk.tambah',compact('nota','produk'));
+    }
+
+    public function insert_incoming(Request $request){
+        $data = $request->all();
+        // dd($data);
+        $invoice_id = $_POST['invoice_id'];
+        $admin_id = Session::get('login');
+        $tanggal = Carbon::parse($request->tanggal)->toDateString();
+        $total = $_POST['total_seluruh'];
+        $produk_id = $_POST['produk_id'];
+        $jumlah = $_POST['jumlah'];
+        $harga_satuan = $_POST['harga_satuan'];
+
+        // INSERT BARANG MASUK
+        $insert = DB::select(DB::raw("CALL insert_barangmasuk(:id_invo, :id_admin, :tanggal,  :total)"),[
+            ':id_invo' => $invoice_id,
+            ':id_admin' => $admin_id,
+            ':tanggal' => $tanggal,
+            ':total' => $total,
+        ]);
+
+        // INSERT DETAIL BARANG MASUK
+        foreach ($data['produk_id'] as $index => $produk_id) {
+            $insert_det = DB::select(DB::raw("CALL insert_detbarangmasuk(:id_invo, :id_prod, :jum, :harga)"),[
+                ':id_invo' => $invoice_id,
+                ':id_prod' => $produk_id,
+                ':jum' => $data['jumlah'][$index],
+                ':harga' => $data['harga_satuan'][$index],
+            ]);
+        }
+        return redirect('/barangmasuk');
+        
     }
 
     
