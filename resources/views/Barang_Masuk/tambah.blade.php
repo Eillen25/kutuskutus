@@ -101,12 +101,12 @@
             </div>
             <div class="row gutters">
                 <div class="col align-self-end">
-                    <div class="col-md-5 offset-md-5 mt-5">
-                        <button type="reset"  class="btn btn-secondary btn-lg">Batal</button>
+                    <div class="col-md-12 text-right mt-5">
+                        <button type="button" id="tambah_produk" class="btn btn-success btn-lg mr-5" >Tambah Produk</button>
+                        <button type="reset"  class="btn btn-secondary btn-lg ">Batal</button>
                         <button type="submit" id="submit" name="submit" class="btn btn-primary btn-lg">Tambah</button>
                     </div>
                     <div class="col-md-3 offset-md-3">
-                        <button type="button" id="tambah_produk" class="btn btn-success btn-lg " >Tambah Produk</button>
                     </div>
                 </div>
             </div>

@@ -175,15 +175,15 @@
   }
 }
 </style>
-    <div id="invoice">
+    {{-- <div id="invoice">
             <hr style="color: #B28E6B;">
-        </div>
+      </div> --}}
         <div class="invoice overflow-auto">
             <div style="min-width: 600px">
                 <header>
                     <div class="row" style="display: block">
                         <div class="col">
-                                <img src="assets/img/logokk.png" style="width: 20%; display: block; margin-left: auto; margin-right: auto; " data-holder-rendered="true" />
+                                <img src="assets/img/logokk.png" style="width: 150px; display: block; margin-left: auto; margin-right: auto; " data-holder-rendered="true" />
                         </div>
                         <div class="col company-details text-center">
                             <div class = "text-center"><h2>Kutus - kutus</h2></div>
