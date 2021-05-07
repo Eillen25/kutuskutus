@@ -20,13 +20,17 @@ use Illuminate\Http\Request;
 
 class BarangMasukController extends Controller
 {
-
+    
     public function addproduk(){
-
+        
         $nota = DB::select('CALL ID_barangmasuk');
         $produk = Produk::all();
-
+        
         return view('Barang_Masuk.tambah',compact('nota','produk'));
+    }
+    
+    public function insert_incoming(Request $request){
+    
     }
 
     public function edit($id){
@@ -43,7 +47,7 @@ class BarangMasukController extends Controller
     public function detailbarangmasuk(){
 
 
+
         return view('Barang_Masuk.detail');
     }
 
-}
