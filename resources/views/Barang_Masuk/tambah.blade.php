@@ -83,7 +83,10 @@
                         </div>
                     </div>
                 </div>
-                <button type="button" id="tambah_produk" class="btn btn-secondary btn-lg">Tambah Produk</button>
+                <!-- <div class="btn text-center" style="margin-top:50px;margin-left:60px;">
+                         
+                </div> -->
+                
 
                 <div class="col align-self-end">
                     <div class="col-md-3 offset-md-8 ">
@@ -98,9 +101,12 @@
             </div>
             <div class="row gutters">
                 <div class="col align-self-end">
-                    <div class="col-md-3 offset-md-8  mt-5">
+                    <div class="col-md-5 offset-md-5 mt-5">
                         <button type="reset"  class="btn btn-secondary btn-lg">Batal</button>
                         <button type="submit" id="submit" name="submit" class="btn btn-primary btn-lg">Tambah</button>
+                    </div>
+                    <div class="col-md-3 offset-md-3">
+                        <button type="button" id="tambah_produk" class="btn btn-success btn-lg " >Tambah Produk</button>
                     </div>
                 </div>
             </div>

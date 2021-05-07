@@ -49,7 +49,7 @@ Route::get('/barangkeluar/destroy/{id}', 'App\Http\Controllers\BarangKeluarContr
 // BARANG MASUK
 // CREATE BARANG MASUK
 Route::get('/addproduk', 'App\Http\Controllers\BarangMasukController@addproduk');
-Route::post('/insertincoming', 'App\Http\Controllers\BarangKeluarController@insert_incoming');
+// Route::post('/insertincoming', 'App\Http\Controllers\BarangKeluarController@insert_incoming');
 
 
 // PRODUK

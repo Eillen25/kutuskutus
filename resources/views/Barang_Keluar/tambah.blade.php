@@ -108,7 +108,13 @@
 
                         </div>
                     </div>
-                    <button type="button" id="tambah_produk" class="btn btn-secondary btn-lg mt-3">Tambah Produk</button>
+                    <!-- <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12"> -->
+                    <div class="text-center" style="margin-top:50px;">
+                         <button type="button" id="tambah_produk" class="btn btn-success btn-md mt-3 text-right">Tambah Produk</button>
+                        <!-- <button type="reset" class="btn btn-secondary btn-lg">Batal</button>
+                        <button type="submit" id="submit" class="btn btn-primary btn-lg" >Tambah</button> -->
+                    </div>
+                </div>
 
 
                 </div>

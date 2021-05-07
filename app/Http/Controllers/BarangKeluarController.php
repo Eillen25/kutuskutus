@@ -117,7 +117,7 @@ class BarangKeluarController extends Controller
         //         ]);
         //     }
         // }
-        return redirect('/barangkeluar');
+        return redirect('/barangkeluar/edit/'.$nota_id);
     }
     
 

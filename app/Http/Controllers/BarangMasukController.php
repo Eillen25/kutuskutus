@@ -28,10 +28,8 @@ class BarangMasukController extends Controller
         
         return view('Barang_Masuk.tambah',compact('nota','produk'));
     }
+
     
-    public function insert_incoming(Request $request){
-    
-    }
 
     public function edit($id){
         // echo "Halo Kamu ngakses Controller Awal pada function index";
@@ -45,9 +43,6 @@ class BarangMasukController extends Controller
     }
 
     public function detailbarangmasuk(){
-
-
-
         return view('Barang_Masuk.detail');
     }
-
+}
