@@ -108,7 +108,7 @@
 
                         </div>
                     </div>
-                    <button type="button" id="tambah_produk" class="btn btn-secondary btn-lg">Tambah Produk</button>
+                    <button type="button" id="tambah_produk" class="btn btn-secondary btn-lg mt-3">Tambah Produk</button>
 
 
                 </div>
