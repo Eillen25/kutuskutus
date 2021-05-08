@@ -24,8 +24,8 @@
         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
             <div class="form-group mt-4">
                 <label for="fullName">Nama Admin</label>
-                {{-- <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="Oh Sehun"> --}}
-                <input type="text" class="form-control" id="fullName" value="Eillen Lie Pramono" >
+                <!-- <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="Oh Sehun"> -->
+                <input type="text" class="form-control" name="nama_admin" value="{{$admin->nama_admin}}" >
             </div>
             <div class="form-group">
                 <label for="fullName">Password</label>

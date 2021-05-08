@@ -15,6 +15,7 @@
                     <table class="table-wisata table-tiketsaya table " id ="produk-table">
                         <thead>
                             <tr class="1">
+                                <th scope="col">ID Produk</th>
                                 <th scope="col">Nama Produk</th>
                                 <th scope="col">Jumlah Produk</th>
                                 <th scope="col">Satuan</th>
@@ -79,6 +80,9 @@
       serverside: true,
       ajax: 'produk/produk_json',
       columns: [{
+          data: 'produk_id',
+          name: 'produk_id'
+        },{
           data: 'nama_produk',
           name: 'nama_produk'
         },

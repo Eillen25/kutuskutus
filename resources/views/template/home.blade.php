@@ -69,12 +69,14 @@
                         Produk
                     </li>
                 </a>
+                @if(session('akses_id') == 0)
                 <a href="/admin">
                     <li style="color: black">
                         <i class="fas  fa-people-carry"></i>
                         Admin
                     </li>
                 </a>
+                @endif
                 <a href="/reseller">
                     <li style="color: black" >
                         <i class="fas fa-2x fa-male" ></i>

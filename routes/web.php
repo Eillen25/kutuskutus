@@ -55,6 +55,7 @@ Route::get('/barangkeluar/destroy/{id}', 'App\Http\Controllers\BarangKeluarContr
 // PRODUK
 // EDIT PRODUK
 Route::get('/produk/edit/{id}', 'App\Http\Controllers\ProdukController@produkedit');
+Route::post('/produk/update', 'App\Http\Controllers\ProdukController@update_produk');
 
 
 
@@ -70,6 +71,10 @@ Route::get('/stockopname/sopname_json', 'App\Http\Controllers\AwalController@sop
 
 Route::get('/admin', 'App\Http\Controllers\AwalController@admin');
 Route::get('/admin/admin_json', 'App\Http\Controllers\AwalController@admin_json');
+Route::get('/admin/edit/{id}', 'App\Http\Controllers\AdminController@admin_edit');
+Route::get('/addadmin', 'App\Http\Controllers\AdminController@add_admin');
+Route::post('/insertadmin', 'App\Http\Controllers\AdminController@insert_admin');
+
 
 // Route::get('/exit2', 'App\Http\Controllers\AwalController@exit2');
 
@@ -84,7 +89,6 @@ Route::get('/reseller/edit{id}', 'App\Http\Controllers\ResellerController@resell
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/admin/edit{id}', 'App\Http\Controllers\AdminController@adminedit');
 
 
 
@@ -100,4 +104,3 @@ Route::get('/addso', 'App\Http\Controllers\StockOpnameController@addso');
 
 Route::get('/addreseller', 'App\Http\Controllers\ResellerController@addreseller');
 
-Route::get('/addadmin', 'App\Http\Controllers\AdminController@addadmin');

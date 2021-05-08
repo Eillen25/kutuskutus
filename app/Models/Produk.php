@@ -22,6 +22,7 @@ class Produk extends Model
         "satuan_id",
         "harga_modal",
         "harga_jual",
-        "status_del"
+        "status_del",
+        "updated_at"
     ];
 }

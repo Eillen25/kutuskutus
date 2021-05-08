@@ -153,8 +153,8 @@ class AwalController extends Controller
         ->addColumn('action', function ($res) {
             $button ='<div style="display: flex;  ">';
             // $button .= '<a class="btn btn-success btn-sm"  href="/reseller/detail/{id}' . $res->reseller_id. '")">Detail</a>';
-            $button .= '<a class="btn btn-warning btn-sm" style="margin: 0 10px" href="/reseller/edit/{id}' . $res->reseller_id . '")"><i class="fas fa-edit"></i></a>';
-            $button .= '<a class="btn btn-danger btn-sm" href="/reseller/destroy/{id}' . $res->reseller_id . '")"><i class="far fa-trash-alt"></i></a>';
+            $button .= '<a class="btn btn-warning btn-sm" style="margin: 0 10px" href="/reseller/edit/' . $res->reseller_id . '")"><i class="fas fa-edit"></i></a>';
+            $button .= '<a class="btn btn-danger btn-sm" href="/reseller/destroy/' . $res->reseller_id . '")"><i class="far fa-trash-alt"></i></a>';
             $button .= '</div>';
             return $button;
         })
@@ -210,8 +210,8 @@ class AwalController extends Controller
         ->addColumn('action', function ($admin) {
             $button ='<div style="display: flex;  ">';
             // $button .= '<a class="btn btn-success btn-sm"  href="/produk/detail/{id}' . $produk->produk_id. '")">Detail</a>';
-            $button .= '<a class="btn btn-warning btn-sm" style="margin: 0 10px" href="/admin/edit/{id}' .  $admin->admin_id . '")"><i class="fas fa-edit"></i></a>';
-            $button .= '<a class="btn btn-danger btn-sm" href="/admin/destroy/{id}' . $admin->admin_id . '")"><i class="far fa-trash-alt"></i></a>';
+            $button .= '<a class="btn btn-warning btn-sm" style="margin: 0 10px" href="/admin/edit/' .  $admin->admin_id . '")"><i class="fas fa-edit"></i></a>';
+            $button .= '<a class="btn btn-danger btn-sm" href="/admin/destroy/' . $admin->admin_id . '")"><i class="far fa-trash-alt"></i></a>';
             $button .= '</div>';
             return $button;
         })
@@ -261,6 +261,8 @@ class AwalController extends Controller
            Session::put('login', $username);
             Session::put('pass', $pass);
 
+            $admin = Admin::find($username);
+            Session::put('akses_id', $admin->akses_id);
            
 
             Session::flash('success', 'Anda berhasil Login!');

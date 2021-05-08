@@ -10,7 +10,7 @@
 
             <div class="col-md-12" >
                 <div class="item-big-report col-md-12">
-                  <a class="btn btn-primary float-right" style="background-color:#C2A890" href="#" role="button">+ Tambah Admin</a>
+                  <a class="btn btn-primary float-right" style="background-color:#C2A890" href="/addadmin" role="button">+ Tambah Admin</a>
 
 
                     <table class="table-wisata table-tiketsaya table table-borderless" id ="admin-table">
