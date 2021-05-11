@@ -112,5 +112,5 @@ Route::get('/about', 'App\Http\Controllers\AwalController@about');
 
 
 
-
+Route::get('/laporan/bulan', 'App\Http\Controllers\BarangMasukController@laporan');
 

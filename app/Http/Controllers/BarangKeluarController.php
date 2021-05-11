@@ -181,6 +181,6 @@ class BarangKeluarController extends Controller
         
     }
 
-
+  
 
 }

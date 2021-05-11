@@ -83,6 +83,10 @@ class BarangMasukController extends Controller
         return view('Barang_Masuk.detail', compact('incoming','det'));
     }
 
+    public function laporan(Request $request) {
+        return view('Barang_Masuk.laporan');
+    }
+
 
     // KALAU CETAK INVOICE
     // public function cetak_pdf($id){
