@@ -35,7 +35,8 @@ Route::get('/barangmasuk/detail/{id}', 'App\Http\Controllers\BarangMasukControll
 // Route::get('/barangmasuk/cetak_pdf/{id}', 'App\Http\Controllers\BarangMasukController@cetak_pdf');
 Route::get('/laporan/bulan', 'App\Http\Controllers\BarangMasukController@combo_box');
 Route::post('/laporan/masuk', 'App\Http\Controllers\BarangMasukController@laporan_bulan');
-
+Route::get('/laporan/tahun', 'App\Http\Controllers\BarangMasukController@combo_box_tahun');
+Route::post('/laporan/tahun/cetak', 'App\Http\Controllers\BarangMasukController@laporan_tahun');
 
 
 // READ BARANG KELUAR

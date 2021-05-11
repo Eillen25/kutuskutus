@@ -96,7 +96,7 @@ class BarangMasukController extends Controller
         
         // dd($monthName);
 
-        $res = DB::select('SELECT p.nama_produk, SUM(dbm.jumlah*harga) AS total, dbm.jumlah
+        $res = DB::select('SELECT p.nama_produk, SUM(dbm.jumlah*harga) AS total, SUM(dbm.jumlah) AS jumlah
         FROM barang_masuk AS bm, detail_barang_masuk AS dbm, produk AS p
         WHERE EXTRACT(MONTH FROM tanggal) ='.$month.' AND bm.invoice_id = dbm.invoice_id AND dbm.produk_id = p.produk_id
         GROUP BY dbm.produk_id');
@@ -117,14 +117,39 @@ class BarangMasukController extends Controller
        
     }
 
-    // KALAU CETAK INVOICE
-    // public function cetak_pdf($id){
-    //     $det = DetailBarangMasuk::where('invoice_id', $id)->get();
-    //     $incoming = BarangMasuk::find($id);
-    //     ini_set('max_execution_time', 300);
-    //     $pdf = PDF::loadview('Barang_Masuk.detail_pdf', compact('incoming','det') );
-    //     return $pdf->stream();
-    //     }
+    public function combo_box_tahun() {
+        $tahun = DB::select('SELECT EXTRACT(YEAR FROM tanggal) AS year
+        FROM barang_masuk
+        GROUP BY year
+        ');
+        // dd($tahun);
+        return view('Barang_Masuk.laporan_tahun',compact('tahun'));
+    }
+
+    public function laporan_tahun(Request $request) {
+        $year = $_POST['year'];
+        $res = DB::select('SELECT p.produk_id, p.nama_produk, SUM(dbm.jumlah*harga) AS total, SUM(dbm.jumlah) AS jumlah
+        FROM barang_masuk AS bm, detail_barang_masuk AS dbm, produk p
+        WHERE EXTRACT(YEAR FROM tanggal) = '.$year.' AND bm.invoice_id = dbm.invoice_id AND dbm.produk_id = p.produk_id
+        GROUP BY dbm.produk_id
+        ');
+        // dd($res);
+        $total = DB::select('SELECT SUM(total) AS total_semua
+        FROM (SELECT produk_id, SUM(dbm.jumlah*harga) AS total
+        FROM barang_masuk AS bm, detail_barang_masuk AS dbm
+        WHERE EXTRACT(YEAR FROM tanggal) = '.$year.' AND bm.invoice_id = dbm.invoice_id
+        GROUP BY dbm.produk_id) a
+        ');
+        // dd($res,$total);
+       
+        ini_set('max_execution_time', 300);
+        $pdf = PDF::loadview('Barang_Masuk.detail_tahun_pdf', compact('res','total','year') );
+        return $pdf->stream();
+      
+
+       
+    }
+   
 
 
 }

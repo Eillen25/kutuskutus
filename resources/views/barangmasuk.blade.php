@@ -12,7 +12,7 @@
                 <div class="item-big-report col-md-12">
                   <a class="btn btn-primary float-right" style="background-color:#ac7339" href="/addproduk" role="button">+ Tambah Invoice</a>
                   <a class="btn btn-primary float-right mr-2" style="background-color:#d9b38c" href="/laporan/bulan" role="button">Laporan Periodik</a>
-                  <a class="btn btn-primary float-right mr-2" style="background-color:#d9b38c" href="/" role="button">Laporan Tahunan</a>
+                  <a class="btn btn-primary float-right mr-2" style="background-color:#d9b38c" href="/laporan/tahun" role="button">Laporan Tahunan</a>
 
                     <table class="table-wisata table-tiketsaya table " id ="incoming-table">
                         <thead>
