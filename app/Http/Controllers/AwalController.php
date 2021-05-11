@@ -243,7 +243,8 @@ class AwalController extends Controller
     public function authentication(Request $req){
         //1. Get INPUT
         $username = $req->input('username');
-        $pass    = $req->input('password');
+        // $pass    = md5($req->input('password'));
+        $pass = $req->input('password');
 
         $data = [
             'username' => $username,

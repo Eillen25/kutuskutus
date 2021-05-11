@@ -5,6 +5,7 @@ use Session;
 use Alert;
 use Mail;
 use DB;
+use PDF;
 use DataTables;
 use App\Models\Produk;
 use App\Models\BarangMasuk;
@@ -75,7 +76,22 @@ class BarangMasukController extends Controller
         // dd($incoming);
     }
 
-    public function detailbarangmasuk(){
-        return view('Barang_Masuk.detail');
+    public function detail_barangmasuk($id){
+        $det = DetailBarangMasuk::where('invoice_id', $id)->get();
+        $incoming = BarangMasuk::find($id);
+        // dd($incoming);
+        return view('Barang_Masuk.detail', compact('incoming','det'));
     }
+
+
+    // KALAU CETAK INVOICE
+    // public function cetak_pdf($id){
+    //     $det = DetailBarangMasuk::where('invoice_id', $id)->get();
+    //     $incoming = BarangMasuk::find($id);
+    //     ini_set('max_execution_time', 300);
+    //     $pdf = PDF::loadview('Barang_Masuk.detail_pdf', compact('incoming','det') );
+    //     return $pdf->stream();
+    //     }
+
+    
 }

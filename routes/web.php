@@ -31,7 +31,8 @@ Route::get('/barangmasuk/edit/{id}', 'App\Http\Controllers\BarangMasukController
 // CREATE BARANG MASUK
 Route::get('/addproduk', 'App\Http\Controllers\BarangMasukController@addproduk');
 Route::post('/insertincoming', 'App\Http\Controllers\BarangMasukController@insert_incoming');
-
+Route::get('/barangmasuk/detail/{id}', 'App\Http\Controllers\BarangMasukController@detail_barangmasuk');
+Route::get('/barangmasuk/cetak_pdf/{id}', 'App\Http\Controllers\BarangMasukController@cetak_pdf');
 
 // READ BARANG KELUAR
 Route::get('/barangkeluar', 'App\Http\Controllers\AwalController@exit');
@@ -43,8 +44,8 @@ Route::post('/barangkeluar/edit/update', 'App\Http\Controllers\BarangKeluarContr
 Route::get('/addexit', 'App\Http\Controllers\BarangKeluarController@addexit');
 Route::post('/calexit', 'App\Http\Controllers\BarangKeluarController@calexit');
 Route::post('/insertexit', 'App\Http\Controllers\BarangKeluarController@insert_exit');
-
-Route::get('/detailbarangkeluar', 'App\Http\Controllers\BarangKeluarController@detailbarangkeluar');
+Route::get('/barangkeluar/detail/{id}', 'App\Http\Controllers\BarangKeluarController@detailbarangkeluar');
+Route::get('/barangkeluar/cetak_pdf/{id}', 'App\Http\Controllers\BarangKeluarController@cetak_pdf');
 // DELETE BARANG KELUAR
 Route::get('/barangkeluar/destroy/{id}', 'App\Http\Controllers\BarangKeluarController@destroy');
 
@@ -65,16 +66,27 @@ Route::get('/produk/produk_json', 'App\Http\Controllers\AwalController@produk_js
 
 Route::get('/reseller', 'App\Http\Controllers\AwalController@reseller');
 Route::get('/reseller/reseller_json', 'App\Http\Controllers\AwalController@reseller_json');
+Route::get('/reseller/edit/{id}', 'App\Http\Controllers\ResellerController@reseller_edit');
+Route::post('/reseller/update', 'App\Http\Controllers\ResellerController@reseller_update');
+Route::get('/reseller/add', 'App\Http\Controllers\ResellerController@addreseller');
+Route::post('/reseller/insert', 'App\Http\Controllers\ResellerController@insert_reseller');
+Route::get('/reseller/destroy/{id}', 'App\Http\Controllers\ResellerController@destroy_reseller');
+
+
 
 Route::get('/stockopname', 'App\Http\Controllers\AwalController@sopname');
 Route::get('/stockopname/sopname_json', 'App\Http\Controllers\AwalController@sopname_json');
+Route::get('/stockopname/add', 'App\Http\Controllers\StockOpnameController@add_so');
+Route::post('/stockopname/insert', 'App\Http\Controllers\StockOpnameController@insert_so');
+
 
 Route::get('/admin', 'App\Http\Controllers\AwalController@admin');
 Route::get('/admin/admin_json', 'App\Http\Controllers\AwalController@admin_json');
 Route::get('/admin/edit/{id}', 'App\Http\Controllers\AdminController@admin_edit');
+Route::post('/admin/update', 'App\Http\Controllers\AdminController@admin_update');
 Route::get('/addadmin', 'App\Http\Controllers\AdminController@add_admin');
 Route::post('/insertadmin', 'App\Http\Controllers\AdminController@insert_admin');
-
+Route::get('/admin/destroy/{id}', 'App\Http\Controllers\AdminController@destroy_admin');
 
 // Route::get('/exit2', 'App\Http\Controllers\AwalController@exit2');
 
@@ -83,7 +95,6 @@ Route::get('/profile', 'App\Http\Controllers\AwalController@profile');
 Route::get('/login', 'App\Http\Controllers\AwalController@login');
 
 
-Route::get('/reseller/edit{id}', 'App\Http\Controllers\ResellerController@reselleredit');
 
 // Auth::routes();
 
@@ -93,14 +104,13 @@ Route::get('/reseller/edit{id}', 'App\Http\Controllers\ResellerController@resell
 
 
 
-Route::get('/detailbarangmasuk', 'App\Http\Controllers\BarangMasukController@detailbarangmasuk');
+
 
 Route::get('/about', 'App\Http\Controllers\AwalController@about');
 
 // Route::get('/deleteincoming', 'App\Http\Controllers\AwalController@deleteincoming');
 
 
-Route::get('/addso', 'App\Http\Controllers\StockOpnameController@addso');
 
-Route::get('/addreseller', 'App\Http\Controllers\ResellerController@addreseller');
+
 

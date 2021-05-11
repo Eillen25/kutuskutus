@@ -206,11 +206,15 @@
 
     });
 
+
+    // INI ONKEYUPNYA BISA DI PRODUK_ID DAN JUMLAH
     $(document).on('keyup', '[name^="jumlah"]', function () {
         $(this).closest('.row-nota')
             .find('[name^="total_harga_penjualan"]')
             .val(this.value * hargaDiskon);
     })
+
+
 
     $('#tambah_produk').click(function () {
         let template = $('#templateNota').html();

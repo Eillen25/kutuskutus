@@ -185,7 +185,7 @@
                 <header>
                     <div class="row" style="display: block">
                         <div class="col">
-                                <img src="{{asset('assets/img/logokk.png')}}" style="width: 150px; display: block; margin-left: auto; margin-right: auto; " data-holder-rendered="true" />
+                                <img src="{{public_path('/assets/img/logokk.png')}}" style="width: 150px; display: block; margin-left: auto; margin-right: auto; " data-holder-rendered="true" />
                         </div>
                         <div class="col company-details text-center">
                             <div class = "text-center"><h2>Kutus - kutus</h2></div>
@@ -246,7 +246,7 @@
                         </tfoot>
                     </table>
                 </main>
-              <!-- <button type="submit"class="btn btn-primary btn-lg" >Print Nota</button> -->
+              
         </div>
       </form>
     </div>

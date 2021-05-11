@@ -28,15 +28,16 @@ class AdminController extends Controller
         // dd($request->all());
         $password = md5($_POST['password']);
         $akses = 1;
-        // dd($password);
+        $email = $_POST['email'];
+        // dd($email);
         Admin::create([
             'admin_id'=>$request->input('admin_id'),
             'nama_admin'=>$request->input('nama_admin'),
             'password'=>$password,
             'gaji'=>$request->input('gaji'),
             'nomor_telepon'=>$request->input('nomor_telepon'),
-            'email'=>$request->input('email'),
-            'email'=>$akses,
+            'email'=>$email,
+            'akses_id'=>$akses,
             'alamat'=>$request->input('alamat')
             ]);
 
@@ -50,6 +51,30 @@ class AdminController extends Controller
         return view('Admin.edit', compact('admin'));
     }
 
+    public function admin_update(Request $request){
+        // dd($request->all());
+        $password = md5($request->input('password'));
+        $id = $_POST['admin_id'];
+        Admin::where('admin_id',$id)->update([
+            'nama_admin'=> $request->input('nama_admin'), 
+            'password'=>$password, 
+            'gaji'=>$request->input('gaji'),
+            'email'=>$request->input('email'),
+            'alamat'=>$request->input('alamat'),
+            'nomor_telepon'=>$request->input('nomor_telepon'),
 
+        ]);
+
+        return redirect('/admin/edit/'.$id);
+    }
+
+    public function destroy_admin($id)
+    {
+        Admin::where('admin_id',$id)->delete();
+      
+        // kalau pakai restore dibalikin
+        return redirect('/admin');
+        
+    }
 
 }

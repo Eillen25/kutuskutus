@@ -10,7 +10,11 @@ use DB;
 class BarangKeluar extends Model
 {
     use HasFactory;
-    // protected $primaryKey = 'nota_id';
+    protected $primaryKey = 'nota_id';
+    public $incrementing = false;
+
+    // In Laravel 6.0+ make sure to also set $keyType
+    protected $keyType = 'string';
     protected $table = "barang_keluar";
     protected $fillable = [
         "nota_id",

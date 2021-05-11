@@ -9,17 +9,24 @@ use DB;
 class StockOpname extends Model
 {
     use HasFactory;
-    // protected $primaryKey = 'opname_id'; kalau kayak gini jadinya 0
+    protected $primaryKey = 'opname_id';
+    public $incrementing = false;
+
+    // In Laravel 6.0+ make sure to also set $keyType
+    protected $keyType = 'string';
     protected $table = "stock_opname";
     protected $fillable = [
         "opname_id",
         "satuan_id",
+        "admin_id",
+        "produk_id",
         "jumlah_sistem",
         "jumlah_hitung",
         "perbedaan",
         "alasan",
         "tanggal",
-        "status_del"
+        "created_at",
+        "updated_at"
     ];
 
     public function admin()

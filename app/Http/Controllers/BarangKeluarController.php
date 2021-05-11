@@ -6,6 +6,7 @@ use Alert;
 use Mail;
 use DB;
 use DataTables;
+use PDF;
 use App\Models\Produk;
 use App\Models\BarangMasuk;
 use App\Models\BarangKeluar;
@@ -53,36 +54,39 @@ class BarangKeluarController extends Controller
         $data = $request->all();
         $data['produk_id'] = array_filter($data['produk_id']);
         $data['jumlah'] = array_filter($data['jumlah']);
-        $data['harga_satuan'] = array_filter($data['harga_satuan']);
+        $data['harga_diskon'] = array_filter($data['harga_diskon']);
         $data['total_harga_penjualan'] = array_filter($data['total_harga_penjualan']);
-
-        //  dd($data);
+        
+        // dd($data);
         $nota_id = $_POST['nota_id'];
         $admin_id = Session::get('login');
         $tanggal = Carbon::parse($request->tanggal)->toDateString();
         $res = $_POST['reseller_id'];
         $reseller_id = substr($res,0, strpos($res, "|"));
         $jumlah = $_POST['jumlah'];
-
+        $jumlah_kutus = 0;
+        // dd($reseller_id);
         $subtotal = $_POST['total_harga_penjualan'];
         $total = 0;
             foreach($subtotal as $s){
-                if(!is_null($s)){
+             
                     $total += (int)$s;
-                }
+              
             };
         $produk_id = $_POST['produk_id'];
+        // dd($produk_id);
         $harga_satuan = $_POST['harga_satuan'];
         // dd($reseller_id);
         // dd($total);
         // dd($jumlah);
         // BUAT IF UNTUK JUMLAH KUTUS
-        foreach($produk_id as $p){
-            if($p == 'MUS1'){
-                $jumlah_kutus = $jumlah;
+        // dd($produk_id);
+        foreach($data['produk_id'] as $p => $produk_id){
+            if($produk_id == 'MUS1'){
+                $jumlah_kutus += $jumlah[$p];
             }
             else{
-                $jumlah_kutus = 0;
+                $jumlah_kutus += 0;
             };
         };  
 
@@ -101,7 +105,7 @@ class BarangKeluarController extends Controller
                 ':id_nota' => $nota_id,
                 ':id_prod' => $produk_id,
                 ':jum' => $data['jumlah'][$index],
-                ':harga' => $data['harga_satuan'][$index],
+                ':harga' => $data['harga_diskon'][$index],
             ]);
         }
         // INSERT KEDUA KE DETAIL BARANG KELUAR
@@ -150,11 +154,23 @@ class BarangKeluarController extends Controller
         return redirect('/barangkeluar');
     }
 
-    public function detailbarangkeluar(){
+    public function detailbarangkeluar($id){
+        // dd($id);
+        $det = DetailBarangKeluar::where('nota_id', $id)->get();
+        $exit = BarangKeluar::find($id);
+        // dd($exit);
 
-
-        return view('Barang_Keluar.detail');
+        return view('Barang_Keluar.detail', compact('det','exit'));
     }
+
+    public function cetak_pdf($id){
+        $det = DetailBarangKeluar::where('nota_id', $id)->get();
+        $exit = BarangKeluar::find($id);
+        ini_set('max_execution_time', 300);
+        $pdf = PDF::loadview('Barang_Keluar.detail_pdf', compact('det','exit') );
+        return $pdf->stream();
+    }
+
 
     public function destroy($id)
     {

@@ -10,6 +10,7 @@ use SoftDeletes;
 class DetailBarangKeluar extends Model
 {
     use HasFactory;
+    
 
     protected $table = "detail_barang_keluar";
     protected $fillable = [

@@ -175,73 +175,77 @@
   }
 }
 </style>
-    <div id="invoice">
-            <hr style="color: #B28E6B;">
+<form action="/barangkeluar/cetak_pdf/{{$exit->nota_id}}" method="GET">
+@csrf
+        <div id="invoice">
+                <hr style="color: #B28E6B;">
+            </div>
+            <div class="invoice overflow-auto">
+                <div style="min-width: 600px">
+                    <header>
+                        <div class="row" style="display: block">
+                            <div class="col">
+                                    <img src="{{asset('assets/img/logokk.png')}}" style="width: 20%; display: block; margin-left: auto; margin-right: auto; " data-holder-rendered="true" />
+                            </div>
+                            <div class="col company-details text-center">
+                                <div class = "text-center"><h2>Kutus - kutus</h2></div>
+                                <div class = "text-center">Jl. Buana Kubu No.48, Tegal Harum, Bali</div>
+                                <div>081805554911</div>
+                                <div>company@example.com</div>
+                            </div>
+                        </div>
+                    </header>
+                    <main>
+                        <div class="row contacts">
+                            <div class="col invoice-to">
+                                <div class="text-gray-light">NOTA TO:</div>
+                                <h2 class="to">{{$exit->reseller->nama_reseller}}</h2>
+                                <div class="address">{{$exit->reseller->alamat}} </div>
+                            </div>
+                            <div class="col invoice-details">
+                                <h1 class="invoice-id">INVOICE {{$exit->nota_id}}</h1>
+                                <div class="date"> DATE:</div>
+                                <div class="date"> {{$exit->tanggal}}</div>
+                            </div>
+                        </div>
+                        <table  cellspacing="0" cellpadding="0">
+                            <thead>
+                                <tr>
+                                    <!-- <th>#</th> -->
+                                    <th class="text-left">Nama produk</th>
+                                    <th class="text-right">Harga satuan</th>
+                                    <th class="text-right">Jumlah</th>
+                                    <th class="text-right">TOTAL</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($det as $d)
+                                <tr>
+                                    <!-- <td class="no">01</td> -->
+                                    <td class="text-left">
+                                        <h3>
+                                            {{$d->produk->nama_produk}}
+                                        </h3>
+                                    </td>
+                                    <td class="unit">{{$d->harga_satuan}}</td>
+                                    <td class="qty">{{$d->jumlah}}</td>
+                                    <td class="total">{{($d->jumlah)*($d->harga_satuan)}}</td>
+                                </tr>
+                            @endforeach 
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="2"></td>
+                                    <td colspan="2">SUBTOTAL</td>
+                                    <td>{{$exit->total_harga_penjualan}}</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </main>
+                  <button type="submit"class="btn btn-primary btn-lg" >Print Nota</button>
+            </div>
         </div>
-        <div class="invoice overflow-auto">
-            <div style="min-width: 600px">
-                <header>
-                    <div class="row" style="display: block">
-                        <div class="col">
-                                <img src="assets/img/logo.png" style="width: 20%; display: block; margin-left: auto; margin-right: auto; " data-holder-rendered="true" />
-                        </div>
-                        <div class="col company-details text-center">
-                            <div class = "text-center"><h2>Kutus - kutus</h2></div>
-                            <div class = "text-center">Jl. Buana Kubu No.48, Tegal Harum, Bali</div>
-                            <div>081805554911</div>
-                            <div>company@example.com</div>
-                        </div>
-                    </div>
-                </header>
-                <main>
-                    <div class="row contacts">
-                        <div class="col invoice-to">
-                            <div class="text-gray-light">INVOICE TO:</div>
-                            <h2 class="to">Dendani Denden</h2>
-                            <div class="address">Jl. setiap hari </div>
-                        </div>
-                        <div class="col invoice-details">
-                            <h1 class="invoice-id">INVOICE J01001 </h1>
-                            <div class="date"> DATE:</div>
-                            <div class="date"> 01-01-2021</div>
-                        </div>
-                    </div>
-                    <table  cellspacing="0" cellpadding="0">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th class="text-left">Nama produk</th>
-                                <th class="text-right">Harga satuan</th>
-                                <th class="text-right">Jumlah</th>
-                                <th class="text-right">TOTAL</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="no">01</td>
-                                <td class="text-left">
-                                    <h3>
-                                    Minyak kutus-kutus
-                                    </h3>
-                                </td>
-                                <td class="unit">230000</td>
-                                <td class="qty">5</td>
-                                <td class="total">1150000</td>
-                            </tr>
-                            
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <td colspan="2"></td>
-                                <td colspan="2">SUBTOTAL</td>
-                                <td>1150000</td>
-                            </tr>
-                        </tfoot>
-                    </table>
-                </main>
-        </div>
-    </div>
-
+</form>
 
 <script>
     $('#printInvoice').click(function(){

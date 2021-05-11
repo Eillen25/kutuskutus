@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use SoftDeletes;
 use DB;
 
 class Admin extends Model
@@ -17,13 +18,17 @@ class Admin extends Model
     protected $table = "admin";
     protected $fillable = [
         "admin_id",
-        "nama_admin",
         "password",
+        "nama_admin",
         "gaji",
         "alamat",
         "nomor_telepon",
+        "email",
         "akses_id",
-        "status_del"
+        "status_del",
+        "created_at",
+        "updated_at",
+        "deleted_at"
     ];
 
     public function isExist($data){
