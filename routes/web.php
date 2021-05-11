@@ -32,7 +32,11 @@ Route::get('/barangmasuk/edit/{id}', 'App\Http\Controllers\BarangMasukController
 Route::get('/addproduk', 'App\Http\Controllers\BarangMasukController@addproduk');
 Route::post('/insertincoming', 'App\Http\Controllers\BarangMasukController@insert_incoming');
 Route::get('/barangmasuk/detail/{id}', 'App\Http\Controllers\BarangMasukController@detail_barangmasuk');
-Route::get('/barangmasuk/cetak_pdf/{id}', 'App\Http\Controllers\BarangMasukController@cetak_pdf');
+// Route::get('/barangmasuk/cetak_pdf/{id}', 'App\Http\Controllers\BarangMasukController@cetak_pdf');
+Route::get('/laporan/bulan', 'App\Http\Controllers\BarangMasukController@combo_box');
+Route::post('/laporan/masuk', 'App\Http\Controllers\BarangMasukController@laporan_bulan');
+
+
 
 // READ BARANG KELUAR
 Route::get('/barangkeluar', 'App\Http\Controllers\AwalController@exit');
@@ -112,5 +116,5 @@ Route::get('/about', 'App\Http\Controllers\AwalController@about');
 
 
 
-Route::get('/laporan/bulan', 'App\Http\Controllers\BarangMasukController@laporan');
+
 

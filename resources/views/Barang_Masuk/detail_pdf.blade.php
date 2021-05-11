@@ -178,8 +178,7 @@
     {{-- <div id="invoice">
             <hr style="color: #B28E6B;">
       </div> --}}
-      <form action="/barangmasuk/cetak_pdf/{{$incoming->invoice_id}}" method="GET">
-      @csrf
+      
         <div class="invoice overflow-auto">
             <div style="min-width: 600px">
                 <header>
@@ -203,52 +202,47 @@
                             <h2 class="to">Nyoman Veni</h2>
                             <div class="address">Jl. Taman Giri </div>
                         </div>
-                        <div class="col invoice-details">
-                            <h1 class="invoice-id">NO. INVOICE: {{$incoming->invoice_id}} </h1>
-                            <div class="date"> Tanggal:</div>
-                            <div class="date"> {{$incoming->tanggal}}</div>
-                        </div>
                     </div>
                     <table  cellspacing="0" cellpadding="0">
                         <thead>
                             <tr>
                                 <!-- <th>#</th> -->
                                 <th class="text-left">Nama produk</th>
-                                <th class="text-right">Harga satuan</th>
+                                <th class="text-right">Total Harga</th>
                                 <th class="text-right">Jumlah</th>
                                 <th class="text-right">Satuan</th>
-                                <th class="text-right">TOTAL</th>
+                                
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($det as $d)
+                            @foreach($res as $d)
                               <tr>
                                   <!-- <td class="no">01</td> -->
                                   <td class="text-left">
                                       <h3>
-                                      {{$d->produk->nama_produk}}
+                                      {{$d->nama_produk}}
                                       </h3>
                                   </td>
-                                  <td class="unit">{{$d->harga}}</td>
+                                  <td class="unit" name="total_harga_pembelian[]">{{$d->total}}</td>
                                   <td class="qty">{{$d->jumlah}}</td>
                                   <td>pcs</td>
-                                  <td class="total">{{($d->jumlah)*($d->harga)}}</td>
+                             
                               </tr>
                             @endforeach 
                             
                         </tbody>
                         <tfoot>
                             <tr>
-                                <td colspan="2"></td>
-                                <td colspan="2">SUBTOTAL</td>
-                                <td>{{$incoming->total_harga}}</td>
+                                <td colspan="2">Total Penjualan</td>
+                                <td colspan="2">{{$total[0]->total_semua}}</td>
+                                <td ></td>
                             </tr>
                         </tfoot>
                     </table>
                 </main>
               
         </div>
-      </form>
+      
     </div>
 
 
@@ -260,7 +254,12 @@
         window.print();
         return true;
     }
+    
+    
+
 });
+
+
 </script>
 
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>

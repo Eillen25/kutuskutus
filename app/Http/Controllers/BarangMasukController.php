@@ -83,10 +83,39 @@ class BarangMasukController extends Controller
         return view('Barang_Masuk.detail', compact('incoming','det'));
     }
 
-    public function laporan(Request $request) {
+    public function combo_box() {
         return view('Barang_Masuk.laporan');
     }
 
+    public function laporan_bulan(Request $request) {
+        setlocale(LC_TIME, 'IND');  // or setlocale(LC_TIME, 'id_ID');
+
+        $month = $_POST['month'];
+
+        $monthName = date("F", mktime(0, 0, 0, $month, 10));
+        
+        // dd($monthName);
+
+        $res = DB::select('SELECT p.nama_produk, SUM(dbm.jumlah*harga) AS total, dbm.jumlah
+        FROM barang_masuk AS bm, detail_barang_masuk AS dbm, produk AS p
+        WHERE EXTRACT(MONTH FROM tanggal) ='.$month.' AND bm.invoice_id = dbm.invoice_id AND dbm.produk_id = p.produk_id
+        GROUP BY dbm.produk_id');
+
+        $total = DB::select('SELECT SUM(total) AS total_semua
+        FROM (SELECT produk_id, SUM(dbm.jumlah*harga) AS total
+        FROM barang_masuk AS bm, detail_barang_masuk AS dbm
+        WHERE EXTRACT(MONTH FROM tanggal) = '.$month.' AND bm.invoice_id = dbm.invoice_id
+        GROUP BY dbm.produk_id) a
+        ');
+        // dd($res,$total);
+       
+        ini_set('max_execution_time', 300);
+        $pdf = PDF::loadview('Barang_Masuk.detail_pdf', compact('res','total','monthName') );
+        return $pdf->stream();
+      
+
+       
+    }
 
     // KALAU CETAK INVOICE
     // public function cetak_pdf($id){
@@ -97,5 +126,5 @@ class BarangMasukController extends Controller
     //     return $pdf->stream();
     //     }
 
-    
+
 }
