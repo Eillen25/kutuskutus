@@ -184,7 +184,7 @@
                 <header>
                     <div class="row" style="display: block">
                         <div class="col">
-                                <img src="{{public_path('/assets/img/logokk.png')}}" style="width: 150px; display: block; margin-left: auto; margin-right: auto; " data-holder-rendered="true" />
+                                <img src="{{public_path('/assets/img/logokk.png')}}" style="width: 120px; display: block; margin-left: auto; margin-right: auto; " data-holder-rendered="true" />
                         </div>
                         <div class="col company-details text-center">
                             <div class = "text-center"><h2>Kutus - kutus</h2></div>
@@ -196,12 +196,8 @@
                     </div>
                 </header>
                 <main>
-                    <div class="row contacts">
-                        <div class="col invoice-to">
-                            <div class="text-gray-light">Kepada</div>
-                            <h2 class="to">Nyoman Veni</h2>
-                            <div class="address">Jl. Taman Giri </div>
-                        </div>
+                    <div class="container">
+                      <div class = "text-center"><center><h2>Laporan Pemesanan Bulan //BULAN//</h2></center></div>
                     </div>
                     <table  cellspacing="0" cellpadding="0">
                         <thead>
