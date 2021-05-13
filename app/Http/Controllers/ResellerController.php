@@ -31,7 +31,8 @@ class ResellerController extends Controller
     }
 
     public function insert_reseller(Request $request){
-        $tanggal = Carbon::parse($request->tanggal)->toDateString();
+        // $tanggal = Carbon::parse($request->tanggal)->toDateString();
+        $tanggal = Carbon::createFromFormat('d/m/Y', $request->tanggal)->toDateString();
         Reseller::create([
             'reseller_id'=>$request->input('reseller_id'),
             'nama_reseller'=>$request->input('nama_reseller'),

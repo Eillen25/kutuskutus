@@ -60,7 +60,8 @@ class BarangKeluarController extends Controller
         // dd($data);
         $nota_id = $_POST['nota_id'];
         $admin_id = Session::get('login');
-        $tanggal = Carbon::parse($request->tanggal)->toDateString();
+        // $tanggal = Carbon::parse($request->tanggal)->toDateString();
+        $tanggal = Carbon::createFromFormat('d/m/Y', $request->tanggal)->toDateString();
         $res = $_POST['reseller_id'];
         $reseller_id = substr($res,0, strpos($res, "|"));
         $jumlah = $_POST['jumlah'];
