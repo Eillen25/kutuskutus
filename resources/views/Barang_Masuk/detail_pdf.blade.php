@@ -221,7 +221,7 @@
                                   </td>
                                   <td class="unit" name="total_harga_pembelian[]">{{$d->total}}</td>
                                   <td class="qty">{{$d->jumlah}}</td>
-                                  <td>pcs</td>
+                                  <td class="text-center">pcs</td>
                              
                               </tr>
                             @endforeach 

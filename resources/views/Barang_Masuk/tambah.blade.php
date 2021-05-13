@@ -57,19 +57,19 @@
 
                     <div id="wrapNota">
                         <div class="col-md-12 row row-nota">
-                            <div class="col-md-3">
+                            <div class="col-md-3" style="width:400px;">
                                 <select class="form-control mt-2 ab-t-rpt-2" name="produk_id[]">
                                     <option value="">--Nama Produk--</option>
                                     @foreach($produk as $items)
-                                    <option value="{{ $items->produk_id }}" id="id_produk" onchange="myFunction()">
+                                    <option value="{{ $items->produk_id }}" id="id_produk" onchange="myFunction()" >
                                         {{ $items->nama_produk }}</option>
                                     @endforeach
                                 </select>
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-md-2" >
                                 <input type="text" class="form-control mt-2" name="jumlah[]">
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-3" >
                                 <select class="form-control mt-2 ab-t-rpt-2" name="harga_satuan[]" readonly>
                                     <option value="">--Harga Produk--</option>
                                     @foreach($produk as $items)
@@ -77,7 +77,7 @@
                                     @endforeach
                                 </select>
                             </div>
-                            <div class="col-md-3  mb-3">
+                            <div class="col-md-3  mb-3" >
                                 <input type="text" class="form-control mt-2" name="total_harga_pembelian[]" readonly>
                             </div>
                         </div>
@@ -106,7 +106,7 @@
             </div>
             <div class="row gutters">
                 <div class="col align-self-end">
-                    <div class="col-md-12 text-right mt-5">
+                    <div class="col-md-12 text-center mt-5">
                         {{-- <button type="button" id="tambah_produk" class="btn btn-success btn-lg mr-5" >Tambah Produk</button> --}}
                         <button type="reset"  class="btn btn-secondary btn-lg ">Batal</button>
                         <button type="submit" id="submit" name="submit" class="btn btn-primary btn-lg">Tambah</button>

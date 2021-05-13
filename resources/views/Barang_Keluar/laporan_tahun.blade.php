@@ -249,13 +249,13 @@
                     {{-- <img src="assets/img/logo.png" style="width: 50%; margin-bottom: 10%;"> --}}
                     <h2 style="margin-bottom: 5px"> Pilih Tahun</h2>
                     <!-- <p>Silahkan membuat akun jika belum punya akun</p> -->
-                       <select class="form-control mt-2 ab-t-rpt-2" style="height: 35px;
-                       width: 100px;" name="year">
+                       <select class="form-control mt-2 ab-t-rpt-2" style="height: 40px;
+                    width: 120px; font-size:18px;" name="year">
                         @foreach($tahun as $t) 
                             <option value="{{$t->year}}">{{$t->year}}</option>
                         @endforeach
                     </select>
-                    <button type="submit" id="signUp" class="ghost"style="margin-top: 15px;">Submit</button>
+                    <button type="submit" id="signUp" class="ghost"style="margin-top: 15px;">Pilih</button>
                 </div>
             </div>
         </div>

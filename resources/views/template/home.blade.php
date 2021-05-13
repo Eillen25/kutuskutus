@@ -38,7 +38,7 @@
     <div class="side-left">
         <div class="shortcut">    
         </div>
-        <div class="admin-profile" id="sl_ap"  style="padding-top: 50px">
+        <div class="admin-profile sidenav" id="sl_ap"  style="padding-top: 50px">
             <ul class="admin-menus">
               
                     <li class="active-link" style="color: black">
@@ -94,7 +94,7 @@
         </div>
     </div>
 
-    <div class="main-content" style="padding-top: 50px;">
+    <div class="main-content" style="padding-top: 50px; margin-left:250px;">
     @yield('isi_konten')
         
     </div>

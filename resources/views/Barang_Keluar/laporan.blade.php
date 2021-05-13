@@ -248,8 +248,8 @@
                     {{-- <img src="assets/img/logo.png" style="width: 50%; margin-bottom: 10%;"> --}}
                     <h2 style="margin-bottom: 5px"> Pilih Bulan</h2>
                     <!-- <p>Silahkan membuat akun jika belum punya akun</p> -->
-                    <select class="form-control mt-2 ab-t-rpt-4" style="height: 35px;
-                    width: 100px;" name="month">
+                    <select class="form-control mt-2 ab-t-rpt-4" style="height: 40px;
+                    width: 120px; font-size:18px;" name="month">
                         <option value="1">Januari</option>
                         <option value="2">Februari</option>
                         <option value="3">Maret</option>
@@ -263,7 +263,7 @@
                         <option value="11">November</option>
                         <option value="12">Desember</option>
                     </select>
-                    <button type="submit" id="signUp" class="ghost"style="margin-top: 15px;">Submit</button>
+                    <button type="submit" id="signUp" class="ghost"style="margin-top: 15px;">Pilih</button>
                 </div>
             </div>
         </div>

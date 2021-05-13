@@ -33,7 +33,7 @@
                     <div class="form-group">
                         <label for="fullName">Password</label>
                         <!-- ditampilinnya kan mesti decrypt -->
-                        <input type="password" name="password" class="form-control" id="fullName" value="*****">
+                        <input type="password" name="password" class="form-control" id="fullName" value="*****" readonly>
                     </div>
                     <div class="form-group">
                         <label for="phone">Gaji</label>
