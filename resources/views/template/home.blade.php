@@ -110,7 +110,9 @@
     <script type="text/javascript" src="../../assets/js/bootstrap-datepicker.min.js"></script>
     <script>
         $(function () {
-            $('.datepicker').datepicker();
+            $('.datepicker').datepicker({
+                format: 'd/mm/yyyy'
+            });
 
         })
        

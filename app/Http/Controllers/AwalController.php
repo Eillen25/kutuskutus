@@ -11,6 +11,7 @@ use App\Models\Reseller;
 use App\Models\StockOpname;
 use App\Models\Admin;
 use Exception;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB as DB;
 use Illuminate\Support\Facades\Mail as Mail;
@@ -73,6 +74,9 @@ class AwalController extends Controller
             $button .= '</div>';
             return $button;
         })
+        ->editColumn('tanggal', function($incoming) {
+            return Carbon::parse($incoming->tanggal)->format('d M Y');
+        })
         ->make(true);
     }
 
@@ -88,8 +92,7 @@ class AwalController extends Controller
         DB::raw('*, (CASE 
             WHEN belum_dibayar = 0 THEN "Lunas"
             ELSE "Belum Lunas" 
-            END) AS status'))
-            ;
+            END) AS status'));
 
         //var_dump($exit->get()->toArray());die();
         
@@ -110,6 +113,9 @@ class AwalController extends Controller
         })
         // ->addIndexColumn()
         // ->rawColumns(['action','nama_reseller','status'])
+        ->editColumn('tanggal', function($exit) {
+            return Carbon::parse($exit->tanggal)->format('d M Y');
+        })
         ->make(true);
     }
 

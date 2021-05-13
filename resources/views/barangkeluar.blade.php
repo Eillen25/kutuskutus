@@ -11,6 +11,9 @@
             <div class="col-md-12">
                 <div class="item-big-report col-md-12">
                   <a class="btn btn-primary float-right" style="background-color:#C2A890" href="/addexit" role="button">+ Buat Nota</a>
+                  <a class="btn btn-primary float-right mr-2" style="background-color:#d9b38c" href="/laporan/bln" role="button">Laporan Periodik</a>
+                  <a class="btn btn-primary float-right mr-2" style="background-color:#d9b38c" href="/laporan/thn" role="button">Laporan Tahunan</a>
+
 
 
                     <table class="table-wisata table-tiketsaya table " id ="exit-table">

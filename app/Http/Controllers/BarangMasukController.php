@@ -36,7 +36,7 @@ class BarangMasukController extends Controller
         // dd($data);
         $invoice_id = $_POST['invoice_id'];
         $admin_id = Session::get('login');
-        $tanggal = Carbon::parse($request->tanggal)->toDateString();
+        $tanggal = Carbon::createFromFormat('d/m/Y', $request->tanggal)->toDateString();
         $total = $_POST['total_seluruh'];
         $produk_id = $_POST['produk_id'];
         $jumlah = $_POST['jumlah'];
@@ -91,6 +91,7 @@ class BarangMasukController extends Controller
         setlocale(LC_TIME, 'IND');  // or setlocale(LC_TIME, 'id_ID');
 
         $month = $_POST['month'];
+
 
         $monthName = date("F", mktime(0, 0, 0, $month, 10));
         

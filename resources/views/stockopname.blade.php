@@ -11,7 +11,7 @@
                 <div class="col-md-12">
                     <div class="item-big-report col-md-12">
                       <a class="btn btn-primary float-right" style="background-color:#C2A890" href="/stockopname/add" role="button">+ Catat Stock Opname</a>
-
+                      <a class="btn btn-primary float-right mr-2" style="background-color:#d9b38c" href="/stockopname/laporan" role="button">Laporan Tahunan</a>
 
                         <table class="table-wisata table-tiketsaya table " id ="sopname-table">
                             <thead>

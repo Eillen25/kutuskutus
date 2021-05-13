@@ -53,6 +53,11 @@ Route::get('/barangkeluar/detail/{id}', 'App\Http\Controllers\BarangKeluarContro
 Route::get('/barangkeluar/cetak_pdf/{id}', 'App\Http\Controllers\BarangKeluarController@cetak_pdf');
 // DELETE BARANG KELUAR
 Route::get('/barangkeluar/destroy/{id}', 'App\Http\Controllers\BarangKeluarController@destroy');
+// LAPORAN BARANG KELUAR
+Route::get('/laporan/bln', 'App\Http\Controllers\BarangKeluarController@combo_box');
+Route::get('/laporan/thn', 'App\Http\Controllers\BarangKeluarController@combo_box_tahun');
+Route::post('/laporan/keluar', 'App\Http\Controllers\BarangKeluarController@laporan_bulan');
+Route::post('/laporan/thn/cetak', 'App\Http\Controllers\BarangKeluarController@laporan_tahun');
 
 
 
@@ -83,7 +88,8 @@ Route::get('/stockopname', 'App\Http\Controllers\AwalController@sopname');
 Route::get('/stockopname/sopname_json', 'App\Http\Controllers\AwalController@sopname_json');
 Route::get('/stockopname/add', 'App\Http\Controllers\StockOpnameController@add_so');
 Route::post('/stockopname/insert', 'App\Http\Controllers\StockOpnameController@insert_so');
-
+Route::get('/stockopname/laporan', 'App\Http\Controllers\StockOpnameController@combo_box_tahun');
+Route::post('/stockopname/cetak/laporan', 'App\Http\Controllers\StockOpnameController@laporan_tahun');
 
 Route::get('/admin', 'App\Http\Controllers\AwalController@admin');
 Route::get('/admin/admin_json', 'App\Http\Controllers\AwalController@admin_json');

@@ -33,7 +33,7 @@
                     <div class="col mb-4">
                         <label for="phone" class='font-weight-bold'>Tanggal</label>
                         <input type="text" class="form-control datepicker" id="from-datepicker" name="tanggal"
-                            value="{{ now()->format('m/d/Y') }}">
+                            value="{{ now()->format('d/m/Y') }}">
                     </div>
 
                 </div>
@@ -138,6 +138,9 @@
             <div class="col-md-3  mb-3">
                 <input type="text" class="form-control mt-2" name="total_harga_pembelian[]" readonly>
             </div>
+            <div class="col-md-1">
+                <a class="btn btn-danger btn-sm btn-delete-row"><i class="far fa-trash-alt">Hapus</i></a>
+            </div>
         </div>
     </div>
     
@@ -159,6 +162,14 @@
         pointerHargaProduk = $(this).closest('.row-nota')
             .find('[name^="harga_satuan"]');
 
+        let jumlah = $(this).closest('.row-nota')
+            .find('[name^="jumlah"]')
+            .val();
+
+        if (jumlah)
+            $(this).closest('.row-nota')
+                .find('[name^="total_harga_pembelian"]')
+                .val(jumlah * pointerHargaProduk.val()  );
     });
 
     $(document).on('keyup', '[name^="jumlah"]', function () {
@@ -167,6 +178,10 @@
                 .val(this.value * pointerHargaProduk.val()  );
         
         findTotal();
+    })
+
+    $(document).on('click', '.btn-delete-row', function() {
+        $(this).closest('.row-nota').remove();
     })
 
     $('#tambah_produk').click(function () {

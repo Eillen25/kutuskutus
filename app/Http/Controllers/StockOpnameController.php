@@ -5,6 +5,7 @@ use Session;
 use Alert;
 use Mail;
 use DB;
+use PDF;
 use DataTables;
 use App\Models\Produk;
 use App\Models\BarangMasuk;
@@ -49,6 +50,40 @@ class StockOpnameController extends Controller
             ]);
 
         return redirect('/stockopname');
+    }
+
+    public function combo_box_tahun(){
+        $tahun = DB::select('SELECT EXTRACT(YEAR FROM tanggal) AS year
+        FROM stock_opname
+        GROUP BY year
+        ');
+        return view('Stok_Opname.laporan_tahun',compact('tahun'));
+    }
+
+
+    public function laporan_tahun(){
+    
+
+        $year = $_POST['year'];
+
+
+
+        $so = DB::select('SELECT opname_id, tanggal, p.nama_produk, p.satuan_id, jumlah_sistem, jumlah_hitung, perbedaan, alasan
+        FROM stock_opname so, produk p
+        WHERE EXTRACT(YEAR FROM tanggal) = '.$year.' AND so.produk_id = p.produk_id
+        GROUP BY p.nama_produk');
+
+        
+        // dd($so);
+       
+        ini_set('max_execution_time', 300);
+        $pdf = PDF::loadview('Stok_Opname.laporan_so_pdf', compact('so','year') );
+        return $pdf->stream();
+      
+
+       
+
+        // return view('Barang.Keluar.laporan');
     }
 
 }

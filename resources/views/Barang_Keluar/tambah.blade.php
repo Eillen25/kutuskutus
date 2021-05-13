@@ -51,7 +51,7 @@
                     <div class="col mb-4">
                         <label for="phone" class='font-weight-bold'>Tanggal</label>
                         <input type="text" class="form-control datepicker" id="from-datepicker"
-                            value="{{ now()->format('m/d/Y') }}" name="tanggal">
+                            value="{{ now()->format('d/m/Y') }}" name="tanggal">
                     </div>
                 </div>
 
@@ -159,6 +159,9 @@
         <div class="col-md-3">
             <input type="text" class="form-control mt-2" name="total_harga_penjualan[]" readonly>
         </div>
+        <div class="col-md-1">
+            <a class="btn btn-danger btn-sm btn-delete-row"><i class="far fa-trash-alt">Hapus</i></a>
+        </div>
     </div>
 </div>
 
@@ -196,13 +199,25 @@
         pointerHargaProduk = $(this).closest('.row-nota')
             .find('[name^="harga_satuan"]');
 
+        let jumlah = $(this).closest('.row-nota')
+        .find('[name^="jumlah"]')
+        .val();
+
+        if (jumlah)
+            $(this).closest('.row-nota')
+                .find('[name^="total_harga_penjualan"]')
+                .val(jumlah * pointerHargaProduk.val()  );
+
         pointerHargaDiskon = $(this).closest('.row-nota')
             .find('[name^="harga_diskon"]');
 
         // nanti diubah soalnya indexnya turun kalau ditambah option "--Nama Produk--"
         //document.getElementById("harga_produk").selectedIndex = document.getElementById("produk").selectedIndex;
 
+        
+
         calculateValue(gradeId, produkId);
+        
 
     });
 
@@ -214,7 +229,9 @@
             .val(this.value * hargaDiskon);
     })
 
-
+    $(document).on('click', '.btn-delete-row', function() {
+        $(this).closest('.row-nota').remove();
+    })
 
     $('#tambah_produk').click(function () {
         let template = $('#templateNota').html();
