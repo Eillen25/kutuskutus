@@ -242,7 +242,7 @@ input {
 	@if (Session::has('error'))
 	<div class="alert alert-danger alert-block">
 	    {{-- <button type="button" class="close" data-dismiss="alert"></button> --}}
-	    <strong>{{ Session::get('error') }}</strong>
+	    <strong style="margin:25px">{{ Session::get('error') }}</strong>
 	</div>
 	@endif
 	@if (Session::has('keluar'))

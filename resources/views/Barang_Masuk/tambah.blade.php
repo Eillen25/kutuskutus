@@ -45,7 +45,7 @@
                             <label for="fullName" class='font-weight-bold'>Nama Produk</label>
                         </div>
                         <div class="col-md-2">
-                            <label for="fullName" class='font-weight-bold'>Jumlah Per Produk </label>
+                            <label for="fullName" class='font-weight-bold' style="margin-left: -40px;">Jumlah Per Produk </label>
                         </div>
                         <div class="col-md-3">
                             <label for="eMail" class='font-weight-bold'>Harga Satuan</label>
@@ -83,6 +83,11 @@
                         </div>
                     </div>
                 </div>
+                <div class="text-center" style="margin-top:50px;">
+                    <button type="button" id="tambah_produk" class="btn btn-success btn-md mt-2 text-right ml-4">Tambah Produk</button>
+                   <!-- <button type="reset" class="btn btn-secondary btn-lg">Batal</button>
+                   <button type="submit" id="submit" class="btn btn-primary btn-lg" >Tambah</button> -->
+               </div>
                 <!-- <div class="btn text-center" style="margin-top:50px;margin-left:60px;">
                          
                 </div> -->
@@ -102,7 +107,7 @@
             <div class="row gutters">
                 <div class="col align-self-end">
                     <div class="col-md-12 text-right mt-5">
-                        <button type="button" id="tambah_produk" class="btn btn-success btn-lg mr-5" >Tambah Produk</button>
+                        {{-- <button type="button" id="tambah_produk" class="btn btn-success btn-lg mr-5" >Tambah Produk</button> --}}
                         <button type="reset"  class="btn btn-secondary btn-lg ">Batal</button>
                         <button type="submit" id="submit" name="submit" class="btn btn-primary btn-lg">Tambah</button>
                     </div>
@@ -138,9 +143,10 @@
             <div class="col-md-3  mb-3">
                 <input type="text" class="form-control mt-2" name="total_harga_pembelian[]" readonly>
             </div>
-            <div class="col-md-1">
-                <a class="btn btn-danger btn-sm btn-delete-row"><i class="far fa-trash-alt">Hapus</i></a>
-            </div>
+                <div class="col-md-1">
+                    <a class="btn btn-danger btn-sm btn-delete-row " style="    height: 40px;width: 35px;
+                    margin-top: 6px;"><i class="far fa-2x fa-trash-alt" style="color: white;margin-top: 2px;margin-left: -3px;"></i></a>
+                </div>
         </div>
     </div>
     

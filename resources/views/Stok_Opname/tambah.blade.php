@@ -34,10 +34,10 @@ body {
       </div>
       <div class="row">
         <div class="col-md-12 row  ml-4">
-          <div class="col-md-3"><label for="inputproduk">Nama produk</label></div>
+          <div class="col-md-3" style="margin-left: 15px"><label for="inputproduk">Nama produk</label></div>
         </div>
         <div class="col-md-12 row row-nota  ml-4 mb-3">
-          <div class="col-md-3">
+          <div class="col-md-3" style="margin-left: 15px">
                   <select class="form-control" name="produk" id="produk" >
                         <option value="">--Nama Produk--</option>
                         @foreach($produk as $items)

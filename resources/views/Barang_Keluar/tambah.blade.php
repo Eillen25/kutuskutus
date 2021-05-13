@@ -69,7 +69,7 @@
                         <div class="col-md-2">
                             <label for="eMail" class='font-weight-bold'>Harga Setelah Diskon</label>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-2">
                             <label for="eMail" class='font-weight-bold'>Subtotal</label>
                         </div>
                     </div>
@@ -101,7 +101,7 @@
                             <div class="col-md-2">
                                 <input type="text" class="form-control mt-2" name="harga_diskon[]" readonly>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-2">
                                 <input type="text" class="form-control mt-2" name="total_harga_penjualan[]" readonly>
                             </div>
 
@@ -110,7 +110,7 @@
                     </div>
                     <!-- <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12"> -->
                     <div class="text-center" style="margin-top:50px;">
-                         <button type="button" id="tambah_produk" class="btn btn-success btn-md mt-3 text-right">Tambah Produk</button>
+                         <button type="button" id="tambah_produk" class="btn btn-success btn-md mt-2 text-right ml-3">Tambah Produk</button>
                         <!-- <button type="reset" class="btn btn-secondary btn-lg">Batal</button>
                         <button type="submit" id="submit" class="btn btn-primary btn-lg" >Tambah</button> -->
                     </div>
@@ -156,11 +156,11 @@
         <div class="col-md-2">
             <input type="text" class="form-control mt-2" name="harga_diskon[]" readonly>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-2">
             <input type="text" class="form-control mt-2" name="total_harga_penjualan[]" readonly>
         </div>
-        <div class="col-md-1">
-            <a class="btn btn-danger btn-sm btn-delete-row"><i class="far fa-trash-alt">Hapus</i></a>
+        <div class="col-md-1" style=" margin-top:6px; margin-left:-9px;">
+            <a class="btn btn-danger btn-sm btn-delete-row " style="margin-top: 2px;padding: 0.14rem 0.35rem;"><i class="far fa-2x fa-trash-alt" style="color: white;margin-top: 2px;"></i></a>
         </div>
     </div>
 </div>
