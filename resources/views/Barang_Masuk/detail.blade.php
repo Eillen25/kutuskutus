@@ -231,7 +231,7 @@
                                   </td>
                                   <td class="unit">{{$d->harga}}</td>
                                   <td class="qty">{{$d->jumlah}}</td>
-                                  <td>pcs</td>
+                                  <td class="text-right">pcs</td>
                                   <td class="total">{{($d->jumlah)*($d->harga)}}</td>
                               </tr>
                             @endforeach 
