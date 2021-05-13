@@ -328,7 +328,16 @@ class AwalController extends Controller
     }
 
 
-   
+    public function logout(Request $req){
+            $hasLogin = $req->session()->has('login');
+            if(isset($hasLogin)){
+                Session::flush();
+                // Session::flash('keluar', 'Anda telah logout');
+    
+                return redirect('/');
+            }
+        
+    }
     
    
 

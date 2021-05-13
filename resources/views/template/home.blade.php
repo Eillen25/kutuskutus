@@ -27,8 +27,8 @@
           <ul class="navbar-nav mr-auto">
           </ul>
           <form class="form-inline my-2 my-lg-0">
-            <a class="nav-link" href="#" style="color:black">Logout</a>
-            <a class="nav-link" href="#" style="color:black">About </a>
+            <a class="nav-link" href="/logout" style="color:black">Logout</a>
+            <a class="nav-link" href="/about" style="color:black">About </a>
             <a class="nav-link" href="#" ><i class="fas fa-2x fa-user" style="color:black"></i></a>
           </form>
         </div>
@@ -76,7 +76,6 @@
                         Admin
                     </li>
                 </a>
-                @endif
                 <a href="/reseller">
                     <li style="color: black" >
                         <i class="fas fa-2x fa-male" ></i>
@@ -90,6 +89,7 @@
                         Stok Opname
                     </li>
                 </a>
+                @endif
             </ul>
         </div>
     </div>

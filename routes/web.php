@@ -118,6 +118,7 @@ Route::get('/login', 'App\Http\Controllers\AwalController@login');
 
 
 Route::get('/about', 'App\Http\Controllers\AwalController@about');
+Route::get('/logout', 'App\Http\Controllers\AwalController@logout');
 
 // Route::get('/deleteincoming', 'App\Http\Controllers\AwalController@deleteincoming');
 
