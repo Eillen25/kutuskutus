@@ -87,11 +87,35 @@ class BarangMasukController extends Controller
         return view('Barang_Masuk.laporan');
     }
 
-    public function laporan_bulan(Request $request) {
+    public function preview_laporan_bulan(Request $request) {
         setlocale(LC_TIME, 'IND');  // or setlocale(LC_TIME, 'id_ID');
 
         $month = $_POST['month'];
+        // dd($month);
+        $monthName = date("F", mktime(0, 0, 0, $month, 10));
+        
+        // dd($monthName);
 
+        $res = DB::select('SELECT p.nama_produk, SUM(dbm.jumlah*harga) AS total, SUM(dbm.jumlah) AS jumlah
+        FROM barang_masuk AS bm, detail_barang_masuk AS dbm, produk AS p
+        WHERE EXTRACT(MONTH FROM tanggal) ='.$month.' AND bm.invoice_id = dbm.invoice_id AND dbm.produk_id = p.produk_id
+        GROUP BY dbm.produk_id');
+
+        $total = DB::select('SELECT SUM(total) AS total_semua
+        FROM (SELECT produk_id, SUM(dbm.jumlah*harga) AS total
+        FROM barang_masuk AS bm, detail_barang_masuk AS dbm
+        WHERE EXTRACT(MONTH FROM tanggal) = '.$month.' AND bm.invoice_id = dbm.invoice_id
+        GROUP BY dbm.produk_id) a
+        ');
+        // dd($res,$total);
+        return view('Barang_Masuk.preview_detail_pdf', compact('monthName','res','total','month'));
+
+       
+    }
+
+    public function laporan_bulan(Request $request) {
+        $month = $_POST['month'];
+        // dd($month);
 
         $monthName = date("F", mktime(0, 0, 0, $month, 10));
         
@@ -118,6 +142,8 @@ class BarangMasukController extends Controller
        
     }
 
+   
+
     public function combo_box_tahun() {
         $tahun = DB::select('SELECT EXTRACT(YEAR FROM tanggal) AS year
         FROM barang_masuk
@@ -125,6 +151,28 @@ class BarangMasukController extends Controller
         ');
         // dd($tahun);
         return view('Barang_Masuk.laporan_tahun',compact('tahun'));
+    }
+
+    public function preview_laporan_tahun(Request $request) {
+        $year = $_POST['year'];
+        $res = DB::select('SELECT p.produk_id, p.nama_produk, SUM(dbm.jumlah*harga) AS total, SUM(dbm.jumlah) AS jumlah
+        FROM barang_masuk AS bm, detail_barang_masuk AS dbm, produk p
+        WHERE EXTRACT(YEAR FROM tanggal) = '.$year.' AND bm.invoice_id = dbm.invoice_id AND dbm.produk_id = p.produk_id
+        GROUP BY dbm.produk_id
+        ');
+        // dd($res);
+        $total = DB::select('SELECT SUM(total) AS total_semua
+        FROM (SELECT produk_id, SUM(dbm.jumlah*harga) AS total
+        FROM barang_masuk AS bm, detail_barang_masuk AS dbm
+        WHERE EXTRACT(YEAR FROM tanggal) = '.$year.' AND bm.invoice_id = dbm.invoice_id
+        GROUP BY dbm.produk_id) a
+        ');
+        // dd($res,$total);
+       
+        return view('Barang_Masuk.preview_detail_tahun_pdf', compact('year','res','total'));
+      
+
+       
     }
 
     public function laporan_tahun(Request $request) {

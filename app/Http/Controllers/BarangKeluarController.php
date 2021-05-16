@@ -186,13 +186,34 @@ class BarangKeluarController extends Controller
         return view('Barang_Keluar.laporan');
     }
 
-    public function combo_box_tahun(){
-        $tahun = DB::select('SELECT EXTRACT(YEAR FROM tanggal) AS year
-        FROM barang_keluar
-        GROUP BY year
+    public function preview_laporan_bulan(){
+        setlocale(LC_TIME, 'IND');  // or setlocale(LC_TIME, 'id_ID');
+
+        $month = $_POST['month'];
+
+
+        $monthName = date("F", mktime(0, 0, 0, $month, 10));
+        
+        // dd($monthName);
+
+        $exit = DB::select('SELECT p.produk_id, p.nama_produk, SUM(dbk.jumlah*harga_satuan) AS total, SUM(dbk.jumlah) AS jumlah
+        FROM barang_keluar AS bk, detail_barang_keluar AS dbk, produk p
+        WHERE EXTRACT(MONTH FROM tanggal) = '.$month.' AND bk.nota_id = dbk.nota_id AND dbk.produk_id = p.produk_id
+        GROUP BY dbk.produk_id');
+
+        $total = DB::select('SELECT SUM(total) AS total_semua
+        FROM (SELECT SUM(dbk.jumlah*harga_satuan) AS total
+        FROM barang_keluar AS bk, detail_barang_keluar AS dbk
+        WHERE EXTRACT(MONTH FROM tanggal) = '.$month.' AND bk.nota_id = dbk.nota_id
+        GROUP BY dbk.produk_id) a
+        
         ');
-        return view('Barang_Keluar.laporan_tahun',compact('tahun'));
+        // dd($exit,$total);
+  
+        return view('Barang_Keluar.preview_laporan_bulan', compact('exit','total','monthName','month') );
+
     }
+
 
     public function laporan_bulan(){
         setlocale(LC_TIME, 'IND');  // or setlocale(LC_TIME, 'id_ID');
@@ -202,7 +223,7 @@ class BarangKeluarController extends Controller
 
         $monthName = date("F", mktime(0, 0, 0, $month, 10));
         
-        // dd($monthName);
+        // dd($month);
 
         $exit = DB::select('SELECT p.produk_id, p.nama_produk, SUM(dbk.jumlah*harga_satuan) AS total, SUM(dbk.jumlah) AS jumlah
         FROM barang_keluar AS bk, detail_barang_keluar AS dbk, produk p
@@ -227,6 +248,38 @@ class BarangKeluarController extends Controller
 
         // return view('Barang.Keluar.laporan');
     }
+
+
+    public function combo_box_tahun(){
+        $tahun = DB::select('SELECT EXTRACT(YEAR FROM tanggal) AS year
+        FROM barang_keluar
+        GROUP BY year
+        ');
+        return view('Barang_Keluar.laporan_tahun',compact('tahun'));
+    }
+
+
+
+    public function preview_laporan_tahun(){
+        $year = $_POST['year'];
+        $exit = DB::select('SELECT p.produk_id, p.nama_produk, SUM(dbk.jumlah*harga_satuan) AS total, SUM(dbk.jumlah) AS jumlah
+        FROM barang_keluar AS bk, detail_barang_keluar AS dbk, produk p
+        WHERE EXTRACT(YEAR FROM tanggal) = '.$year.' AND bk.nota_id = dbk.nota_id AND dbk.produk_id = p.produk_id
+        GROUP BY dbk.produk_id');
+        // dd($res);
+        $total = DB::select('SELECT SUM(total) AS total_semua
+        FROM (SELECT SUM(dbk.jumlah*harga_satuan) AS total
+        FROM barang_keluar AS bk, detail_barang_keluar AS dbk
+        WHERE EXTRACT(YEAR FROM tanggal) = '.$year.' AND bk.nota_id = dbk.nota_id
+        GROUP BY dbk.produk_id) a
+        ');
+        // dd($res,$total);
+
+        return view('Barang_Keluar.preview_laporan_tahun', compact('exit','total','year') );
+        
+      
+    }
+  
 
     public function laporan_tahun(){
         $year = $_POST['year'];

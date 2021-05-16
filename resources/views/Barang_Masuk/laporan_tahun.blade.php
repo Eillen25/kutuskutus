@@ -1,5 +1,5 @@
 
-<form action='/laporan/tahun/cetak' method="POST">
+<form action='/preview/laporan/tahun/cetak' method="POST">
 @csrf
 <style>
     @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');

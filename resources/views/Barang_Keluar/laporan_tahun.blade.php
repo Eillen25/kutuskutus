@@ -1,5 +1,5 @@
 
-<form action='/laporan/thn/cetak' method="POST">
+<form action='/preview/laporan/thn/cetak' method="POST">
 @csrf
   
 <style>

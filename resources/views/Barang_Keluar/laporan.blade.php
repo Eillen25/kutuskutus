@@ -1,5 +1,5 @@
 
-<form action='/laporan/keluar' method="POST">
+<form action='/preview/laporan/keluar' method="POST">
 @csrf
 <style>
     @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');

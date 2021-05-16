@@ -35,7 +35,7 @@ class StockOpnameController extends Controller
         // dd($request->all());
         // dd($email);
         $id = Session::get('login');
-        $tanggal = Carbon::parse($request->tanggal)->toDateString();
+        $tanggal = Carbon::createFromFormat('d/m/Y', $request->tanggal)->toDateString();
         $satuan = 'pcs';
         StockOpname::create([
             'opname_id'=>$request->input('opname_id'),
@@ -58,6 +58,32 @@ class StockOpnameController extends Controller
         GROUP BY year
         ');
         return view('Stok_Opname.laporan_tahun',compact('tahun'));
+    }
+
+
+    public function preview_laporan_tahun(){
+    
+
+        $year = $_POST['year'];
+
+
+
+        $so = DB::select('SELECT opname_id, tanggal, p.nama_produk, p.satuan_id, jumlah_sistem, jumlah_hitung, perbedaan, alasan
+        FROM stock_opname so, produk p
+        WHERE EXTRACT(YEAR FROM tanggal) = '.$year.' AND so.produk_id = p.produk_id
+        GROUP BY p.nama_produk');
+
+        
+        // dd($so);
+       
+        ini_set('max_execution_time', 300);
+       return view('Stok_Opname.preview_laporan_so', compact('so','year') );
+       
+      
+
+       
+
+        // return view('Barang.Keluar.laporan');
     }
 
 

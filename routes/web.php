@@ -35,7 +35,9 @@ Route::get('/barangmasuk/detail/{id}', 'App\Http\Controllers\BarangMasukControll
 // Route::get('/barangmasuk/cetak_pdf/{id}', 'App\Http\Controllers\BarangMasukController@cetak_pdf');
 Route::get('/laporan/bulan', 'App\Http\Controllers\BarangMasukController@combo_box');
 Route::post('/laporan/masuk', 'App\Http\Controllers\BarangMasukController@laporan_bulan');
+Route::post('/preview/laporan/masuk', 'App\Http\Controllers\BarangMasukController@preview_laporan_bulan');
 Route::get('/laporan/tahun', 'App\Http\Controllers\BarangMasukController@combo_box_tahun');
+Route::post('/preview/laporan/tahun/cetak', 'App\Http\Controllers\BarangMasukController@preview_laporan_tahun');
 Route::post('/laporan/tahun/cetak', 'App\Http\Controllers\BarangMasukController@laporan_tahun');
 
 
@@ -56,7 +58,9 @@ Route::get('/barangkeluar/destroy/{id}', 'App\Http\Controllers\BarangKeluarContr
 // LAPORAN BARANG KELUAR
 Route::get('/laporan/bln', 'App\Http\Controllers\BarangKeluarController@combo_box');
 Route::get('/laporan/thn', 'App\Http\Controllers\BarangKeluarController@combo_box_tahun');
+Route::post('preview/laporan/keluar', 'App\Http\Controllers\BarangKeluarController@preview_laporan_bulan');
 Route::post('/laporan/keluar', 'App\Http\Controllers\BarangKeluarController@laporan_bulan');
+Route::post('/preview/laporan/thn/cetak', 'App\Http\Controllers\BarangKeluarController@preview_laporan_tahun');
 Route::post('/laporan/thn/cetak', 'App\Http\Controllers\BarangKeluarController@laporan_tahun');
 
 
@@ -89,6 +93,7 @@ Route::get('/stockopname/sopname_json', 'App\Http\Controllers\AwalController@sop
 Route::get('/stockopname/add', 'App\Http\Controllers\StockOpnameController@add_so');
 Route::post('/stockopname/insert', 'App\Http\Controllers\StockOpnameController@insert_so');
 Route::get('/stockopname/laporan', 'App\Http\Controllers\StockOpnameController@combo_box_tahun');
+Route::post('/stockopname/preview/laporan', 'App\Http\Controllers\StockOpnameController@preview_laporan_tahun');
 Route::post('/stockopname/cetak/laporan', 'App\Http\Controllers\StockOpnameController@laporan_tahun');
 
 Route::get('/admin', 'App\Http\Controllers\AwalController@admin');
