@@ -235,22 +235,17 @@ input {
 	<!-- ALERT -->
 	@if (Session::has('success'))
 	<div class="alert alert-success alert-block">
-	    {{-- <button type="button" class="close" data-dismiss="alert"></button> --}}
+	    <!-- <button type="button" class="close" data-dismiss="alert"></button> -->
 	    <strong>{{ Session::get('success') }}</strong>
 	</div>
 	@endif
 	@if (Session::has('error'))
-	<div class="alert alert-danger alert-block">
-	    {{-- <button type="button" class="close" data-dismiss="alert"></button> --}}
-	    <strong style="margin:25px">{{ Session::get('error') }}</strong>
+	<div class="alert alert-danger alert-block mt-5">
+	    <!-- <button type="button" class="close" data-dismiss="alert"></button>  -->
+	   {{ Session::get('error') }}
 	</div>
 	@endif
-	@if (Session::has('keluar'))
-	<div class="alert alert-warning alert-block">
-	    {{-- <button type="button" class="close" data-dismiss="alert"></button> --}}
-	    <strong>{{ Session::get('keluar') }}</strong>
-	</div>
-	@endif
+	
 
 	<!-- FORM -->
         <form action="/authenticate" method="POST">
