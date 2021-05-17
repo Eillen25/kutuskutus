@@ -18,7 +18,7 @@
     <!-- DEN -->
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg " style="position: fixed; overflow:hidden; width:100%; z-index:9999; background-color:#b28e6b">
-        <a class="navbar-brand" href=""><img src="../assets/img/logo.png" height="50" alt=""></a>
+        <a class="navbar-brand" href=""><img src="/assets/img/logo.png" height="50" alt=""></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -29,7 +29,7 @@
           <form class="form-inline my-2 my-lg-0">
             <a class="nav-link" href="/logout" style="color:black">Logout</a>
             <a class="nav-link" href="/about" style="color:black">About </a>
-            <a class="nav-link" href="#" ><i class="fas fa-2x fa-user" style="color:black"></i></a>
+            {{-- <a class="nav-link" href="#" ><i class="fas fa-2x fa-user" style="color:black"></i></a> --}}
           </form>
         </div>
       </nav>

@@ -54,7 +54,7 @@ body {
             <div class="col-md-3"><label for="inputtanggal">Perbedaan</label></div>
           <div class="col-md-12 row row-nota mb-3">
               <div class="col-md-3">
-                  <select class="form-control" name="jumlah_sistem" id="jumlah_sistem" readonly>
+                  <select class="form-control" name="jumlah_sistem" id="jumlah_sistem" readonly disabled>
                         <option value="">--Jumlah Sistem--</option>
                         @foreach($produk as $items)
                           <option value="{{ $items->jumlah_stok }}">{{ $items->jumlah_stok }}</option>
