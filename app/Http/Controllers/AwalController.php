@@ -93,6 +93,7 @@ class AwalController extends Controller
             WHEN belum_dibayar = 0 THEN "Lunas"
             ELSE "Belum Lunas" 
             END) AS status'));
+        // dd($exit);
 
         //var_dump($exit->get()->toArray());die();
         

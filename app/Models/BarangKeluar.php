@@ -4,17 +4,18 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use SoftDeletes;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use DB;
 
 class BarangKeluar extends Model
 {
+    use SoftDeletes;
     use HasFactory;
     protected $primaryKey = 'nota_id';
     public $incrementing = false;
-
     // In Laravel 6.0+ make sure to also set $keyType
     protected $keyType = 'string';
+    protected $dates = ['deleted_at'];
     protected $table = "barang_keluar";
     protected $fillable = [
         "nota_id",
@@ -24,7 +25,8 @@ class BarangKeluar extends Model
         "total_harga_penjualan",
         "sudah_dibayar",
         "belum_dibayar",
-        "jumlah_kutus"
+        "jumlah_kutus",
+        "updated_at"
         
     ];
 

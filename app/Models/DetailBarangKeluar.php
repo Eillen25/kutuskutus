@@ -5,12 +5,13 @@ use DB;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use SoftDeletes;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class DetailBarangKeluar extends Model
 {
+    use SoftDeletes;
     use HasFactory;
-    
+    protected $dates = ['deleted_at'];
 
     protected $table = "detail_barang_keluar";
     protected $fillable = [
@@ -18,7 +19,8 @@ class DetailBarangKeluar extends Model
         "produk_id",
         "jumlah",
         "satuan_id",
-        "harga_satuan"
+        "harga_satuan",
+   
         
     ];
 
