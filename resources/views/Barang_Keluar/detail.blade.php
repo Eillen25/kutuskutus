@@ -198,12 +198,12 @@
                     <main>
                         <div class="row contacts">
                             <div class="col invoice-to">
-                                <div class="text-gray-light">NOTA TO:</div>
+                                <div class="text-gray-light">KEPADA:</div>
                                 <h2 class="to">{{$exit->reseller->nama_reseller}}</h2>
                                 <div class="address">{{$exit->reseller->alamat}} </div>
                             </div>
                             <div class="col invoice-details">
-                                <h1 class="invoice-id">INVOICE {{$exit->nota_id}}</h1>
+                                <h1 class="invoice-id">NOTA {{$exit->nota_id}}</h1>
                                 <div class="date"> DATE:</div>
                                 <div class="date"> {{$exit->tanggal}}</div>
                             </div>

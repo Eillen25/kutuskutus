@@ -41,7 +41,7 @@
                 </div>
                 <!-- </div> -->
 
-                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                {{-- <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12"> --}}
                 <div class="form-group mt-4">
                     <label for="eMail">Harga Modal</label>
                     <input type="text" class="form-control" name="harga_modal" value="{{$produk->harga_modal}}">
@@ -51,14 +51,8 @@
                     <input type="text" class="form-control" name="harga_jual" value="{{$produk->harga_jual}}">
                 </div>
                 <!-- </div> -->
-            </div>
-            <div class="row gutters">
-                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                    <div class="text-center">
-                        <button type="reset" class="btn btn-secondary btn-lg">Batal</button>
-                        <button type="submit" class="btn btn-primary btn-lg">Ubah</button>
-                    </div>
-                </div>
+                <button type="reset" class="btn btn-secondary btn-lg mt-2">Batal</button>
+                <button type="submit" class="btn btn-primary btn-lg mt-2">Ubah</button>
             </div>
         </form>
     </div>
