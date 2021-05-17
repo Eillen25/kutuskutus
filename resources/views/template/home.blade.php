@@ -29,7 +29,7 @@
           <form class="form-inline my-2 my-lg-0">
             <a class="nav-link" href="/logout" style="color:black">Logout</a>
             <a class="nav-link" href="/about" style="color:black">About </a>
-            <a class="nav-link" href="#" ><i class="fas fa-2x fa-user" style="color:black"></i></a>
+            {{-- <a class="nav-link" href="#" ><i class="fas fa-2x fa-user" style="color:black"></i></a> --}}
           </form>
         </div>
       </nav>
