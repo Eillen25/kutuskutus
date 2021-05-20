@@ -114,6 +114,7 @@
       processing: true,
       serverside: true,
       ajax: 'barangmasuk/json',
+      order: [[0, 'desc']],
       columns: [{
           data: 'invoice_id',
           name: 'invoice_id'
@@ -124,7 +125,8 @@
         },
         {
           data: 'total_harga',
-          name: 'total_harga'
+          name: 'total_harga',
+          render: $.fn.dataTable.render.number( '.', '.', 0, 'Rp' )
         },
         // {
         //   data: 'satuan_id',

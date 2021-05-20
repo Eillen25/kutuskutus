@@ -222,7 +222,7 @@
                                         {{$d->nama_produk}}
                                         </h3>
                                     </td>
-                                    <td class="unit" name="total_harga_pembelian[]">{{$d->total}}</td>
+                                    <td class="unit" name="total_harga_pembelian[]">@currency($d->total)</td>
                                     <td class="qty">{{$d->jumlah}}</td>
                                     <td class="text-center">pcs</td>
                               
@@ -233,7 +233,7 @@
                           <tfoot>
                               <tr>
                                   <td colspan="2">Total Penjualan</td>
-                                  <td colspan="2">{{$total[0]->total_semua}}</td>
+                                  <td colspan="2">@currency($total[0]->total_semua)</td>
                                   <td ></td>
                               </tr>
                           </tfoot>

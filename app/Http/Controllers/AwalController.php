@@ -77,6 +77,7 @@ class AwalController extends Controller
         ->editColumn('tanggal', function($incoming) {
             return Carbon::parse($incoming->tanggal)->format('d M Y');
         })
+       
         ->make(true);
     }
 
@@ -250,8 +251,8 @@ class AwalController extends Controller
     public function authentication(Request $req){
         //1. Get INPUT
         $username = $req->input('username');
-        // $pass    = md5($req->input('password'));
-        $pass = $req->input('password');
+        $pass    = md5($req->input('password'));
+        // $pass = $req->input('password');
 
         $data = [
             'username' => $username,

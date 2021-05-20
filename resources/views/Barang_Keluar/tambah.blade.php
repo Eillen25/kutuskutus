@@ -148,7 +148,7 @@
             <select class="form-control mt-2 ab-t-rpt-2" name="harga_satuan[]" readonly>
                 <option value="">--Harga Produk--</option>
                 @foreach($produk as $items)
-                <option value="{{ $items->harga_jual }}">{{ $items->harga_jual }}</option>
+                <option value="{{ $items->harga_jual }}">@currency($items->harga_jual)</option>
                 @endforeach
             </select>
         </div>

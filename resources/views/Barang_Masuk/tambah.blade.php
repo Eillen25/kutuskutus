@@ -133,10 +133,10 @@
                 <input type="text" class="form-control mt-2" name="jumlah[]">
             </div>
             <div class="col-md-3">
-                <select class="form-control mt-2 ab-t-rpt-2" name="harga_satuan[]" readonly>
+                <select class="form-control mt-2 ab-t-rpt-2" name="harga_satuan[]" disabled>
                     <option value="">--Harga Produk--</option>
                     @foreach($produk as $items)
-                    <option value="{{ $items->harga_jual }}">{{ $items->harga_jual }}</option>
+                    <option value="{{ $items->harga_jual }}">@currency($items->harga_jual)</option>
                     @endforeach
                 </select>
             </div>

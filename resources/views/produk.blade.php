@@ -96,11 +96,13 @@
         },
         {
           data: 'harga_modal',
-          name: 'harga_modal'
+          name: 'harga_modal',
+          render: $.fn.dataTable.render.number( '.', '.', 0, 'Rp' )
         },
         {
           data: 'harga_jual',
-          name: 'harga_jual'
+          name: 'harga_jual',
+          render: $.fn.dataTable.render.number( '.', '.', 0, 'Rp' )
         },
         {
           data: 'action',

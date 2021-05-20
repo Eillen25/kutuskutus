@@ -267,7 +267,7 @@
                             <option value="11">November</option>
                             <option value="12">Desember</option>
                         </select>
-                        <button type="submit" style="margin-top: 15px;">Pilih</button>
+                        <button type="submit" id="signUp" class="ghost" style="margin-top: 15px;">Pilih</button>
                     </div>
                 </div>
             </div>

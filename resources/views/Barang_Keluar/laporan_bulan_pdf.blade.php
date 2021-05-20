@@ -216,9 +216,9 @@
                                         {{$d->nama_produk}}
                                     </h3>
                                 </td>
-                                <td class="unit">{{$d->total}}</td>
+                                <td class="unit">@currency($d->total)</td>
                                 <td class="qty">{{$d->jumlah}}</td>
-                                <td class="total">{{($d->jumlah)*($d->total)}}</td>
+                                <td class="total">@currency(($d->jumlah)*($d->total))</td>
                             </tr>
                         @endforeach 
                         </tbody>
@@ -226,7 +226,7 @@
                             <tr>
                                 <td colspan="2"></td>
                                 <td colspan="2">SUBTOTAL</td>
-                                <td>{{$total[0]->total_semua}}</td>
+                                <td>@currency($total[0]->total_semua)</td>
                             </tr>
                         </tfoot>
                     </table>
