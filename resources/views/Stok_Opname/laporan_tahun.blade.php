@@ -231,12 +231,12 @@
                 <div class="overlay-container">
                     <div class="overlay">
                         <div class="overlay-panel overlay-right">
-                            <h3 > Laporan Pemesanan Tahunan</h3>
+                            <h2> Laporan Stock Opname</h2>
                             {{-- <img src="assets/img/logo.png" style="width: 50%; margin-bottom: 10%;"> --}}
                            
-                            <h2 style="margin-bottom: 5px"> Pilih Tahun</h2>
+                            <h3 style="margin-bottom: 5px"> Pilih Tahun</h3>
                             <!-- <p>Silahkan membuat akun jika belum punya akun</p> -->
-                            <select class="form-control mt-2 ab-t-rpt-2" name="year">
+                            <select class="form-control mt-2 ab-t-rpt-2" name="year" style="height: 40px;width: 120px; font-size:18px;">
                                 @foreach($tahun as $t) 
                                     <option value="{{$t->year}}">{{$t->year}}</option>
                                 @endforeach

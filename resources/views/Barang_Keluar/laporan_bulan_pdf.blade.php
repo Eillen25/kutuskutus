@@ -175,21 +175,21 @@
   }
 }
 </style>
-    <div id="invoice">
+    <!-- <div id="invoice">
             <hr style="color: #B28E6B;">
-        </div>
+        </div> -->
         <div class="invoice overflow-auto">
             <div style="min-width: 600px">
                 <header>
                     <div class="row" style="display: block">
                         <div class="col">
-                                <img src="{{public_path('/assets/img/logokk.png')}}" style="width: 20%; display: block; margin-left: auto; margin-right: auto; " data-holder-rendered="true" />
+                                <img src="{{public_path('/assets/img/logokk.png')}}" style="width: 150px; display: block; margin-left: auto; margin-right: auto; " data-holder-rendered="true" />
                         </div>
                         <div class="col company-details text-center">
                             <div class = "text-center"><h2>Kutus - kutus</h2></div>
-                            <div class = "text-center">Jl. Buana Kubu No.48, Tegal Harum, Bali</div>
+                            <div class = "text-center">Jl. Buana Kubu No.48, Tegal Harum</div>
+                            <div>Bali</div>
                             <div>081805554911</div>
-                            <div>company@example.com</div>
                         </div>
                     </div>
                 </header>
@@ -201,32 +201,30 @@
                         <thead>
                             <tr>
                                 <!-- <th>#</th> -->
-                                <th class="text-left">Nama produk</th>
-                                <th class="text-right">Harga satuan</th>
-                                <th class="text-right">Jumlah</th>
-                                <th class="text-right">TOTAL</th>
+                                <th class="text-center">Jumlah</th>
+                                <th class="text-center">Nama produk</th>
+                                <!-- <th class="text-right">Harga satuan</th> -->
+                                <th class="text-center">Subtotal</th>
                             </tr>
                         </thead>
                         <tbody>
                         @foreach($exit as $d)
                             <tr>
                                 <!-- <td class="no">01</td> -->
+                                <td class="qty" style="text-align:center;">{{$d->jumlah}} pcs</td>
                                 <td class="text-left">
-                                    <h3>
                                         {{$d->nama_produk}}
-                                    </h3>
                                 </td>
                                 <td class="unit">@currency($d->total)</td>
-                                <td class="qty">{{$d->jumlah}}</td>
-                                <td class="total">@currency(($d->jumlah)*($d->total))</td>
+                                <!-- <td class="total">@currency(($d->jumlah)*($d->total))</td> -->
                             </tr>
                         @endforeach 
                         </tbody>
                         <tfoot>
                             <tr>
-                                <td colspan="2"></td>
-                                <td colspan="2">SUBTOTAL</td>
-                                <td>@currency($total[0]->total_semua)</td>
+                                <!-- <td colspan="2"></td> -->
+                                <td colspan="2"><strong>Total Harga</strong></td>
+                                <td><strong>@currency($total[0]->total_semua)</strong></td>
                             </tr>
                         </tfoot>
                     </table>
