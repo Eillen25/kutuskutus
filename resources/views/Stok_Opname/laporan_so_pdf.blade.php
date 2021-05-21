@@ -201,6 +201,7 @@
                         <thead>
                             <tr>
                                 <!-- <th>#</th> -->
+                                <th class="text-left">Tanggal</th>
                                 <th class="text-left">Nama produk</th>
                                 <th class="text-right">Jumlah Sistem</th>
                                 <th class="text-right">Jumlah Hitung</th>
@@ -212,7 +213,7 @@
                         <tbody>
                         @foreach($so as $d)
                             <tr>
-                                <!-- <td class="no">01</td> -->
+                                <td>{{$d->tanggal}}</td>
                                 <td class="text-left">
                                     <h3>
                                         {{$d->nama_produk}}
