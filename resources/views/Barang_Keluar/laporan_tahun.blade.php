@@ -247,7 +247,7 @@
                 <div class="overlay-panel overlay-right">
                     <h3 > Laporan Penjualan Tahunan</h3>
                     {{-- <img src="assets/img/logo.png" style="width: 50%; margin-bottom: 10%;"> --}}
-                    <h2 style="margin-bottom: 5px"> Pilih Tahun</h2>
+                    <h3 style="margin-bottom: 5px"> Pilih Tahun</h3>
                     <!-- <p>Silahkan membuat akun jika belum punya akun</p> -->
                        <select class="form-control mt-2 ab-t-rpt-2" style="height: 40px;
                     width: 120px; font-size:18px;" name="year">

@@ -188,7 +188,7 @@
                                 <img src="{{asset('assets/img/logokk.png')}}" style="width: 150px; display: block; margin-left: auto; margin-right: auto; " data-holder-rendered="true" />
                         </div>
                         <div class="col company-details text-center">
-                            <div class = "text-center"><h2>Kutus - kutus</h2></div>
+                            <div class = "text-center"><h2>Kutus - Kutus</h2></div>
                             <div class = "text-center">Jl. Sawo No.88, Bakbakan,
                                 Kabupaten Gianyar, Bali 80515</div>
                             <div>081999919777</div>
@@ -200,24 +200,24 @@
                     <div class="row contacts">
                         <div class="col invoice-to">
                             <div class="text-gray-light">Kepada</div>
-                            <h2 class="to">Nyoman Veni</h2>
+                            <h3 class="to">Nyoman Veni</h3>
                             <div class="address">Jl. Taman Giri </div>
                         </div>
                         <div class="col invoice-details">
-                            <h1 class="invoice-id">NO. INVOICE: {{$incoming->invoice_id}} </h1>
+                            <h2 class="invoice-id">No. Invoice: {{$incoming->invoice_id}} </h2>
                             <div class="date"> Tanggal:</div>
-                            <div class="date"> {{$incoming->tanggal}}</div>
+                            <div class="date"><h5>{{$incoming->tanggal}}</h5></div>
                         </div>
                     </div>
                     <table  cellspacing="0" cellpadding="0">
                         <thead>
                             <tr>
                                 <!-- <th>#</th> -->
-                                <th class="text-left">Nama produk</th>
-                                <th class="text-right">Harga satuan</th>
-                                <th class="text-right">Jumlah</th>
-                                <th class="text-right">Satuan</th>
-                                <th class="text-right">TOTAL</th>
+                                <th class="text-center"><h5>Nama produk</h5></th>
+                                <th class="text-center"><h5>Harga satuan</h5></th>
+                                <th class="text-center"><h5>Jumlah</h5></th>
+                                <th class="text-center"><h5>Satuan</h5></th>
+                                <th class="text-center"><h5>Subtotal</h5></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -229,19 +229,19 @@
                                       {{$d->produk->nama_produk}}
                                       </h3>
                                   </td>
-                                  <td class="unit">{{$d->harga}}</td>
-                                  <td class="qty">{{$d->jumlah}}</td>
-                                  <td class="text-right">pcs</td>
-                                  <td class="total">{{($d->jumlah)*($d->harga)}}</td>
+                                  <td class="unit">@currency($d->harga)</td>
+                                  <td class="qty" style="text-align:center;">{{$d->jumlah}}</td>
+                                  <td style="text-align:center;">pcs</td>
+                                  <td class="total">@currency(($d->jumlah)*($d->harga))</td>
                               </tr>
                             @endforeach 
                             
                         </tbody>
                         <tfoot>
                             <tr>
-                                <td colspan="2"></td>
-                                <td colspan="2">SUBTOTAL</td>
-                                <td>{{$incoming->total_harga}}</td>
+                                
+                                <td colspan="4">Total Harga</td>
+                                <td>@currency($incoming->total_harga)</td>
                             </tr>
                         </tfoot>
                     </table>

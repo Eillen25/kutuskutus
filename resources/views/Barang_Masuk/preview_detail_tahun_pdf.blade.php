@@ -187,7 +187,7 @@
                                 <img src="{{asset('assets/img/logokk.png')}}" style="width: 120px; display: block; margin-left: auto; margin-right: auto; " data-holder-rendered="true" />
                         </div>
                         <div class="col company-details text-center">
-                            <div class = "text-center"><h2>Kutus - kutus</h2></div>
+                            <div class = "text-center"><h2>Kutus - Kutus</h2></div>
                             <div class = "text-center">Jl. Sawo No.88, Bakbakan,
                                 Kabupaten Gianyar, Bali 80515</div>
                             <div>081999919777</div>
@@ -199,17 +199,17 @@
                   @csrf
                       <main>
                           <div class="container">
-                            <div class = "text-center"><center><h2>Laporan Pemesanan Tahun {{$year}}</h2></center></div>
+                            <div class = "text-center" style="margin-bottom:20px;"><center><h2>Laporan Pemesanan Tahun {{$year}}</h2></center></div>
                             <input type="hidden" name="year" value="{{$year}}">
                           </div>
                           <table  cellspacing="0" cellpadding="0">
                               <thead>
                                   <tr>
                                       <!-- <th>#</th> -->
-                                      <th class="text-left">Nama produk</th>
-                                      <th class="text-right">Total Harga</th>
-                                      <th class="text-right">Jumlah</th>
-                                      <th class="text-right">Satuan</th>
+                                      <th class="text-center"><h5>Nama produk</h5></th>
+                                      <th class="text-center"><h5>Jumlah</h5></th>
+                                      <th class="text-center"><h5>Satuan</h5></th>
+                                      <th class="text-center"><h5>Total Harga</h5></th>
                                       
                                   </tr>
                               </thead>
@@ -218,13 +218,13 @@
                                     <tr>
                                         <!-- <td class="no">01</td> -->
                                         <td class="text-left">
-                                            <h3>
+                                            
                                             {{$d->nama_produk}}
-                                            </h3>
+                                            
                                         </td>
+                                        <td class="qty" style="text-align:center;">{{$d->jumlah}}</td>
+                                        <td style="text-align:center;">pcs</td>
                                         <td class="unit" name="total_harga_pembelian[]">@currency($d->total)</td>
-                                        <td class="qty">{{$d->jumlah}}</td>
-                                        <td>pcs</td>
                                   
                                     </tr>
                                   @endforeach 
@@ -232,9 +232,9 @@
                               </tbody>
                               <tfoot>
                                   <tr>
-                                      <td colspan="2">Total Penjualan</td>
-                                      <td colspan="2">@currency($total[0]->total_semua)</td>
-                                      <td ></td>
+                                      <td colspan="3"><strong>Total Penjualan</strong></td>
+                                      <td><strong>@currency($total[0]->total_semua)</strong></td>
+                                      <!-- <td ></td> -->
                                   </tr>
                               </tfoot>
                           </table>

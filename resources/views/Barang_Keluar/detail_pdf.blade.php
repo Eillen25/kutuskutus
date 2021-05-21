@@ -175,9 +175,9 @@
   }
 }
 </style>
-    <div id="invoice">
+    <!-- <div id="invoice">
             <hr style="color: #B28E6B;">
-        </div>
+        </div> -->
         <div class="invoice overflow-auto">
             <div style="min-width: 600px">
                 <header>
@@ -186,23 +186,23 @@
                                 <img src="{{public_path('/assets/img/logokk.png')}}" style="width: 20%; display: block; margin-left: auto; margin-right: auto; " data-holder-rendered="true" />
                         </div>
                         <div class="col company-details text-center">
-                            <div class = "text-center"><h2>Kutus - kutus</h2></div>
+                            <div class = "text-center"><h2>Kutus - Kutus</h2></div>
                             <div class = "text-center">Jl. Buana Kubu No.48, Tegal Harum, Bali</div>
                             <div>081805554911</div>
-                            <div>company@example.com</div>
+                            <!-- <div>company@example.com</div> -->
                         </div>
                     </div>
                 </header>
                 <main>
                     <div class="row contacts">
                         <div class="col invoice-to">
-                            <div class="text-gray-light">NOTA TO:</div>
-                            <h2 class="to">{{$exit->reseller->nama_reseller}}</h2>
+                            <div class="text-gray-light">Kepada:</div>
+                            <h3 class="to">{{$exit->reseller->nama_reseller}}</h3>
                             <div class="address">{{$exit->reseller->alamat}} </div>
                         </div>
                         <div class="col invoice-details">
-                            <h1 class="invoice-id">INVOICE {{$exit->nota_id}}</h1>
-                            <div class="date"> DATE:</div>
+                            <h2 class="invoice-id">No. Nota {{$exit->nota_id}}</h2>
+                            <div class="date"> Tanggal:</div>
                             <div class="date"> {{$exit->tanggal}}</div>
                         </div>
                     </div>
@@ -210,32 +210,31 @@
                         <thead>
                             <tr>
                                 <!-- <th>#</th> -->
-                                <th class="text-left">Nama produk</th>
-                                <th class="text-right">Harga satuan</th>
-                                <th class="text-right">Jumlah</th>
-                                <th class="text-right">TOTAL</th>
+                                <th class="text-center" style="width:10%">Jumlah</th>
+                                <th class="text-center" style="width:35%">Nama produk</th>
+                                <th class="text-center" style="width:25%">Harga satuan</th>
+                                <th class="text-center" style="width:30%">Subtotal</th>
                             </tr>
                         </thead>
                         <tbody>
                         @foreach($det as $d)
                             <tr>
                                 <!-- <td class="no">01</td> -->
+                                <td class="qty" style="text-align:center;">{{$d->jumlah}} pcs</td>
                                 <td class="text-left">
-                                    <h3>
                                         {{$d->produk->nama_produk}}
-                                    </h3>
+                                    
                                 </td>
-                                <td class="unit">{{$d->harga_satuan}}</td>
-                                <td class="qty">{{$d->jumlah}}</td>
-                                <td class="total">{{($d->jumlah)*($d->harga_satuan)}}</td>
+                                <td class="unit">@currency($d->harga_satuan)</td>
+                                <td class="total">@currency(($d->jumlah)*($d->harga_satuan))</td>
                             </tr>
                         @endforeach 
                         </tbody>
                         <tfoot>
                             <tr>
-                                <td colspan="2"></td>
-                                <td colspan="2">SUBTOTAL</td>
-                                <td>{{$exit->total_harga_penjualan}}</td>
+                                
+                                <td colspan="3">Total Harga</td>
+                                <td>@currency($exit->total_harga_penjualan)</td>
                             </tr>
                         </tfoot>
                     </table>
