@@ -211,11 +211,11 @@
                         @foreach($exit as $d)
                             <tr>
                                 <!-- <td class="no">01</td> -->
-                                <td class="qty" style="text-align:center;">{{$d->jumlah}} pcs</td>
+                                <td style="text-align:center;">{{$d->jumlah}} pcs</td>
                                 <td class="text-left">
                                         {{$d->nama_produk}}
                                 </td>
-                                <td class="unit">@currency($d->total)</td>
+                                <td style="text-align:right;">@currency($d->total)</td>
                                 <!-- <td class="total">@currency(($d->jumlah)*($d->total))</td> -->
                             </tr>
                         @endforeach 

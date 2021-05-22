@@ -187,11 +187,10 @@
                                 <img src="{{asset('assets/img/logokk.png')}}" style="width: 120px; display: block; margin-left: auto; margin-right: auto; " data-holder-rendered="true" />
                         </div>
                         <div class="col company-details text-center">
-                            <div class = "text-center"><h2>Kutus - Kutus</h2></div>
-                            <div class = "text-center">Jl. Sawo No.88, Bakbakan,
-                                Kabupaten Gianyar, Bali 80515</div>
-                            <div>081999919777</div>
-                            <div>support@kutuskutusherbal.co.id</div>
+                        <div class = "text-center"><h2>Kutus - Kutus</h2></div>
+                        <div class = "text-center">Jl. Buana Kubu No.48, Tegal Harum, Bali</div>
+                        <div>081805554911</div>
+                            <!-- <div>support@kutuskutusherbal.co.id</div> -->
                         </div>
                     </div>
                 </header>

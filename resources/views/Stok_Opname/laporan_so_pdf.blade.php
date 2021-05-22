@@ -175,21 +175,22 @@
   }
 }
 </style>
-    <div id="invoice">
+    <!-- <div id="invoice">
             <hr style="color: #B28E6B;">
-        </div>
+        </div> -->
         <div class="invoice overflow-auto">
             <div style="min-width: 600px">
                 <header>
                     <div class="row" style="display: block">
                         <div class="col">
-                                <img src="{{public_path('/assets/img/logokk.png')}}" style="width: 20%; display: block; margin-left: auto; margin-right: auto; " data-holder-rendered="true" />
+                                <img src="{{public_path('/assets/img/logokk.png')}}" style="width: 150px; display: block; margin-left: auto; margin-right: auto; " data-holder-rendered="true" />
                         </div>
                         <div class="col company-details text-center">
-                            <div class = "text-center"><h2>Kutus - kutus</h2></div>
-                            <div class = "text-center">Jl. Buana Kubu No.48, Tegal Harum, Bali</div>
+                            <div class = "text-center"><h2>Kutus - Kutus</h2></div>
+                            <div class = "text-center">Jl. Buana Kubu No.48, Tegal Harum</div>
+                            <div>Bali</div>
                             <div>081805554911</div>
-                            <div>company@example.com</div>
+                            <!-- <div>company@example.com</div> -->
                         </div>
                     </div>
                 </header>
@@ -201,13 +202,13 @@
                         <thead>
                             <tr>
                                 <!-- <th>#</th> -->
-                                <th class="text-left">Tanggal</th>
-                                <th class="text-left">Nama produk</th>
-                                <th class="text-right">Jumlah Sistem</th>
-                                <th class="text-right">Jumlah Hitung</th>
-                                <th class="text-right">Perbedaan</th>
-                                <th class="text-right">Satuan</th>
-                                <th class="text-right">Alasan</th>
+                                <th class="text-center">Tanggal</th>
+                                <th class="text-center">Nama produk</th>
+                                <th class="text-center">Jumlah Sistem</th>
+                                <th class="text-center">Jumlah Hitung</th>
+                                <th class="text-center">Perbedaan</th>
+                                <!-- <th class="text-right">Satuan</th> -->
+                                <th class="text-center">Alasan</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -215,15 +216,13 @@
                             <tr>
                                 <td>{{$d->tanggal}}</td>
                                 <td class="text-left">
-                                    <h3>
                                         {{$d->nama_produk}}
-                                    </h3>
                                 </td>
-                                <td class="qty">{{$d->jumlah_sistem}}</td>
-                                <td class="total">{{$d->jumlah_hitung}}</td>
-                                <td class="total">{{$d->perbedaan}}</td>
-                                <td class="unit">{{$d->satuan_id}}</td>
-                                <td class="total">{{$d->alasan}}</td>
+                                <td style="text-align:center;">{{$d->jumlah_sistem}}</td>
+                                <td style="text-align:center;">{{$d->jumlah_hitung}}</td>
+                                <td style="text-align:center;">{{$d->perbedaan}}</td>
+                                <!-- <td class="unit">{{$d->satuan_id}}</td> -->
+                                <td>{{$d->alasan}}</td>
                             </tr>
                         @endforeach 
                         </tbody>

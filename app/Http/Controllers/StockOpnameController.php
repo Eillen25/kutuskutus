@@ -71,7 +71,7 @@ class StockOpnameController extends Controller
         $so = DB::select('SELECT opname_id, tanggal, p.nama_produk, p.satuan_id, jumlah_sistem, jumlah_hitung, perbedaan, alasan
         FROM stock_opname so, produk p
         WHERE EXTRACT(YEAR FROM tanggal) = '.$year.' AND so.produk_id = p.produk_id
-        GROUP BY p.nama_produk');
+        ');
 
         
         // dd($so);
@@ -97,7 +97,7 @@ class StockOpnameController extends Controller
         $so = DB::select('SELECT opname_id, tanggal, p.nama_produk, p.satuan_id, jumlah_sistem, jumlah_hitung, perbedaan, alasan
         FROM stock_opname so, produk p
         WHERE EXTRACT(YEAR FROM tanggal) = '.$year.' AND so.produk_id = p.produk_id
-        GROUP BY p.nama_produk');
+        ');
 
         
         // dd($so);

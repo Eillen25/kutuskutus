@@ -188,7 +188,8 @@
                         <div class="col company-details text-center">
                             <div class = "text-center"><h2>Kutus - Kutus</h2></div>
                             <div class = "text-center">Jl. Buana Kubu No.48, Tegal Harum, Bali</div>
-                            <div>081805554911</div>
+                            <div style="margin-bottom: 10px;">081805554911</div>
+                            
                             <!-- <div>company@example.com</div> -->
                         </div>
                     </div>
@@ -201,7 +202,7 @@
                             <div class="address">{{$exit->reseller->alamat}} </div>
                         </div>
                         <div class="col invoice-details">
-                            <h2 class="invoice-id">No. Nota {{$exit->nota_id}}</h2>
+                            <h2 >No. Nota {{$exit->nota_id}}</h2>
                             <div class="date"> Tanggal:</div>
                             <div class="date"> {{$exit->tanggal}}</div>
                         </div>
@@ -220,21 +221,20 @@
                         @foreach($det as $d)
                             <tr>
                                 <!-- <td class="no">01</td> -->
-                                <td class="qty" style="text-align:center;">{{$d->jumlah}} pcs</td>
+                                <td style="text-align:center;">{{$d->jumlah}} pcs</td>
                                 <td class="text-left">
                                         {{$d->produk->nama_produk}}
-                                    
                                 </td>
-                                <td class="unit">@currency($d->harga_satuan)</td>
-                                <td class="total">@currency(($d->jumlah)*($d->harga_satuan))</td>
+                                <td style="text-align:right;">@currency($d->harga_satuan)</td>
+                                <td style="text-align:right;">@currency(($d->jumlah)*($d->harga_satuan))</td>
                             </tr>
                         @endforeach 
                         </tbody>
                         <tfoot>
                             <tr>
                                 
-                                <td colspan="3">Total Harga</td>
-                                <td>@currency($exit->total_harga_penjualan)</td>
+                                <td colspan="3"><strong>Total Harga</strong></td>
+                                <td><strong>@currency($exit->total_harga_penjualan)</strong></td>
                             </tr>
                         </tfoot>
                     </table>

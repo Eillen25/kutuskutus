@@ -205,7 +205,7 @@
         @csrf
             <main>
                 <div class="container">
-                    <div class="text-center">
+                    <div class="text-center" style="margin-bottom:20px;">
                         <center>
                             <h2>Laporan Stock Opname Tahun {{$year}}</h2>
                         </center>
@@ -216,13 +216,13 @@
                     <thead>
                         <tr>
                             
-                            <th class="text-left">Tanggal</th>
-                            <th class="text-left">Nama produk</th>
-                            <th class="text-right">Jumlah Sistem</th>
-                            <th class="text-right">Jumlah Hitung</th>
-                            <th class="text-right">Perbedaan</th>
-                            <th class="text-right">Satuan</th>
-                            <th class="text-right">Alasan</th>
+                            <th class="text-center">Tanggal</th>
+                            <th class="text-center">Nama produk</th>
+                            <th class="text-center">Jumlah Sistem</th>
+                            <th class="text-center">Jumlah Hitung</th>
+                            <th class="text-center">Perbedaan</th>
+                            <!-- <th class="text-right">Satuan</th> -->
+                            <th class="text-center">Alasan</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -234,10 +234,10 @@
                                     {{$d->nama_produk}}
                                 <!-- </h3> -->
                             </td>
-                            <td class="qty">{{$d->jumlah_sistem}}</td>
-                            <td class="total">{{$d->jumlah_hitung}}</td>
-                            <td class="total">{{$d->perbedaan}}</td>
-                            <td class="unit">{{$d->satuan_id}}</td>
+                            <td style="text-align:center;">{{$d->jumlah_sistem}}</td>
+                            <td style="text-align:center;">{{$d->jumlah_hitung}}</td>
+                            <td style="text-align:center;">{{$d->perbedaan}}</td>
+                            <!-- <td class="unit">{{$d->satuan_id}}</td> -->
                             <td>{{$d->alasan}}</td>
                         </tr>
                         @endforeach

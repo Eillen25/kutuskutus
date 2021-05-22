@@ -187,11 +187,11 @@
                                 <img src="{{public_path('/assets/img/logokk.png')}}" style="width: 120px; display: block; margin-left: auto; margin-right: auto; " data-holder-rendered="true" />
                         </div>
                         <div class="col company-details text-center">
-                            <div class = "text-center"><h2>Kutus - Kutus</h2></div>
-                            <div class = "text-center">Jl. Sawo No.88, Bakbakan,
-                                Kabupaten Gianyar, Bali 80515</div>
-                            <div>081999919777</div>
-                            <div>support@kutuskutusherbal.co.id</div>
+                        <div class = "text-center"><h2>Kutus - Kutus</h2></div>
+                        <div class = "text-center">Jl. Buana Kubu No.48, Tegal Harum, Bali</div>
+                        <div>081805554911</div>
+                        <div></div>
+                            <!-- <div>support@kutuskutusherbal.co.id</div> -->
                         </div>
                     </div>
                 </header>
@@ -219,9 +219,9 @@
                                       {{$d->nama_produk}}
                                       
                                   </td>
-                                  <td class="qty" style="text-align:center;">{{$d->jumlah}}</td>
+                                  <td style="text-align:center;">{{$d->jumlah}}</td>
                                   <td style="text-align:center;">pcs</td>
-                                  <td class="unit" style="text-align:right;" name="total_harga_pembelian[]">@currency($d->total)</td>
+                                  <td style="text-align:right;" name="total_harga_pembelian[]">@currency($d->total)</td>
                              
                               </tr>
                             @endforeach 
@@ -230,7 +230,7 @@
                         <tfoot>
                             <tr>
                                 <td colspan="3"><strong>Total Penjualan</strong></td>
-                                <td style="text-align:right;"><strong> @currency($total[0]->total_semua)</strong></td>
+                                <td style="text-align:right; font-weight: bold;">@currency($total[0]->total_semua)</td>
                                 
                             </tr>
                         </tfoot>
