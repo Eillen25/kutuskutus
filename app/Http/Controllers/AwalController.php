@@ -162,7 +162,7 @@ class AwalController extends Controller
             $button ='<div style="display: flex;  ">';
             // $button .= '<a class="btn btn-success btn-sm"  href="/reseller/detail/{id}' . $res->reseller_id. '")">Detail</a>';
             $button .= '<a class="btn btn-warning btn-sm" style="margin: 0 10px" href="/reseller/edit/' . $res->reseller_id . '")"><i class="fas fa-edit"></i></a>';
-            $button .= '<a class="btn btn-danger btn-sm" href="/reseller/destroy/' . $res->reseller_id . '")"><i class="far fa-trash-alt"></i></a>';
+            $button .= '<a class="btn btn-danger btn-sm" onclick="return confirm(`Are you sure?`)" href="/reseller/destroy/' . $res->reseller_id . '")"><i class="far fa-trash-alt"></i></a>';
             $button .= '</div>';
             return $button;
         })
@@ -219,7 +219,7 @@ class AwalController extends Controller
             $button ='<div style="display: flex;  ">';
             // $button .= '<a class="btn btn-success btn-sm"  href="/produk/detail/{id}' . $produk->produk_id. '")">Detail</a>';
             $button .= '<a class="btn btn-warning btn-sm" style="margin: 0 10px" href="/admin/edit/' .  $admin->admin_id . '")"><i class="fas fa-edit"></i></a>';
-            $button .= '<a class="btn btn-danger btn-sm" href="/admin/destroy/' . $admin->admin_id . '")"><i class="far fa-trash-alt"></i></a>';
+            $button .= '<a class="btn btn-danger btn-sm" onclick="return confirm(`Are you sure?`)" href="/admin/destroy/' . $admin->admin_id . '")"><i class="far fa-trash-alt"></i></a>';
             $button .= '</div>';
             return $button;
         })
