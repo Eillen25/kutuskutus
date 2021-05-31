@@ -65,7 +65,7 @@ class AdminController extends Controller
 
         ]);
 
-        return redirect('/admin/edit/'.$id);
+        return redirect('/admin');
     }
 
     public function destroy_admin($id)
