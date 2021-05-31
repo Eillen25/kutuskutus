@@ -133,7 +133,11 @@
                 <input type="text" class="form-control mt-2" name="jumlah[]">
             </div>
             <div class="col-md-3">
+<<<<<<< Updated upstream
                 <select class="form-control mt-2 ab-t-rpt-2" name="harga_satuan[]" readonly>
+=======
+                <select class="form-control mt-2 ab-t-rpt-2" name="harga_satuan[]" >
+>>>>>>> Stashed changes
                     <option value="">--Harga Produk--</option>
                     @foreach($produk as $items)
                     <option value="{{ $items->harga_jual }}">{{$items->harga_jual}}</option>

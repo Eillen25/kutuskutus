@@ -56,7 +56,7 @@ class BarangMasukController extends Controller
                 ':id_invo' => $invoice_id,
                 ':id_prod' => $produk_id,
                 ':jum' => $data['jumlah'][$index],
-                ':harga' => $data['harga_satuan'][$index],
+                ':harga' => $data['harga_satuan'][$index]
             ]);
         }
         return redirect('/barangmasuk');
